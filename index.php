@@ -113,13 +113,12 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="box-title">Traffic </h4>
+                        <h4 class="box-title">สัดส่วนการใช้เงินประจำเดือน<span>มกราคม</span> ณ วันที่ <span>21/01/15</span> </h4>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
                             <div class="card-body">
-                                <!-- <canvas id="TrafficChart"></canvas>   -->
-                                <div id="traffic-chart" class="traffic-chart"></div>
+                                <canvas id="TrafficChart"></canvas>  
                             </div>
                         </div>
                     </div> <!-- /.row -->
@@ -491,8 +490,8 @@
 <!-- /.content -->
 
     <!--  Chart js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/google-palette@1.1.0/palette.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script> 
     <!--Chartist Chart-->
     <script src="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartist-plugin-legend@0.6.2/chartist-plugin-legend.min.js"></script>
@@ -505,7 +504,6 @@
     <script>
         jQuery(document).ready(function($) {
             "use strict";
-
             // Pie chart flotPie1
             var piedata = [
                 { label: "Desktop visits", data: [[1,32]], color: '#5c6bc0'},
@@ -558,6 +556,7 @@
 
             });
             // cellPaiChart End
+
             // Line Chart  #flotLine5
             var newCust = [[0, 3], [1, 5], [2,4], [3, 7], [4, 9], [5, 3], [6, 6], [7, 4], [8, 10]];
 
@@ -593,88 +592,47 @@
                 }
             });
             // Line Chart  #flotLine5 End
-            // Traffic Chart using chartist
-            if ($('#traffic-chart').length) {
-                var chart = new Chartist.Line('#traffic-chart', {
-                  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-                  series: [
-                  [0, 18000, 35000,  25000,  22000,  0],
-                  [0, 33000, 15000,  20000,  15000,  300],
-                  [0, 15000, 28000,  15000,  30000,  5000]
-                  ]
-              }, {
-                  low: 0,
-                  showArea: true,
-                  showLine: false,
-                  showPoint: false,
-                  fullWidth: true,
-                  axisX: {
-                    showGrid: true
-                }
-            });
 
-                chart.on('draw', function(data) {
-                    if(data.type === 'line' || data.type === 'area') {
-                        data.element.animate({
-                            d: {
-                                begin: 2000 * data.index,
-                                dur: 2000,
-                                from: data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify(),
-                                to: data.path.clone().stringify(),
-                                easing: Chartist.Svg.Easing.easeOutQuint
-                            }
-                        });
-                    }
-                });
-            }
-            // Traffic Chart using chartist End
             //Traffic chart chart-js
             if ($('#TrafficChart').length) {
-                var ctx = document.getElementById( "TrafficChart" );
-                ctx.height = 150;
-                var myChart = new Chart( ctx, {
-                    type: 'line',
-                    data: {
-                        labels: [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul" ],
-                        datasets: [
-                        {
-                            label: "Visit",
-                            borderColor: "rgba(4, 73, 203,.09)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(4, 73, 203,.5)",
-                            data: [ 0, 2900, 5000, 3300, 6000, 3250, 0 ]
-                        },
-                        {
-                            label: "Bounce",
-                            borderColor: "rgba(245, 23, 66, 0.9)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(245, 23, 66,.5)",
-                            pointHighlightStroke: "rgba(245, 23, 66,.5)",
-                            data: [ 0, 4200, 4500, 1600, 4200, 1500, 4000 ]
-                        },
-                        {
-                            label: "Targeted",
-                            borderColor: "rgba(40, 169, 46, 0.9)",
-                            borderWidth: "1",
-                            backgroundColor: "rgba(40, 169, 46, .5)",
-                            pointHighlightStroke: "rgba(40, 169, 46,.5)",
-                            data: [1000, 5200, 3600, 2600, 4200, 5300, 0 ]
-                        }
+                let ctx = $('#TrafficChart')[0];
+                let dataForPieChart = {
+                    data: [150, 400, 250],
+                    label: [
+                            'บิล & สาธารณูปโภค',
+                            'อาหาร & เครื่องดื่ม',
+                            'การเดินทาง'
                         ]
+                };
+                ctx.height = 150;
+                let chart = new Chart(ctx, {
+                    type: 'pie',
+                    data: {
+                        datasets: [{
+                            data: dataForPieChart.data,
+                            backgroundColor: palette('tol', dataForPieChart.data.length).map(function(hex) {
+                                return '#' + hex; 
+                            })
+                        }],
+                        labels: dataForPieChart.label
                     },
                     options: {
                         responsive: true,
-                        tooltips: {
-                            mode: 'index',
-                            intersect: false
+                        legend: {
+                            position: 'right'
                         },
-                        hover: {
-                            mode: 'nearest',
-                            intersect: true
+                        tooltips: {
+                            callbacks: {
+                                label: function (tooltipItem, data) {
+                                    let label = data.labels[tooltipItem.datasetIndex]
+                                    let val = data.datasets[0].data[tooltipItem.datasetIndex];
+                                    
+                                    return label + ": ฿" + val;
+                                }
+                            }
                         }
-
                     }
-                } );
+                });
             }
             //Traffic chart chart-js  End
             // Bar Chart #flotBarChart
