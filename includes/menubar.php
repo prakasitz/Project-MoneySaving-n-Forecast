@@ -7,15 +7,8 @@
                             <a href="<?= ROOT ?>/index.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
                         </li>
                         <li class="menu-title">menu-title</li><!-- /.menu-title -->
-                        <li class="menu-item-has-children dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>วางแผนเป้าหมาย</a>
-                            <ul class="sub-menu children dropdown-menu">
-                                <li><i class="fa fa-table"></i><a href="tables-basic.html">เพื่อปลดหนี้</a></li>
-                                <li><i class="fa fa-table"></i><a href="tables-data.html">เพื่อใช้จ่ายยามฉุกเฉิน</a></li>
-                                <li><i class="fa fa-table"></i><a href="tables-data.html">เพื่อวัตถุประสงค์การเงินตามจังหวะชีวิต</a></li>
-                                <li><i class="fa fa-table"></i><a href="tables-data.html">เพื่อลงทุน</a></li>
-                                <li><i class="fa fa-table"></i><a href="tables-data.html">เพื่อยามเกษียณ</a></li>
-                            </ul>
+                        <li class="">
+                            <a href="<?= ROOT ?>/planing/planing.php"> <i class="menu-icon fa fa-table"></i> วางแผนเป้าหมาย</a>
                         </li>
                         <li class="menu-item-has-children dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>บันทึกประจำวัน</a>
