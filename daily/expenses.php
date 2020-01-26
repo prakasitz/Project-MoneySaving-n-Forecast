@@ -41,7 +41,7 @@
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
                                 <input type="date" id="input-date" name="date" class="form-control">
-                            </div>
+                                </div>
                         </div>
                         <div class="row form-group">
                                 <div class="input-group col-lg-6">
@@ -50,15 +50,27 @@
                                         <option>เลือกประเภท</option>
                                         <option value="1" data-icon="fa fa-money">บิล & สาธารณูปโภค</option>
                                         <option value="2" data-icon="fa fa-suitcase">อาหาร & เครื่องดื่ม</option>
-                                        <option value="3" data-icon="fa fa-pagelines">ช้อปปิ้ง</option>
+                                        <option value="3" data-icon="fa fa-pagelines">การเดินทาง</option>
+                                        <option value="4" data-icon="fa fa-pagelines">ช้อปปิ้ง</option>
+                                        <option value="5" data-icon="fa fa-pagelines">บันเทิง</option>
+                                        <option value="6" data-icon="fa fa-pagelines">ท่องเที่ยว</option>
+                                        <option value="7" data-icon="fa fa-pagelines">สุขภาพ & ฟิตเนส</option>
+                                        <option value="8" data-icon="fa fa-pagelines">ครอบครัว</option>
+                                        <option value="9" data-icon="fa fa-pagelines">การให้ & บริจาค</option>
+                                        <option value="10" data-icon="fa fa-pagelines">การศึกษา</option>
+                                        <option value="11" data-icon="fa fa-pagelines">การลงทุน</option>
+                                        <option value="12" data-icon="fa fa-pagelines">ธุรกิจ</option>
+                                        <option value="13" data-icon="fa fa-pagelines">ประกันภัย</option>
+                                        <option value="14" data-icon="fa fa-pagelines">หนี้สิน</option>
+                                        <option value="15" data-icon="fa fa-pagelines">อื่นๆ</option>
                                     </select>
-                                </div>
+                                    </div>
                                 <div class="input-group col-lg-6">
                                     <div class="input-group-addon"><i class="fa fa-circle"></i></div>
                                     <select name="typeSubExpense" id="select-type-sub-expense" class="form-control selectpicker">
                                         <option>เลือกประเภทย่อย</option>
                                         <option value="1" data-icon="fa fa-money">การศึกษา</option>
-                                        <option value="2" data-icon="fa fa-suitcase">ท่องเที่ยว</option>
+                                        <o value="2" data-icon="fa fa-suitcase">ท่องเที่ยว</o ption>
                                         <option value="3" data-icon="fa fa-pagelines">บันเทิง</option>
                                     </select>
                                 </div>
