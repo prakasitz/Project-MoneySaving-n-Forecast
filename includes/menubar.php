@@ -15,7 +15,6 @@
                             <ul class="sub-menu children dropdown-menu">
                                 <li><i class="fa fa-puzzle-piece"></i><a href="<?= ROOT ?>/daily/income.php">บันทึกรายรับ</a></li>
                                 <li><i class="fa fa-id-badge"></i><a href="<?= ROOT ?>/daily/expenses.php">บันทึกรายจ่าย</a></li>
-                                <li><i class="fa fa-bars"></i><a href="<?= ROOT ?>/daily/loaning.php">บันทึกหนี้สินหรือเงินกู้งืม</a></li>
                                 <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">สรุปธุรกรรมประจำวัน</a></li>
                             </ul>
                         </li>
@@ -25,6 +24,9 @@
                                 <li><i class="menu-icon fa fa-th"></i><a href="<?= ROOT ?>/summary/monthly.php">รายเดือน</a></li>
                                 <li><i class="menu-icon fa fa-th"></i><a href="<?= ROOT ?>/summary/quarter.php">รายไตรมาส</a></li>
                             </ul>
+                        </li>
+                        <li class="">
+                            <a href="<?= ROOT ?>/forecast/forecast.php"> <i class="menu-icon fa fa-table"></i> การพยากรณ์รายรับรายจ่าย</a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
