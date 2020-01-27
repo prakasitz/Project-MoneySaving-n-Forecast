@@ -40,18 +40,16 @@
                 <div class="login-form">
                     <form>
                         <p class='h4'>Test Dynamic Selectbox</h4>
-                        <div class="form-group">
-                            <label>จังหวัด</label>
-                            <select class="selectpicker form-control" id="selectProvince">
-                                <option selected>เลือกจังหวัด</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>อำเภอ</label>
-                            <select class="selectpicker form-control" id="selectDistct">
-                                <option selected>เลือกอำเภอ</option>
-                            </select>
-                        </div>
+                            <div class="form-group">
+                                <label>จังหวัด</label>
+                                <select class="selectpicker form-control" name="provinceId" id="selectProvince">
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>อำเภอ</label>
+                                <select class="selectpicker form-control" name="distctId" id="selectDistct">
+                                </select>
+                            </div>
                     </form>
                 </div>
             </div>
@@ -63,18 +61,32 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js"></script>
     <script src="../assets/bootstrap-select/dist/js/bootstrap-select.js"></script>
-    
+
     <script>
-        $(document).ready(function($) {
+        $(document).ready(function ($) {
+ 
             $("select#selectProvince").load('./data/provinces.json', function (data) {
-                console.log(data)
-            })
-        })
+                let selectorProvince = $(this);
+                let provinces = JSON.parse(data);
+
+                let strOption = "<option>เลือกจังหวัด</option>";
+                let selected = "selected";
+
+                selectorProvince.text("");
+
+                provinces.forEach(v => {
+                    strOption = strOption + "<option value='" + v['PROVINCE_ID'] + "' >" + v['PROVINCE_NAME'] + "</option>";
+                });
+
+                selectorProvince.append(strOption);
+
+            });
+        });
     </script>
 
     <script src="../assets/js/main.js"></script>
 
- 
+
 
 </body>
 
