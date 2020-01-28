@@ -26,7 +26,7 @@
                             </ul>
                         </li>
                         <li class="">
-                            <a href="<?= ROOT ?>/forecast/forecast.php"> <i class="menu-icon fa fa-table"></i> การพยากรณ์รายรับรายจ่าย</a>
+                            <a href="<?= ROOT ?>/forecast/forecast.php"> <i class="menu-icon fa fa-table"></i> การพยากรณ์รายจ่าย</a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
