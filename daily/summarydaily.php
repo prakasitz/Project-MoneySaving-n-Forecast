@@ -61,7 +61,7 @@
                             <select name="bootstrap-data-table_length" aria-controls="bootstrap-data-table" class="form-control form-control-sm">
                                 <option value="1">รายรับ</option>
                                 <option value="2">รายจ่าย</option>
-                                <option value="3">ทั้งหมด>
+                                <option value="3">ทั้งหมด</option>
                             </select> 
                         </label>
                     </div>
