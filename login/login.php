@@ -19,41 +19,46 @@
     <div class="col-md-10" style="background-color: #EEE9E9;">
     <h2 align="center"> เข้าสู่ระบบ </h2>
      <form  name="formlogin" action="" method="POST" id="login">
-              <div class="row">
-              <label class="col-md-4" style="text-align:right"> Email Address </label>
-                <div class="col-md-4">
-                <input type="text"  name="Email Address" class="form-control" required placeholder="Email Address" />
+              <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="index.html">
+                        <img class="align-content" src="images/logo.png" alt="">
+                    </a>
                 </div>
+                <div class="login-form">
+                    <form>
+                        <div class="form-group">
+                            <label>Email address</label>
+                            <input type="email" class="form-control" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox"> Remember Me
+                            </label>
+                            <label class="pull-right">
+                                <a href="#">Forgotten Password?</a>
+                            </label>
+
+                        </div>
+                        
+                        <a  style="margin-left:350px"class="btn btn-primary" href="#" role="button">Sing In</a>
+                        <div class="social-login-content">
+
+                        </div>
+                        <div class="register-link m-t-15 text-center">
+                            <p>Don't have account ? <a href="#"> Sign Up Here</a></p>
+                        </div>
+                    </form>
                 </div>
-
-
-              <div class="row">
-              <br>
-              <label class="col-md-4" style="text-align:right"> Password </label>
-                <div class="col-md-4">
-                     <input type="password" name="Password" class="form-control" required placeholder="Password" />
             </div>
-              </div>
-
-
-
-              <div class="row">
-              <div class="col-md-4"> </div>
-              <div class="col-md-4">
-              <br /><input name="remember" type="checkbox" value="Remember me" autocomplete="off" /> Remember Me
-
-                </div>
-                <div class="col-md-4"> </div>
-              &nbsp; &nbsp; &nbsp; <br /> 
-              <div class="col-md-12">
-              <p align="center">
-              
-              <button type="button" class="btn btn-secondary">SIGN IN</button>
-              <button type="button" class="btn btn-secondary">REGISTER</button>
-              </p>
-              </div>
-              <br>
-              
+        </div>
+    </div>
             </form>
       </div>
     </div>
