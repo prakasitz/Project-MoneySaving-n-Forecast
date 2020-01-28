@@ -624,8 +624,8 @@
                         tooltips: {
                             callbacks: {
                                 label: function (tooltipItem, data) {
-                                    let label = data.labels[tooltipItem.datasetIndex]
-                                    let val = data.datasets[0].data[tooltipItem.datasetIndex];
+                                    let label = data.labels[tooltipItem.index]
+                                    let val = data.datasets[0].data[tooltipItem.index];
                                     
                                     return label + ": ฿" + val;
                                 }
