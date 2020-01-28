@@ -18,7 +18,7 @@
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
                             <li><a href="#">สรุปรายรับรายจ่าย</a></li>
-                            <li class="active">สรุปรายรับรายจ่าย</li>
+                            <li class="active">รายไตรมาส</li>
                         </ol>
                     </div>
                 </div>
