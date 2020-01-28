@@ -15,7 +15,7 @@
                             <ul class="sub-menu children dropdown-menu">
                                 <li><i class="fa fa-puzzle-piece"></i><a href="<?= ROOT ?>/daily/income.php">บันทึกรายรับ</a></li>
                                 <li><i class="fa fa-id-badge"></i><a href="<?= ROOT ?>/daily/expenses.php">บันทึกรายจ่าย</a></li>
-                                <li><i class="fa fa-id-card-o"></i><a href="ui-cards.html">สรุปธุรกรรมประจำวัน</a></li>
+                                <li><i class="fa fa-id-card-o"></i><a href="<?= ROOT ?>/daily/summarydaily.php">สรุปธุรกรรมประจำวัน</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children dropdown">
