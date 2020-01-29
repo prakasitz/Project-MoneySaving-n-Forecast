@@ -42,12 +42,17 @@
                         <p class='h4'>Test Dynamic Selectbox</h4>
                             <div class="form-group">
                                 <label>จังหวัด</label>
-                                <select class="selectpicker form-control" name="provinceId" id="selectProvince">
+                                <select class="selectpicker form-control" name="PROVINCE_ID" id="selectProvince"
+                                    data-size="7" data-live-search="true">
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label>อำเภอ</label>
-                                <select class="selectpicker form-control" name="distctId" id="selectDistct">
+                                <select class="selectpicker form-control" name="DISTRICT_ID" id="selectDistct"
+                                    data-size="7" data-live-search="true">
+                                    <option value="" selected>เลือกอำเภอ</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
                                 </select>
                             </div>
                     </form>
@@ -64,22 +69,63 @@
 
     <script>
         $(document).ready(function ($) {
- 
-            $("select#selectProvince").load('./data/provinces.json', function (data) {
-                let selectorProvince = $(this);
-                let provinces = JSON.parse(data);
 
-                let strOption = "<option>เลือกจังหวัด</option>";
-                let selected = "selected";
+            $("select#selectProvince").load('location_controller.php', { "name": "provinces"} , function (data) {
+                console.log(data);
+                // let selectorProvince = $(this);
+                // let provinces = JSON.parse(data);
 
-                selectorProvince.text("");
+                // let strOption = "<option value='' selected>เลือกจังหวัด</option>";
 
-                provinces.forEach(v => {
-                    strOption = strOption + "<option value='" + v['PROVINCE_ID'] + "' >" + v['PROVINCE_NAME'] + "</option>";
+                // selectorProvince.text("");
+
+                // provinces.forEach(v => {
+                //     strOption = strOption + "<option value='" + v['PROVINCE_ID'] + "' >" + v[
+                //         'PROVINCE_NAME'] + "</option>";
+                // });
+
+                // selectorProvince.append(strOption);
+            });
+
+            $('select').change(function () {
+                const selectCurrent = $(this);
+                const selectList = selectCurrent
+                                    .closest('body')
+                                    .find('select');
+
+                let selectNext;
+                
+                $(selectList).each(function (ind, element) {
+                    if ($(element).attr('id') == selectCurrent.attr('id')) {
+                        selectNext = $(selectList[ind + 1]);
+                        return false;
+                    }
                 });
+                
+                 if (selectCurrent.val() != '' && selectNext.length != 0) {
 
-                selectorProvince.append(strOption);
+                     let selectId = selectCurrent.val();
+                     let areaName = selectCurrent.attr('name');
+                     let areaNextName = selectNext.attr('name');
 
+                     $.ajax({
+                         url: "./data/districts.json",
+                         method: "GET",
+                         data: {
+                            select: selectId,
+                            curr_name: areaName,
+                            next_name: areaNextName,
+                         },
+                         success: function (result) {
+                             $(selectNext).append(result);
+                         }
+                     });
+
+                 } else {
+                     let boxSelect = $(selectCurrent).closest('div');
+                     let selectNextList = boxSelect.nextAll().find('select');
+                    selectNextList.find('option:not(:first-child)').remove();
+                } 
             });
         });
     </script>
