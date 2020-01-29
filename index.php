@@ -488,7 +488,9 @@
     <!-- .animated -->
 </div>
 <!-- /.content -->
-
+    <?php
+        include_once './includes/footer.php';
+    ?>
     <!--  Chart js -->
     <script src="https://cdn.jsdelivr.net/npm/google-palette@1.1.0/palette.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script> 
@@ -651,7 +653,3 @@
             // Bar Chart #flotBarChart End
         });
     </script>
-
-<?php
-    include_once './includes/footer.php';
-?>
