@@ -62,7 +62,7 @@
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text">$<span class="count">23569</span></div>
-                                    <h4 class="font-weight-bold">Income</h4>
+                                    <h4 class="font-weight-bold">รายรับ</h4>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">3435</span></div>
-                                    <h4 class="font-weight-bold">Expense</h4>
+                                    <h4 class="font-weight-bold">รายจ่าย</h4>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
                             <div class="stat-content">
                                 <div class="text-left dib">
                                     <div class="stat-text"><span class="count">349</span></div>
-                                    <h4 class="font-weight-bold">Saving</h4>
+                                    <h4 class="font-weight-bold">เงินออม</h4>
                                 </div>
                             </div>
                         </div>
@@ -113,7 +113,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="box-title">สัดส่วนการใช้เงินประจำเดือน<span>มกราคม</span> ณ วันที่ <span>21/01/15</span> </h4>
+                        <h4 class="box-title">สัดส่วนการใช้เงิน</h4>
                     </div>
                     <div class="row justify-content-center">
                         <div class="col-lg-8">
