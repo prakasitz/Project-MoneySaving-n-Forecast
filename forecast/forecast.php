@@ -35,44 +35,32 @@
                     <div class="card-header">
                         <strong class="card-title">รายเดือน</strong>
                     </div>
-                <div class="card-body">
-                    <div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
-                        <div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-                            <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
-                        </div>
-                        <div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
-                            <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
-                        </div>
-                        </div>
-                        <h4 class="mb-3">Yearly Sales </h4>
-                            <canvas id="sales-chart" height="316" width="632" class="chartjs-render-monitor" style="display: block; width: 632px; height: 316px;"></canvas>
-                </div>
                     <div class="card-body card-block">
                         <div class="row justify-content-center">
                             <div class="col-lg-8 col-md-10">
                                 <div class="card-body">
-                                    <canvas id="monthlyBarChart"></canvas>
+                                    <canvas id="forecastLineChart"></canvas>
                                     <form id="formSummaryMonthly" action="" method="post">
-                                        <div class="form-group row">
-                                        <label class="col-2 col-form-label text-right" for="selectMonthly">เดือน</label>
-                                        <div class="col-10">
-                                        <select class="selectpicker form-control" id="selectMonthly">
-                                            <option>เลือกเดือน</option>
-                                            <option value="1" selected>มกราคม</option>
-                                            <option value="2">กุมภาพันธ์</option>
-                                            <option value="3">มีนาคม</option>
-                                            <option value="4">เมษายน</option>
-                                            <option value="5">พฤษภาคม</option>
-                                            <option value="6">มิถุนายน</option>
-                                            <option value="7">กรกฎาคม</option>
-                                            <option value="8">สิงหาคม</option>
-                                            <option value="9">กันยนยน</option>
-                                            <option value="10">ตุลาคม</option>
-                                            <option value="11">พฤศจิกายน</option>
-                                            <option value="12">ธันวาคม</option>
-                                        </select>
-                                        </div>
-                                        </div>
+                                            <div class="form-group row">
+                                            <label class="col-2 col-form-label text-right" for="selectMonthly">เดือน</label>
+                                            <div class="col-10">
+                                            <select class="selectpicker form-control" id="selectMonthly">
+                                                <option>เลือกเดือน</option>
+                                                <option value="1" selected>มกราคม</option>
+                                                <option value="2">กุมภาพันธ์</option>
+                                                <option value="3">มีนาคม</option>
+                                                <option value="4">เมษายน</option>
+                                                <option value="5">พฤษภาคม</option>
+                                                <option value="6">มิถุนายน</option>
+                                                <option value="7">กรกฎาคม</option>
+                                                <option value="8">สิงหาคม</option>
+                                                <option value="9">กันยนยน</option>
+                                                <option value="10">ตุลาคม</option>
+                                                <option value="11">พฤศจิกายน</option>
+                                                <option value="12">ธันวาคม</option>
+                                            </select>
+                                            </div>
+                                            </div>
                                     </form>
                                 </div>
                             </div>
@@ -153,6 +141,9 @@
     </div>
 </div>
 
+<?php
+    include_once '../includes/footer.php';
+?>
 <!--  Chart js -->
 <script src="https://cdn.jsdelivr.net/npm/google-palette@1.1.0/palette.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
@@ -169,45 +160,91 @@
     jQuery(document).ready(function ($) {
         "use strict";
         //bar chart
-        var ctx = $("#monthlyBarChart")[0];
-        //    ctx.height = 200;
+        var ctx = $("#forecastLineChart")[0];
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ["บิล", "เดินทาง", "การศึกษา", "หนี้สิน", "ช้อปปิ้ง", "บันเทิง", "อาหาร"],
+                labels: [ "2012", "2013", "2014", "2015", "2016", "2017", "2018" ],
+                type: 'line',
                 datasets: [{
-                        label: "เป้าหมาย",
-                        data: [65, 59, 80, 81, 56, 55, 45],
-                        borderColor: "rgba(0, 194, 146, 0.9)",
-                        borderWidth: "0",
-                        backgroundColor: "rgba(0, 194, 146, 0.5)"
+                        label: "Expense",
+                        data: [ 0, 30, 15, 110, 50, 63, 120 ],
+                        backgroundColor: 'transparent',
+                        borderColor: 'rgba(220,53,69,0.75)',
+                        borderWidth: 3,
+                        pointStyle: 'circle',
+                        pointRadius: 5,
+                        pointBorderColor: 'transparent',
+                        pointBackgroundColor: 'rgba(220,53,69,0.75)',
                     },
                     {
-                        label: "ค่าใช้จ่ายจริง",
-                        data: [28, 48, 40, 19, 86, 27, 76],
-                        borderColor: "rgba(0,0,0,0.09)",
-                        borderWidth: "0",
-                        backgroundColor: "rgba(0,0,0,0.07)"
+                        label: "Focecast",
+                        data: [ 0, 50, 40, 80, 35, 99, 80 ],
+                        backgroundColor: 'transparent',
+                        borderColor: 'rgba(40,167,69,0.75)',
+                        borderWidth: 3,
+                        pointStyle: 'circle',
+                        pointRadius: 5,
+                        pointBorderColor: 'transparent',
+                        pointBackgroundColor: 'rgba(40,167,69,0.75)',
                     }
                 ]
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: true,
+
                 legend: {
-                    position: "top"
+                    display: true,
+                    labels: {
+                        usePointStyle: true,
+                        fontFamily: 'Montserrat',
+                    },
                 },
+
+                tooltips: {
+                    mode: 'index',
+                    titleFontSize: 12,
+                    titleFontColor: '#000',
+                    bodyFontColor: '#000',
+                    backgroundColor: '#fff',
+                    titleFontFamily: 'Montserrat',
+                    bodyFontFamily: 'Montserrat',
+                    cornerRadius: 3,
+                    intersect: false,
+                },
+
                 scales: {
                     yAxes: [{
-                        ticks: {
-                            beginAtZero: true
+                        display: true,
+                        gridLines: {
+                            display: false,
+                            drawBorder: false
+                        },
+                        scaleLabel: {
+                            display: false,
+                            labelString: 'Month'
                         }
                     }],
+                    yAxes: [{
+                        display: true,
+                        gridLines: {
+                            display: false,
+                            drawBorder: false
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Value'
+                        }
+                    }],
+                },
+
+                title: {
+                    display: false,
+                    text: 'Normal Legend'
                 }
             }
         });
 
     });
 </script>
-
-<?php
-    include_once '../includes/footer.php';
