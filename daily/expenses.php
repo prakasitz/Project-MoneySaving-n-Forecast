@@ -46,7 +46,7 @@
                         <div class="row form-group">
                                 <div class="input-group col-lg-6">
                                     <div class="input-group-addon"><i class="fa fa-circle"></i></div>
-                                    <select name="typeExpense" id="select-type-expense" class="form-control selectpicker">
+                                    <select name="typeExpense" id="select-type-expense" class="form-control selectpicker" data-size="10">
                                         <option>เลือกประเภท</option>
                                         <option value="1" data-icon="fa fa-money">บิล & สาธารณูปโภค</option>
                                         <option value="2" data-icon="fa fa-suitcase">อาหาร & เครื่องดื่ม</option>

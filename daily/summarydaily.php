@@ -60,7 +60,7 @@
                     <div class="row form-group">
                         <div class="col-sm-3">
                             <label for="search-typeorder" class="">เลือกรายการ</label>
-                            <select name="search-typeorder" id="filter" class="form-control" for-col="4">
+                            <select name="search-typeorder" id="filter" class="form-control selectpicker" for-col="4">
                                 <option value="รายรับ">รายรับ</option>
                                 <option value="รายจ่าย">รายจ่าย</option>
                                 <option value="" selected>ทั้งหมด</option>
