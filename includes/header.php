@@ -37,5 +37,20 @@
 <body>
 
 <?php
+
+    ob_start();
     include_once 'menubar.php';
     include_once 'navbar.php';
+    $contents = ob_get_contents();
+    ob_end_clean();
+
+
+    if(isset($_GET["isShowNav"])) {
+        $isShow = boolval($_GET["isShowNav"]);
+        echo ($isShow) ? $contents : "";
+    } else {
+        echo "<h1><b>Error!! </b><br>Something in header wrong please check include header!!</h1>";
+        die;
+    }
+
+    unset($contents);
