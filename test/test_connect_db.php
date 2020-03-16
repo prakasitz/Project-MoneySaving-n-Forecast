@@ -54,9 +54,9 @@ step 3: กลับมา web นี้ แล้วลอง
     require_once '../config.php'; //<-- ห้ามลืม import!!!
     require_once '../classes/DB.php'; //<-- ห้ามลืม import!!! เพราะถ้าลืมจะเรียกใช้ DB ไม่ได้ import เฉพาะเป็นหน้าที่ใช้งาน DB นะ
     try {
-        $conn = DB::getInstance(); // <-- ขั้นตอนแรก ประกาศตัว connect db 
+        $conn = DB::getInstance(); // <-- ขั้นตอนแรก ประกาศตัว connect db
         echo "<h3>เชื่อม DB สำเร็จ! <br> ต่อไปกดปุ่ม ดึงข้อมูลดู</h3>";
-    } catch (PDOE $exception) {
+    } catch (PDOException $exception) {
         echo "<h3>ERROR ไม่สามารถต่อดาต้าเบสได้ ดูสาเหตุด้านล่างนี้เลย</h3>";
         echo "<pre>";
         DB::printArray($exception);

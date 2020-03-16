@@ -16,7 +16,6 @@ class DB
         $user = Config::read('db.user');
         // getting DB password from config                
         $password = Config::read('db.password');
-
         $this->dbh = new PDO( $dsn, $user, $password );
         $this->dbh->exec( "set names utf8" );
     }
