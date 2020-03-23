@@ -58,44 +58,35 @@
                             </div>
                         </form>
                     </div>
-                    <div class="container">
+                    
                     <div class="row">
-                    <div class="col">
-                         <h3 class="blue-text">รายรับ</h3>
-                              <div class="row" id="tableOrder-wapper">
-                                 <div class="col-sm-3">
-                                    <table id="tableOrder" class="table table-striped">
-                                    <thead>
-                                    <tr>
-                                        <th>ลำดับ</th>
-                                        <th>รายการ</th>
-                                        <th>จำนวนเงิน</th>
-                                        
-                                    </tr>
-                                     </thead>
-                                     <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>เงินเดือน</td>
-                                        <td>15,000.00</td>
-                                        
-                                    </tr>
-                                    </tbody>
-                                </table>
-                             </div>
-                             </div>
-                         </div>
-                         <div class="col">
-                                <h3 class="blue-text">รายจ่าย</h3> 
-                                <div class="row" id="tableOrder-wapper">
-                                <div class="col-sm-3">
-                                <table id="tableOrder" class="table table-striped ">
+                        <div class="col-6">
+                            <h3>รายรับ</h3>
+                            <table class="table table-striped">
                                 <thead>
                                     <tr>
                                         <th>ลำดับ</th>
                                         <th>รายการ</th>
                                         <th>จำนวนเงิน</th>
-                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>เงินเดือน</td>
+                                        <td>15,000.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-6">
+                            <h3>รายจ่าย</h3> 
+                            <table class="table table-striped ">
+                                <thead>
+                                    <tr>
+                                        <th>ลำดับ</th>
+                                        <th>รายการ</th>
+                                        <th>จำนวนเงิน</th> 
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -103,77 +94,59 @@
                                         <td>1</td>
                                         <td>การออม&การลงทุน</td>
                                         <td>15,000.00</td>
-                                        
                                     </tr>
                                     <tr>
                                         <td>2</td>
                                         <td>สาธารณูปโภค</td>
                                         <td>4,000.00</td>
-                                      
                                     </tr>
                                     <tr>
                                         <td>3</td>
                                         <td>ครอบครัว&ส่วนตัว</td>
                                         <td>3,000.00</td>
-                                       
-                                        
                                     </tr>
                                     <tr>
                                         <td>4</td>
                                         <td>สัทนาการ</td>
                                         <td>1,500.00</td>
-                                      
-                                        
                                     </tr>
                                     <tr>
                                         <td>5</td>
                                         <td>หนี้สิน</td>
                                         <td>1,500.00</td>
-                                      
-                                        
                                     </tr>
                                     <tr>
                                         <td>6</td>
                                         <td>อื่นๆ</td>
                                         <td>1,500.00</td>
-                                      
-                                        
                                     </tr>
                                 </tbody>
                             </table>
-                           </div>
                         </div>
-                        </div>
-                        </div>                  
-                        <div class="card-body card-block">
-                    <div class="row justify-content-start">
-                        <form action="#" id="form-record-income" method="post" class="col-sm-10">
-                            <div class="form-row">
-                                <div class="col-sm-12 col-md-8 col-lg-6 form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-money"></i></div>
-                                        <input type="text" id="input-note" name="note" class="form-control"
-                                            placeholder="Total">
-                                    </div>
-                                </div>
-                                <div class="col-sm-12 col-md-8 col-lg-6 form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-money"></i></div>
-                                        <input type="text" id="input-note" name="note" class="form-control"
-                                            placeholder="Total">
-                                    </div>
-                                </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-money"></i></div>
+                                <input type="text" id="input-note" name="note" class="form-control"
+                                    placeholder="Total">
                             </div>
-                        </form>
-                    </div>
                         </div>
-                     </div>  
+                        <div class="col-6">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-money"></i></div>
+                                <input type="text" id="input-note" name="note" class="form-control"
+                                    placeholder="Total">
+                            </div>
+                        </div>
                     </div>
-
+                                      
                 </div>
-            </div>
+
+            </div>  
         </div>
     </div>
+</div>
 
     <?php
         include_once '../includes/footer.php';
