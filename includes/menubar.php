@@ -8,25 +8,25 @@
                         </li>
                         <li class="menu-title">menu-title</li><!-- /.menu-title -->
                         <li class="">
-                            <a href="<?= ROOT ?>/planing/planing.php"> <i class="menu-icon fa fa-table"></i> วางแผนเป้าหมาย</a>
+                            <a href="<?= ROOT ?>/planing/planing.php"> <i class="menu-icon fa fa-calendar"></i> วางแผนเป้าหมาย</a>
                         </li>
                         <li class="menu-item-has-children dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>บันทึกประจำวัน</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa ti-agenda"></i>บันทึกประจำวัน</a>
                             <ul class="sub-menu children dropdown-menu">
-                                <li><i class="fa fa-puzzle-piece"></i><a href="<?= ROOT ?>/daily/income.php">บันทึกรายรับ</a></li>
-                                <li><i class="fa fa-id-badge"></i><a href="<?= ROOT ?>/daily/expenses.php">บันทึกรายจ่าย</a></li>
-                                <li><i class="fa fa-id-card-o"></i><a href="<?= ROOT ?>/daily/summarydaily.php">สรุปธุรกรรมประจำวัน</a></li>
+                                <li><i class="fa ti-wallet"></i><a href="<?= ROOT ?>/daily/income.php">บันทึกรายรับ</a></li>
+                                <li><i class="fa ti-shopping-cart-full"></i><a href="<?= ROOT ?>/daily/expenses.php">บันทึกรายจ่าย</a></li>
+                                <li><i class="fa ti-receipt"></i><a href="<?= ROOT ?>/daily/summarydaily.php">สรุปธุรกรรมประจำวัน</a></li>
                             </ul>
                         </li>
                         <li class="menu-item-has-children dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>สรุปรายรับรายจ่าย</a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa ti-bar-chart"></i>สรุปรายรับรายจ่าย</a>
                             <ul class="sub-menu children dropdown-menu">
-                                <li><i class="menu-icon fa fa-th"></i><a href="<?= ROOT ?>/summary/monthly.php">รายเดือน</a></li>
-                                <li><i class="menu-icon fa fa-th"></i><a href="<?= ROOT ?>/summary/quarter.php">รายไตรมาส</a></li>
+                                <li><i class="menu-icon ti-bar-chart"></i><a href="<?= ROOT ?>/summary/monthly.php">รายเดือน</a></li>
+                                <li><i class="menu-icon ti-bar-chart"></i><a href="<?= ROOT ?>/summary/quarter.php">รายไตรมาส</a></li>
                             </ul>
                         </li>
                         <li class="">
-                            <a href="<?= ROOT ?>/forecast/forecast.php"> <i class="menu-icon fa fa-table"></i> การพยากรณ์รายจ่าย</a>
+                            <a href="<?= ROOT ?>/forecast/forecast.php"> <i class="menu-icon fa ti-image"></i> การพยากรณ์รายจ่าย</a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
