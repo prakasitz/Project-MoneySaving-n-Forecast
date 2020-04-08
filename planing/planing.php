@@ -25,17 +25,76 @@
             </div>
         </div>
     </div>
-</div>
-<div class="content">
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="card">
-                <div class="card-header row">
-                    <label class="col-sm-3 col-lg-3 col-form-label font-weight-bold">วางแผนเป้าหมายเดือน</label>
-                    <div class="col-sm-5 col-lg-5">
-                        <select class="selectpicker form-control" id="selectMonthly">
-                            <option>เลือกเดือน</option>
-                            <option value="1" selected>มกราคม</option>
+</div><form action="" method="post">
+    <div class="form-row">
+        <div class="col-lg-6 border-right pr-3" style="border-width:5px !important">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header row">
+                                <label class="col-sm-3 col-lg-3 col-form-label font-weight-bold">ข้อมูลการเงิน</label>
+                            </div> 
+                            <div class="card-body card-block">
+                                <form action="#" id="form-record-income" method="post" class="form-horizontal">
+                                <div class="list-group">
+                                    <div class="row form-group">
+                                        <div class="col-lg-6 pl-3">
+                                            <div class="form-group">
+                                                <label>เงินเดือน</label>
+                                                <input type="text" class="form-control" placeholder="THB">
+                                            </div>
+                                        <div class="form-group">
+                                            <label>คุณมีหนี้สินไหม?</label>
+                                            <div class="row" style="padding: 7px 0px 7px 0px;">
+                                                <div class="col-md-6 col-lg-6">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="yDept" name="valDept" class="custom-control-input">
+                                                        <label class="custom-control-label d-block" for="yDept">มี</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-6">
+                                                    <div class="custom-control custom-radio">
+                                                        <input type="radio" id="nDept" name="valDept" class="custom-control-input">
+                                                        <label class="custom-control-label d-block" for="nDept">ไม่มี</label>
+                                                 </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                                <label>เงินต้น</label>
+                                                <input type="text" class="form-control" placeholder="THB">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>อัตราดอกเบี้ย/ปี</label>
+                                            <input type="text" class="form-control" placeholder="THB">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ระยะเวลา/เดือน</label>
+                                            <input type="text" class="form-control" placeholder="THB">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>ผ่อนชำระ/เดือน</label>
+                                            <input type="text" class="form-control" placeholder="THB">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="col-lg-6 border-right pr-3" style="border-width:5px !important" <div class="col-lg-6 border-right pr-3" style="border-width:5px !important">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header row">
+                                <label class="col-sm-3 col-lg-3 col-form-label font-weight-bold">วางแผนเป้าหมายเดือน</label>
+                                <div class="col-sm-5 col-lg-5">
+                                    <select class="selectpicker form-control" id="selectMonthly">
+                                        <option>เลือกเดือน</option>
+                                        <option value="1" selected>มกราคม</option>
                             <option value="2">กุมภาพันธ์</option>
                             <option value="3">มีนาคม</option>
                             <option value="4">เมษายน</option>
