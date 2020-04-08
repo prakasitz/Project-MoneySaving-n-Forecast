@@ -84,8 +84,8 @@
                     </div>
                 </div>
             </div>
-        <div class="col-lg-6 border-right pr-3" style="border-width:5px !important" <div class="col-lg-6 border-right pr-3" style="border-width:5px !important">
-            <div class="content">
+        </div>
+        <div class="content">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="card">
