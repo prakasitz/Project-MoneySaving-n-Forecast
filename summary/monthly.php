@@ -34,7 +34,18 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">รายเดือน</strong>
+                        <strong class="card-title">โปรดเลือก</strong>
+                            <div class="row form-group">
+                                <div class="input-group col-lg-4">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <input type="date" id="input-date" name="date" class="form-control">
+                                </div>
+                                 <strong class="card-title">ถึง</strong>
+                                <div class="input-group col-lg-4">
+                                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                                    <input type="date" id="input-date" name="date" class="form-control">
+                                </div>
+                            </div>
                     </div>
                     <div class="card-body card-block">
                         <div class="row justify-content-center">
