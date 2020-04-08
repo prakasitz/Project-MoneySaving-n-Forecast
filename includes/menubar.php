@@ -18,12 +18,8 @@
                                 <li><i class="fa ti-receipt"></i><a href="<?= ROOT ?>/daily/summarydaily.php">สรุปธุรกรรมประจำวัน</a></li>
                             </ul>
                         </li>
-                        <li class="menu-item-has-children dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa ti-bar-chart"></i>สรุปรายรับรายจ่าย</a>
-                            <ul class="sub-menu children dropdown-menu">
-                                <li><i class="menu-icon ti-bar-chart"></i><a href="<?= ROOT ?>/summary/monthly.php">รายเดือน</a></li>
-                                <li><i class="menu-icon ti-bar-chart"></i><a href="<?= ROOT ?>/summary/quarter.php">รายไตรมาส</a></li>
-                            </ul>
+                        <li class="">
+                            <a href="<?= ROOT ?>/summary/monthly.php"> <i class="menu-icon fa ti-bar-chart"></i> สรุปรายรับรายจ่าย</a>
                         </li>
                         <li class="">
                             <a href="<?= ROOT ?>/forecast/forecast.php"> <i class="menu-icon fa ti-image"></i> การพยากรณ์รายจ่าย</a>
@@ -33,3 +29,4 @@
             </nav>
         </aside>
         <!-- /#left-panel -->
+        
