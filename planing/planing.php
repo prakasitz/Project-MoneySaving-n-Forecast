@@ -85,6 +85,7 @@
                 </div>
             </div>
         </div>
+
         <div class="content">
                 <div class="row">
                     <div class="col-lg-12">
@@ -126,7 +127,7 @@
                        
                         <div class="row form-group">
                             <div class="input-group col-lg-6 col-sm-6">
-                                <div class="input-group-addon"><i class="fa fa-road"></i></div>
+                                <div class="input-group-addon"><i class="fa fa-barcode"></i></div>
                                 <label class="col col-form-label text-left">สาธารณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ บิลอื่นๆ)</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
@@ -165,7 +166,7 @@
                         </ul>
                         <div class="row form-group">
                             <div class="input-group col-lg-6 col-sm-6">
-                                <div class="input-group-addon"><i class="fa fa-barcode"></i></div>
+                                <div class="input-group-addon"><i class="fa fa-coffee"></i></div>
                                 <label class="col col-form-label text-left">สันทนาการ(ช้อปปิ้ง สังสรรค์ ท่องเที่ยว)</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
