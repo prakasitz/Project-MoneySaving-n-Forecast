@@ -52,181 +52,91 @@
                 </div>
                 <div class="card-body card-block">
                     <form action="#" id="form-record-income" method="post" class="form-horizontal">
+                    <div class="list-group">
                         <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
+                            
+                            <div class="input-group col-lg-6 col-sm-6">
                                 <div class="input-group-addon"><i class="fa fa-save"></i></div>
-                                <label class="col col-form-label text-left">เงินออม</label>
+                                <label class="col col-form-label text-left">การออม&การลงทุน</label>
                             </div>
-                            <div class=" col-lg-3 col-sm-2">
+                            <div class=" col-lg-2 col-sm-2">
                                 <input type="text" id="input-note" name="note" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
+                       
                         <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
-                                <div class="input-group-addon"><i class="fa fa-barcode"></i></div>
-                                <label class="col col-form-label text-left">บิล&สาธารณูปโภค</label>
-                            </div>
-                            <div class=" col-lg-3 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
-                                <div class="input-group-addon"><i class="fa fa-cutlery"></i></div>
-                                <label class="col col-form-label text-left">อาหาร&เครื่องดื่ม</label>
-
-                            </div>
-                            <div class=" col-lg-3 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
+                            <div class="input-group col-lg-6 col-sm-6">
                                 <div class="input-group-addon"><i class="fa fa-road"></i></div>
-                                <label class="col col-form-label text-left">การเดินทาง</label>
-
+                                <label class="col col-form-label text-left">สาธารณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ บิลอื่นๆ)</label>
                             </div>
-                            <div class=" col-lg-3 col-sm-2">
+                            <div class=" col-lg-2 col-sm-2">
                                 <input type="text" id="input-note" name="note" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
                         <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
-                                <div class="input-group-addon"><i class="fa fa-shopping-cart"></i></div>
-                                <label class="col col-form-label text-left">ช็อปปิ้ง</label>
-
-                            </div>
-                            <div class=" col-lg-3 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
-                                <div class="input-group-addon"><i class="fa fa-film"></i></div>
-                                <label class="col col-form-label text-left">บันเทิง</label>
-
-                            </div>
-                            <div class=" col-lg-3 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
-                                <div class="input-group-addon"><i class="fa fa-plane"></i></div>
-                                <label class="col col-form-label text-left">ท่องเที่ยว</label>
-
-                            </div>
-                            <div class=" col-lg-3 col-sm-2"">
-                                <input type="text" id="input-note" name="note" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
-                                <div class="input-group-addon"><i class="fa fa-medkit"></i></div>
-                                <label class="col col-form-label text-left">สุขภาพ&ฟิตเนส</label>
-
-                            </div>
-                            <div class=" col-lg-3 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
+                            <div class="input-group col-lg-6 col-sm-6">
                                 <div class="input-group-addon"><i class="fa fa-group (alias)"></i></div>
-                                <label class="col col-form-label text-left">ครอบครัว</label>
+                                <label class="col col-form-label text-left">ครอบครัว&ส่วนตัว</label>
 
                             </div>
-                            <div class=" col-lg-3 col-sm-2">
+                            </div>
+                        <ul class="list">
+                        <div class="row form-group">
+                            <div class="input-group col-lg-6 col-sm-6">
+                                <label class="col col-form-label text-left pl-5">ครอบครัว</label>
+
+                            </div>
+                            <div class=" col-lg-2 col-sm-2">
                                 <input type="text" id="input-note" name="note" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
-                                <div class="input-group-addon"><i class="fa fa-gift"></i></div>
-                                <label class="col col-form-label text-left">การให้&การบริจาค</label>
+                            </div>
+                            <div class="row form-group">
+                            <div class="input-group col-lg-6 col-sm-6">
+                                <label class="col col-form-label text-left pl-5">ส่วนตัว</label>
 
                             </div>
-                            <div class=" col-lg-3 col-sm-2">
+                            <div class=" col-lg-2 col-sm-2">
                                 <input type="text" id="input-note" name="note" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
-                                <div class="input-group-addon"><i class="fa fa-book"></i></div>
-                                <label class="col col-form-label text-left">การศึกษา</label>
-
                             </div>
-                            <div class=" col-lg-3 col-sm-2">
+                        </ul>
+                        <div class="row form-group">
+                            <div class="input-group col-lg-6 col-sm-6">
+                                <div class="input-group-addon"><i class="fa fa-barcode"></i></div>
+                                <label class="col col-form-label text-left">สันทนาการ(ช้อปปิ้ง สังสรรค์ ท่องเที่ยว)</label>
+                            </div>
+                            <div class=" col-lg-2 col-sm-2">
                                 <input type="text" id="input-note" name="note" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
-                        </div>
+                        </div>     
                         <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
-                                <div class="input-group-addon"><i class="fa fa-money"></i></div>
-                                <label class="col col-form-label text-left">การลงทุน</label>
-
-                            </div>
-                            <div class=" col-lg-3 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
-                                <div class="input-group-addon"><i class="fa  fa-home"></i></div>
-                                <label class="col col-form-label text-left">ธุรกิจ</label>
-
-                            </div>
-                            <div class=" col-lg-3 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
-                                <div class="input-group-addon"><i class="fa fa-heart"></i></div>
-                                <label class="col col-form-label text-left">ประกันภัย</label>
-
-                            </div>
-                            <div class=" col-lg-3 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
+                            <div class="input-group col-lg-6 col-sm-6">
                                 <div class="input-group-addon"><i class="fa fa-credit-card"></i></div>
                                 <label class="col col-form-label text-left">หนี้สิน</label>
 
                             </div>
-                            <div class=" col-lg-3 col-sm-2">
+                            <div class=" col-lg-2 col-sm-2">
                                 <input type="text" id="input-note" name="note" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
                         <div class="row form-group">
-                            <div class="input-group col-lg-4 col-sm-5">
+                            <div class="input-group col-lg-6 col-sm-6">
                                 <div class="input-group-addon"><i class="fa fa-circle"></i></div>
                                 <label class="col col-form-label text-left">อื่นๆ</label>
                             </div>
-                            <div class=" col-lg-3 col-sm-2">
+                            <div class=" col-lg-2 col-sm-2">
                                 <input type="text" id="input-note" name="note" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
                         <div class="row form-group">
-                            <div class="col-lg-6">
+                            <div class="col-lg-8">
                                 <button class="btn btn-info btn-block" type="submit">บันทึก</button>
                             </div>
                         </div>
