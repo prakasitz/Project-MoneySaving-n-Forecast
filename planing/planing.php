@@ -26,11 +26,13 @@
         </div>
     </div>
 </div><form action="" method="post">
-    <div class="form-row">
-        <div class="col-lg-6 border-right pr-3" style="border-width:5px !important">
+<div class="container">
+<div class="row">
+    <div class="col-12">
+        <div class="form-row">
             <div class="content">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg">
                         <div class="card">
                             <div class="card-header row">
                                 <label class="col-sm-3 col-lg-3 col-form-label font-weight-bold">ข้อมูลการเงิน</label>
@@ -85,9 +87,8 @@
                 </div>
             </div>
         </div>
-
-        <div class="content">
-                <div class="row">
+    </div>
+    <div class="col">
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header row">
@@ -205,6 +206,7 @@
             </div>
         </div>
     </div>
+  
 </div>
 
 <?php
