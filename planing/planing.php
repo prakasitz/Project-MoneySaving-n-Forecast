@@ -44,7 +44,7 @@
                                         <div class="col-lg-6 pl-3">
                                             <div class="form-group">
                                                 <label>เงินเดือน</label>
-                                                <input type="text" class="form-control" placeholder="THB">
+                                                <input type="text" class="form-control" placeholder="THB" name="salary">
                                             </div>
                                         <div class="form-group">
                                             <label>คุณมีหนี้สินไหม?</label>
