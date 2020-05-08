@@ -1,7 +1,24 @@
 <?php 
     $_GET["isShowNav"] = 1;
+    session_start();
+   
     require_once '../config.php';
+    include '../classes/DB.php';
     include_once '../includes/header.php';
+    $a =  $_SESSION["typeIncome"];
+    $b = $_SESSION["moneyIncome"];
+    $c =  $_SESSION["typeExpenses"];
+    $d = $_SESSION["moneyExpenses"];
+    //$conn = DB::getInstance();
+//  $sql ="SELECT seq,in_type,in_amount FROM income  ORDER BY seq;
+//  ";  
+//  $stmt = $conn->dbh->prepare( $sql );
+//  $stmt->execute();
+//  $result = $stmt->fetchAll( PDO::FETCH_ASSOC );
+//  $conn = null;
+
+   
+    
 ?>
 
 <div class="breadcrumbs">
@@ -70,13 +87,14 @@
                                         <th>จำนวนเงิน</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>เงินเดือน</td>
-                                        <td>15,000.00</td>
-                                    </tr>
-                                </tbody>
+                               
+                                        <tr>
+                                            <td>1</td>
+                                            <td><?php echo $a ;?></td>
+                                            <td><?php echo $b ;?></td>
+                                        </tr>
+                                
+                                
                             </table>
                         </div>
                         <div class="col-6">
@@ -91,35 +109,12 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>1</td>
-                                        <td>การออม&การลงทุน</td>
-                                        <td>15,000.00</td>
-                                    </tr>
+                                     
                                     <tr>
-                                        <td>2</td>
-                                        <td>สาธารณูปโภค</td>
-                                        <td>4,000.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>ครอบครัว&ส่วนตัว</td>
-                                        <td>3,000.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>สัทนาการ</td>
-                                        <td>1,500.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>หนี้สิน</td>
-                                        <td>1,500.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>6</td>
-                                        <td>อื่นๆ</td>
-                                        <td>1,500.00</td>
-                                    </tr>
+                                            <td>1</td>
+                                            <td><?php echo $c ;?></td>
+                                            <td><?php echo $d ;?></td>
+                                        </tr>
                                 </tbody>
                             </table>
                         </div>

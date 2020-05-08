@@ -37,7 +37,7 @@
                     <strong class="card-title">บันทึกรายจ่าย</strong>
                 </div>
                 <div class="card-body card-block">
-                    <form action="#" id="form-record-expenses" method="post" class="form-horizontal">
+                    <form action="expenses_db.php" id="form-record-expenses" method="GET" class="form-horizontal">
                         <div class="row form-group">
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
@@ -45,21 +45,20 @@
                                 </div>
                         </div>
                         <div class="row form-group">
-                                <div class="input-group col-lg-6">
-                                    <div class="input-group-addon"><i class="fa fa-circle"></i></div>
-                                    <select name="typeExpense" id="select-type-expense" class="form-control selectpicker" data-size="10">
-                                        <option>เลือกประเภท</option>
-                                        <option value="1" data-icon="fa fa-money">การออม&การลงทุน</option>
-                                        <option value="2" data-icon="fa fa-barcode">สาธาณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ ฯลฯ)</option>
-                                        <option value="3" data-icon="fa fa-group">ครอบครัว&ส่วนตัว</option>
-                                        <option value="4" data-icon="fa fa-coffee">สันทนาการ</option>
-                                        <option value="5" data-icon="fa fa-credit-card">หนี้สิน</option>
-                                        <option value="6" data-icon="fa fa-circle">อื่นๆ</option>
+                            <div class="input-group col-lg-12">
+                                <div class="input-group-addon"><i class="fa fa-circle"></i></div>
+                                <select name="typeExpenses" id="select-type-expenses" class="form-control selectpicker">
+                                    <option>เลือกประเภท</option>
+                                        <option value="การออม&การลงทุน" data-icon="fa fa-money">การออม&การลงทุน</option>
+                                        <option value="สาธาณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ ฯลฯ)" data-icon="fa fa-barcode">สาธาณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ ฯลฯ)</option>
+                                        <option value="ครอบครัว&ส่วนตัว" data-icon="fa fa-group">ครอบครัว&ส่วนตัว</option>
+                                        <option value="สันทนาการ" data-icon="fa fa-coffee">สันทนาการ</option>
+                                        <option value="หนี้ิสิน" data-icon="fa fa-credit-card">หนี้สิน</option>
+                                        <option value="อื่นๆ" data-icon="fa fa-circle">อื่นๆ</option>
                                     </select>
                                     </div>
                                 </div>
-                        </div>
-                        <div class="row form-group">
+                                <div class="row form-group">
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><i class="fa fa-pencil"></i></div>
                                 <input type="text" id="input-note" name="note" class="form-control" placeholder="จดบันทึก">
@@ -68,7 +67,7 @@
                         <div class="row form-group">
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><strong>THB</strong></div>
-                                <input type="number" step="0.01" min="0" id="input-money-expense" name="moneyExpense" class="form-control" placeholder="จำนวนเงิน">
+                                <input type="number" step="0.01" min="0" id="input-money-income" name="moneyExpenses" class="form-control" placeholder="จำนวนเงิน">
                             </div>
                         </div>
                         <div class="row form-group">

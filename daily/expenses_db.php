@@ -3,28 +3,26 @@
     include '../classes/DB.php';
     session_start();
 
-    if(isset($_GET["date"]) && isset($_GET["typeIncome"]) && isset($_GET["note"]) && isset($_GET["moneyIncome"])) {
+    if(isset($_GET["date"]) && isset($_GET["typeExpenses"]) && isset($_GET["note"]) && isset($_GET["moneyExpenses"])) {
         $date = $_GET["date"];
-        $typeIncome = $_GET["typeIncome"];
+        $typeExpenses = $_GET["typeExpenses"];
         $note = $_GET["note"];
-        $moneyIncome = $_GET["moneyIncome"];
+        $moneyExpenses = $_GET["moneyExpenses"];
 
-       
 
         $conn = DB::getInstance();
-        $sql = "INSERT INTO income (in_date,in_amount,in_type,in_note)
-                VALUES ('$date' , '$moneyIncome', '$typeIncome' ,'$note')
+        $sql = "INSERT INTO expenses (ex_date,ex_amount,ex_type,ex_note)
+                VALUES ('$date' , '$moneyExpenses', '$typeExpenses' ,'$note')
                 ";
-        // print_r($sql);
+         // print_r($sql);
         // die;
         $stmt = $conn->dbh->prepare( $sql );
         $stmt->execute();
         $conn = null;
-
         // $result = $stmt->fetchAll( PDO::FETCH_ASSOC );
         // print_r($result); 
-        $_SESSION["typeIncome"] = $_GET["typeIncome"];
-        $_SESSION["moneyIncome"] = $_GET["moneyIncome"];
+        $_SESSION["typeExpenses"] = $_GET["typeExpenses"];
+        $_SESSION["moneyExpenses"] = $_GET["moneyExpenses"];
     
         if(isset($sql) != 0) {
         echo "<script>alert('[Insert สำเร็จ]')</script>";
@@ -32,5 +30,4 @@
         } else {
             echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
         }
-
     }
