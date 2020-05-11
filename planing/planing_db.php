@@ -16,8 +16,8 @@
         $sql = "INSERT INTO planning (another,savings,utility,family,recreation,debt,month,private)
                 VALUES ('$another' , '$savings' ,'utility','family','recreation','debt','month','private')
              ";
-        echo $sql; 
-        die;
+        //echo $sql; 
+       // die;
         $stmt = $conn->dbh->prepare( $sql );
         $stmt->execute();
         $conn = null;

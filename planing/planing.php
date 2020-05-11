@@ -59,7 +59,7 @@
                                 <label class="col col-form-label text-left">การออม&การลงทุน</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="การออม&การลงทุน" class="form-control"
+                                <input type="text" id="input-note" name="savings" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                                 <label class="col col-form-label text-left">สาธารณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ บิลอื่นๆ)</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="สาธารณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ บิลอื่นๆ)" class="form-control"
+                                <input type="text" id="input-note" name="utility" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
@@ -88,7 +88,7 @@
 
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="ครอบครัว" class="form-control"
+                                <input type="text" id="input-note" name="family" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                             </div>
@@ -98,7 +98,7 @@
 
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="ส่วนตัว" class="form-control"
+                                <input type="text" id="input-note" name="private" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                             </div>
@@ -109,7 +109,7 @@
                                 <label class="col col-form-label text-left">สันทนาการ(ช้อปปิ้ง สังสรรค์ ท่องเที่ยว)</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="สันทนาการ(ช้อปปิ้ง สังสรรค์ ท่องเที่ยว)" class="form-control"
+                                <input type="text" id="input-note" name="recreation" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>     
@@ -120,7 +120,7 @@
 
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="หนี้สิน" class="form-control"
+                                <input type="text" id="input-note" name="debt" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                                 <label class="col col-form-label text-left">อื่นๆ</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="อื่นๆ" class="form-control"
+                                <input type="text" id="input-note" name="another" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
