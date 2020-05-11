@@ -25,69 +25,7 @@
             </div>
         </div>
     </div>
-</div><form action="" method="post">
-<div class="container">
-<div class="row">
-    <div class="col-12">
-        <div class="form-row">
-            <div class="content">
-                <div class="row">
-                    <div class="col-lg">
-                        <div class="card">
-                            <div class="card-header row">
-                                <label class="col-sm-3 col-lg-3 col-form-label font-weight-bold">ข้อมูลการเงิน</label>
-                            </div> 
-                            <div class="card-body card-block">
-                                <form action="#" id="form-record-income" method="post" class="form-horizontal">
-                                <div class="list-group">
-                                    <div class="row form-group">
-                                        <div class="col-lg-6 pl-3">
-                                            <div class="form-group">
-                                                <label>เงินเดือน</label>
-                                                <input type="text" class="form-control" placeholder="THB" name="salary">
-                                            </div>
-                                        <div class="form-group">
-                                            <label>คุณมีหนี้สินไหม?</label>
-                                            <div class="row" style="padding: 7px 0px 7px 0px;">
-                                                <div class="col-md-6 col-lg-6">
-                                                    <div class="custom-control custom-radio">
-                                                        <input type="radio" id="yDept" name="valDept" class="custom-control-input">
-                                                        <label class="custom-control-label d-block" for="yDept">มี</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 col-lg-6">
-                                                    <div class="custom-control custom-radio">
-                                                        <input type="radio" id="nDept" name="valDept" class="custom-control-input">
-                                                        <label class="custom-control-label d-block" for="nDept">ไม่มี</label>
-                                                 </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                                <label>เงินต้น</label>
-                                                <input type="text" class="form-control" placeholder="THB">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>อัตราดอกเบี้ย/ปี</label>
-                                            <input type="text" class="form-control" placeholder="THB">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>ระยะเวลา/เดือน</label>
-                                            <input type="text" class="form-control" placeholder="THB">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>ผ่อนชำระ/เดือน</label>
-                                            <input type="text" class="form-control" placeholder="THB">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <div class="col">
                     <div class="col-lg-12">
                         <div class="card">
@@ -112,7 +50,7 @@
                     </div>
                 </div>
                 <div class="card-body card-block">
-                    <form action="#" id="form-record-income" method="post" class="form-horizontal">
+                    <form action="planing_db.php" id="form-record-income" method="GET" class="form-horizontal">
                     <div class="list-group">
                         <div class="row form-group">
                             
@@ -121,7 +59,7 @@
                                 <label class="col col-form-label text-left">การออม&การลงทุน</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
+                                <input type="text" id="input-note" name="การออม&การลงทุน" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
@@ -132,7 +70,7 @@
                                 <label class="col col-form-label text-left">สาธารณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ บิลอื่นๆ)</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
+                                <input type="text" id="input-note" name="สาธารณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ บิลอื่นๆ)" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
@@ -150,7 +88,7 @@
 
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
+                                <input type="text" id="input-note" name="ครอบครัว" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                             </div>
@@ -160,7 +98,7 @@
 
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
+                                <input type="text" id="input-note" name="ส่วนตัว" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                             </div>
@@ -171,7 +109,7 @@
                                 <label class="col col-form-label text-left">สันทนาการ(ช้อปปิ้ง สังสรรค์ ท่องเที่ยว)</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
+                                <input type="text" id="input-note" name="สันทนาการ(ช้อปปิ้ง สังสรรค์ ท่องเที่ยว)" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>     
@@ -182,7 +120,7 @@
 
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
+                                <input type="text" id="input-note" name="หนี้สิน" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
@@ -192,7 +130,7 @@
                                 <label class="col col-form-label text-left">อื่นๆ</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="note" class="form-control"
+                                <input type="text" id="input-note" name="อื่นๆ" class="form-control"
                                     placeholder="เปอร์เซ็นต์">
                             </div>
                         </div>
