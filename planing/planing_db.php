@@ -3,18 +3,18 @@
     include '../classes/DB.php';
 
 
-    if(isset($_GET["another"]) && isset($_GET["savings"]) && isset($_GET["utility"])&& isset($_GET["family"])&& isset($_GET["recreation"]) && isset($_GET["debt"])&& isset($_GET["month"])&& isset($_GET["private"])) {
-      $another = $_GET["another"];
-      $savings = $_GET["savings"];
-      $utility = $_GET["utility"];  
-      $family = $_GET["family"];
-      $recreation = $_GET["recreation"];
-      $debt = $_GET["debt"];
-      $month = $_GET["month"];
-      $private = $_GET["private"];
+    if(isset($_GET["A1"]) && isset($_GET["A2"]) && isset($_GET["A3"])&& isset($_GET["A4"])&& isset($_GET["A5"]) && isset($_GET["A6"])&& isset($_GET["A7"])&& isset($_GET["A8"])) {
+      $A1 = $_GET["A1"]; //การออมการลงทุน
+      $A2 = $_GET["A2"]; //สาธารณุประโภค
+      $A3 = $_GET["A3"]; //ครอบครัว
+      $A4 = $_GET["A4"]; //ส่วนตัว
+      $A5 = $_GET["A5"]; //สันทนาการ
+      $A6 = $_GET["A6"]; //หนี้สิน
+      $A7 = $_GET["A7"]; //อื่นๆ
+      $A8 = $_GET["A8"]; //เดือน
         $conn = DB::getInstance();
-        $sql = "INSERT INTO planning (another,savings,utility,family,recreation,debt,month,private)
-                VALUES ('$another' , '$savings' ,'utility','family','recreation','debt','month','private')
+        $sql = "INSERT INTO planning (A1,A2,A3,A4,A5,A6,A7,A8)
+                VALUES ('$A1' , '$A2' ,'$A3','$A4','$A5','$A6','$A7','$A8')
              ";
         //echo $sql; 
        // die;
@@ -26,7 +26,7 @@
 
         if(isset($sql) != 0) {
         echo "<script>alert('[Insert สำเร็จ]')</script>";
-        header("Refresh:0.5; url=");
+        header("Refresh:0.5; url=http://localhost/zocute/index.php");
         } else {
             echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
         }
