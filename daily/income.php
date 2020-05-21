@@ -49,11 +49,11 @@
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><i class="fa fa-circle"></i></div>
                                
-                                <select name="typeIncome" id="select-type-income" class="form-control selectpicker">
+                                <select name="typeIncome" id="select-type-income" class="form-control selectpicker" required>
                                     <option>เลือกประเภท</option>
-                                    <option value="เงินเดือน" data-icon="fa fa-credit-card">เงินเดือน</option>
-                                    <option value="ดอกเบี้ย" data-icon="fa fa-money">ดอกเบี้ย</option>
-                                    <option value="อื่นๆ" data-icon="fa fa-question">อื่นๆ</option>
+                                    <option value="1" data-icon="fa fa-credit-card">เงินเดือน</option>
+                                    <option value="2" data-icon="fa fa-money">ดอกเบี้ย</option>
+                                    <option value="3" data-icon="fa fa-question">อื่นๆ</option>
                                 </select>
                             </div>
                         </div>

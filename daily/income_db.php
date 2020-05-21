@@ -3,17 +3,17 @@
     include '../classes/DB.php';
     session_start();
 
-    if(isset($_GET["date"]) && isset($_GET["typeIncome"]) && isset($_GET["note"]) && isset($_GET["moneyIncome"])) {
+    if(isset($_GET["date"], $_GET["typeIncome"], $_GET["note"], $_GET["moneyIncome"], $_SESSION['users'])) {
         $date = $_GET["date"];
         $typeIncome = $_GET["typeIncome"];
         $note = $_GET["note"];
         $moneyIncome = $_GET["moneyIncome"];
-
-       
+        $user_id = $_SESSION['users']['user_id'];
+        $month = intval(explode("-", $date)[1]);
 
         $conn = DB::getInstance();
-        $sql = "INSERT INTO income (in_date,in_amount,in_type,in_note)
-                VALUES ('$date' , '$moneyIncome', '$typeIncome' ,'$note')
+        $sql = "INSERT INTO `saving` (`user_id`, `typemoney_id`, `saving_detail`, `saving_value`, `saving_date`, `month_id`) 
+                VALUES ('$user_id', '$typeIncome', '$note', '$moneyIncome', '$date', '$month')
                 ";
         // print_r($sql);
         // die;
@@ -21,11 +21,6 @@
         $stmt->execute();
         $conn = null;
 
-        // $result = $stmt->fetchAll( PDO::FETCH_ASSOC );
-        // print_r($result); 
-        $_SESSION["typeIncome"] = $_GET["typeIncome"];
-        $_SESSION["moneyIncome"] = $_GET["moneyIncome"];
-    
         if(isset($sql) != 0) {
         echo "<script>alert('[Insert สำเร็จ]')</script>";
         header("Refresh:0.5; url=http://localhost/zocute/index.php");

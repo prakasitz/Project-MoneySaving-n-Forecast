@@ -47,14 +47,14 @@
                         <div class="row form-group">
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><i class="fa fa-circle"></i></div>
-                                <select name="typeExpenses" id="select-type-expenses" class="form-control selectpicker">
+                                <select name="typeExpenses" id="select-type-expenses" class="form-control selectpicker" required>
                                     <option>เลือกประเภท</option>
-                                        <option value="การออม&การลงทุน" data-icon="fa fa-money">การออม&การลงทุน</option>
-                                        <option value="สาธาณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ ฯลฯ)" data-icon="fa fa-barcode">สาธาณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ ฯลฯ)</option>
-                                        <option value="ครอบครัว&ส่วนตัว" data-icon="fa fa-group">ครอบครัว&ส่วนตัว</option>
-                                        <option value="สันทนาการ" data-icon="fa fa-coffee">สันทนาการ</option>
-                                        <option value="หนี้ิสิน" data-icon="fa fa-credit-card">หนี้สิน</option>
-                                        <option value="อื่นๆ" data-icon="fa fa-circle">อื่นๆ</option>
+                                        <option value="1" data-icon="fa fa-money">การออม&การลงทุน</option>
+                                        <option value="2" data-icon="fa fa-barcode">สาธาณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ ฯลฯ)</option>
+                                        <option value="3" data-icon="fa fa-group">ครอบครัว&ส่วนตัว</option>
+                                        <option value="4" data-icon="fa fa-coffee">สันทนาการ</option>
+                                        <option value="5" data-icon="fa fa-credit-card">หนี้สิน</option>
+                                        <option value="6" data-icon="fa fa-circle">อื่นๆ</option>
                                     </select>
                                     </div>
                                 </div>
