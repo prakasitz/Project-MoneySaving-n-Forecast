@@ -37,8 +37,8 @@
 <body>
 
 <?php
-
     ob_start();
+    session_start();
     include_once 'menubar.php';
     include_once 'navbar.php';
     $contents = ob_get_contents();
