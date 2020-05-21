@@ -34,20 +34,20 @@
                             <div class="card-header row">
                                 <label class="col-sm-3 col-lg-3 col-form-label font-weight-bold">วางแผนเป้าหมายเดือน</label>
                                 <div class="col-sm-5 col-lg-5">
-                                    <select class="selectpicker form-control"name = "A8" id="selectMonthly">
-                                        <option>เลือกเดือน</option>
-                                        <option value="มกราคม" selected>มกราคม</option>
-                            <option value="กุมภาพันธ์">กุมภาพันธ์</option>
-                            <option value="มีนาคม">มีนาคม</option>
-                            <option value="เมษายน">เมษายน</option>
-                            <option value="พฤษภาคม">พฤษภาคม</option>
-                            <option value="มิถุนายน">มิถุนายน</option>
-                            <option value="กรกฎาคม">กรกฎาคม</option>
-                            <option value="สิงหาคม">สิงหาคม</option>
-                            <option value="กันยายน">กันยนยน</option>
-                            <option value="ตุลาคม">ตุลาคม</option>
-                            <option value="พฤศจิกายน">พฤศจิกายน</option>
-                            <option value="ธันวาคม">ธันวาคม</option>
+                                    <select class="selectpicker form-control"name = "m" id="selectMonthly">
+                            <option selected>เลือกเดือน</option>
+                            <option value="1" >มกราคม</option>
+                            <option value="2">กุมภาพันธ์</option>
+                            <option value="3">มีนาคม</option>
+                            <option value="4">เมษายน</option>
+                            <option value="5">พฤษภาคม</option>
+                            <option value="6">มิถุนายน</option>
+                            <option value="7">กรกฎาคม</option>
+                            <option value="8">สิงหาคม</option>
+                            <option value="9">กันยนยน</option>
+                            <option value="10">ตุลาคม</option>
+                            <option value="11">พฤศจิกายน</option>
+                            <option value="12">ธันวาคม</option>
                         </select>
                     </div>
                 </div>
@@ -59,8 +59,8 @@
                                 <label class="col col-form-label text-left">การออม&การลงทุน</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="A1" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
+                                <input type="text" id="input-note" name="savings" class="form-control"
+                                    placeholder="">
                             </div>
                         </div>
                        
@@ -70,8 +70,8 @@
                                 <label class="col col-form-label text-left">สาธารณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ บิลอื่นๆ)</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="A2" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
+                                <input type="text" id="input-note" name="bill" class="form-control"
+                                    placeholder="">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -88,8 +88,8 @@
 
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="A3" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
+                                <input type="text" id="input-note" name="fami" class="form-control"
+                                    placeholder="">
                             </div>
                             </div>
                             <div class="row form-group">
@@ -98,8 +98,8 @@
 
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="A4" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
+                                <input type="text" id="input-note" name="personal" class="form-control"
+                                    placeholder="">
                             </div>
                             </div>
                         </ul>
@@ -109,8 +109,8 @@
                                 <label class="col col-form-label text-left">สันทนาการ(ช้อปปิ้ง สังสรรค์ ท่องเที่ยว)</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="A5" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
+                                <input type="text" id="input-note" name="recreation" class="form-control"
+                                    placeholder="">
                             </div>
                         </div>     
                         <div class="row form-group">
@@ -120,8 +120,8 @@
 
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="A6" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
+                                <input type="text" id="input-note" name="debt" class="form-control"
+                                    placeholder="">
                             </div>
                         </div>
                         <div class="row form-group">
@@ -130,8 +130,8 @@
                                 <label class="col col-form-label text-left">อื่นๆ</label>
                             </div>
                             <div class=" col-lg-2 col-sm-2">
-                                <input type="text" id="input-note" name="A7" class="form-control"
-                                    placeholder="เปอร์เซ็นต์">
+                                <input type="text" id="input-note" name="other" class="form-control"
+                                    placeholder="">
                             </div>
                         </div>
                         <div class="row form-group">
