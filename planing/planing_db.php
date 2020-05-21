@@ -1,35 +1,58 @@
 <?php
-    include '../config.php';
-    include '../classes/DB.php';
+include '../config.php';
+include '../classes/DB.php';
 
+session_start();
 
-    if(isset($_GET["savings"]) && isset($_GET["bill"]) && isset($_GET["fami"])&& isset($_GET["personal"])&& isset($_GET["recreation"]) && isset($_GET["debt"])&& isset($_GET["other"])&& isset($_GET["m"])) {
-      $savings = $_GET["savings"]; //การออมการลงทุน
-      $bill = $_GET["bill"]; //สาธารณุประโภค
-      $fami = $_GET["fami"]; //ครอบครัว
-      $personal = $_GET["personal"]; //ส่วนตัว
-      $recreation = $_GET["recreation"]; //สันทนาการ
-      $debt = $_GET["debt"]; //หนี้สิน
-      $other = $_GET["other"]; //อื่นๆ
-      $m = $_GET["m"]; //เดือน
-        $conn = DB::getInstance();
-        $sql = "INSERT INTO planning (savings,bill,fami,personal,recreation,debt,other,m)
-                VALUES ('$savings' , '$bill' ,'$fami','$personal','$recreation','$debt','$other','$m')
-             ";
-       // echo $sql; 
-        //echo $_GET["fami"]; 
-       // die;
-        $stmt = $conn->dbh->prepare( $sql );
-        $stmt->execute();
-        $conn = null;
-        //$result = $stmt->fetchAll( PDO::FETCH_ASSOC );
-        //print_r($result); เอาไว้ปริ้น ดูค่าที่ select มา
+if ( isset( 
+      $_GET["savings"],
+      $_GET["bill"], 
+      $_GET["fami"], 
+      $_GET["personal"], 
+      $_GET["recreation"], 
+      $_GET["debt"], 
+      $_GET["other"], 
+      $_GET["m"],
+      $_SESSION['users']
+    ) 
+    ) {
+    $plan_ids   = [
+                    $_GET["savings_id"]     => $_GET["savings"],
+                    $_GET["bill_id"]        => $_GET["bill"],
+                    $_GET["fami_id"]        => $_GET["fami"],
+                    $_GET["personal_id"]    => $_GET["personal"],
+                    $_GET["recreation_id"]  => $_GET["recreation"],
+                    $_GET["debt_id"]        => $_GET["debt"],
+                    $_GET["other_id"]       => $_GET["other"]
+    ];
 
-        if(isset($sql) != 0) {
+    $m          = $_GET["m"]; //เดือน
+    $user_id    = $_SESSION['users']['user_id'];
+
+    $conn = DB::getInstance();
+
+    #wtf
+    $sql  = " INSERT INTO `userplan` (`plan_id`, `uplan_value`, `month_id`, `user_id`)
+              VALUES ";
+
+    foreach ($plan_ids as $plan_id => $value) {
+      $sql .= "('$plan_id', '$value', '$m', '$user_id'),";
+    }
+
+    $sql = rtrim($sql,",");
+
+    // echo $sql;
+    // die;
+
+    $stmt = $conn->dbh->prepare( $sql );
+    $stmt->execute();
+    $conn = null;
+
+    if ( isset( $sql ) != 0 ) {
         echo "<script>alert('[Insert สำเร็จ]')</script>";
-        header("Refresh:0.5; url=http://localhost/zocute/index.php");
-        } else {
-            echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
-        }
-        
-      }
+        header( "Refresh:0.5; url=http://localhost/zocute/index.php" );
+    } else {
+        echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
+    }
+
+}
