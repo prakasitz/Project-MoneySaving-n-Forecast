@@ -82,6 +82,18 @@
                                 </a>
                             </div>
                         </div>
+                
+                        <a>สวัสดี 
+                        <!-- start php code -->
+                        <?php
+                            if(isset($_SESSION['users'])) {
+                                echo ucfirst($_SESSION['users']['user_fname']." ".$_SESSION['users']['user_sname'] );   
+                            } else {
+                                echo "ชื่อผู้ใช้ สกุล";
+                            }
+                        ?>
+                        <!-- end php code -->
+                        </a>
                     </div>
 
                     <div class="user-area dropdown float-right">
