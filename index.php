@@ -15,7 +15,7 @@
     //echo "<pre>";
     //print_r($result);
     // echo "</pre>";
-     include_once './includes/header.php';
+    include_once './includes/header.php';
    
 ?>
 
