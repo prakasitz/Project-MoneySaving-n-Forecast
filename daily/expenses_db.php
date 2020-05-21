@@ -26,7 +26,7 @@
     
         if(isset($sql) != 0) {
         echo "<script>alert('[Insert สำเร็จ]')</script>";
-        header("Refresh:0.5; url=http://localhost/zocute/index.php");
+        header("Refresh:0.5; url=http://localhost/zocute/daily/expenses.php");
         } else {
             echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
         }

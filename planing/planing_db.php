@@ -3,20 +3,21 @@
     include '../classes/DB.php';
 
 
-    if(isset($_GET["A1"]) && isset($_GET["A2"]) && isset($_GET["A3"])&& isset($_GET["A4"])&& isset($_GET["A5"]) && isset($_GET["A6"])&& isset($_GET["A7"])&& isset($_GET["A8"])) {
-      $A1 = $_GET["A1"]; //การออมการลงทุน
-      $A2 = $_GET["A2"]; //สาธารณุประโภค
-      $A3 = $_GET["A3"]; //ครอบครัว
-      $A4 = $_GET["A4"]; //ส่วนตัว
-      $A5 = $_GET["A5"]; //สันทนาการ
-      $A6 = $_GET["A6"]; //หนี้สิน
-      $A7 = $_GET["A7"]; //อื่นๆ
-      $A8 = $_GET["A8"]; //เดือน
+    if(isset($_GET["savings"]) && isset($_GET["bill"]) && isset($_GET["fami"])&& isset($_GET["personal"])&& isset($_GET["recreation"]) && isset($_GET["debt"])&& isset($_GET["other"])&& isset($_GET["m"])) {
+      $savings = $_GET["savings"]; //การออมการลงทุน
+      $bill = $_GET["bill"]; //สาธารณุประโภค
+      $fami = $_GET["fami"]; //ครอบครัว
+      $personal = $_GET["personal"]; //ส่วนตัว
+      $recreation = $_GET["recreation"]; //สันทนาการ
+      $debt = $_GET["debt"]; //หนี้สิน
+      $other = $_GET["other"]; //อื่นๆ
+      $m = $_GET["m"]; //เดือน
         $conn = DB::getInstance();
-        $sql = "INSERT INTO planning (A1,A2,A3,A4,A5,A6,A7,A8)
-                VALUES ('$A1' , '$A2' ,'$A3','$A4','$A5','$A6','$A7','$A8')
+        $sql = "INSERT INTO planning (savings,bill,fami,personal,recreation,debt,other,m)
+                VALUES ('$savings' , '$bill' ,'$fami','$personal','$recreation','$debt','$other','$m')
              ";
-        //echo $sql; 
+       // echo $sql; 
+        //echo $_GET["fami"]; 
        // die;
         $stmt = $conn->dbh->prepare( $sql );
         $stmt->execute();
@@ -30,4 +31,5 @@
         } else {
             echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
         }
-    }
+        
+      }

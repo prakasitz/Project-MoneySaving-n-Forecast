@@ -46,36 +46,25 @@
                                     <input type="date" id="input-date" name="date" class="form-control">
                                 </div>
                             </div>
-                    </div>
+                            <div class="row form-group">
+                            <div class="col-lg-1">
+                                <button class="btn btn-info btn-block" type="submit">GO</button>
+                            </div>
+                        </div>
+                      </div>
                     <div class="card-body card-block">
-                        <div class="row justify-content-center">
+                    <div class="row justify-content-center">
+                        <h4>กราฟแสดงการเปรียบเทียบระหว่างค่าใช้จ่ายจริงกับเป้าหมาย</h4>
                             <div class="col-lg-8 col-md-10">
                                 <div class="card-body">
                                     <canvas id="monthlyBarChart"></canvas>
                                     <form id="formSummaryMonthly" action="" method="post">
                                         <div class="form-group row">
-                                        <label class="col-2 col-form-label text-right" for="selectMonthly">เดือน</label>
-                                        <div class="col-10">
-                                        <select class="selectpicker form-control" id="selectMonthly">
-                                            <option>เลือกเดือน</option>
-                                            <option value="1" selected>มกราคม</option>
-                                            <option value="2">กุมภาพันธ์</option>
-                                            <option value="3">มีนาคม</option>
-                                            <option value="4">เมษายน</option>
-                                            <option value="5">พฤษภาคม</option>
-                                            <option value="6">มิถุนายน</option>
-                                            <option value="7">กรกฎาคม</option>
-                                            <option value="8">สิงหาคม</option>
-                                            <option value="9">กันยนยน</option>
-                                            <option value="10">ตุลาคม</option>
-                                            <option value="11">พฤศจิกายน</option>
-                                            <option value="12">ธันวาคม</option>
-                                        </select>
-                                        </div>
-                                        </div>
+                                         </div>
                                     </form>
                                 </div>
                             </div>
+                           
                             <div class="col-lg-4">
                                 <div class="col-lg-12">
                                     <div class="card">
@@ -128,22 +117,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="stat-widget-four">
-                                                 <div class="stat-icon dib">
-                                                     <i class="ti-stats-up text-muted"></i>
-                                                </div>
-                                            <div class="stat-content">
-                                                <div class="text-left dib">
-                                                    <div class="stat-text">อาหาร & เครื่องดื่ม เยอะ</div>
-                                                    <h4 class="font-weight-bold">คำแนะนำ</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -178,7 +152,7 @@
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ["บิล", "เดินทาง", "การศึกษา", "หนี้สิน", "ช้อปปิ้ง", "บันเทิง", "อาหาร"],
+                labels: ["การออม", "สาธารณูปโภค", "ครอบครัว", "ส่วนตัว", "สันทนาการ", "หนี้สิน", "อื่นๆ"],
                 datasets: [{
                         label: "เป้าหมาย",
                         data: [65, 59, 80, 81, 56, 55, 45],

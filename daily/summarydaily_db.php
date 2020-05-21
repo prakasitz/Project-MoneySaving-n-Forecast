@@ -9,6 +9,9 @@
         $sql = "SELECT in_type,in_amount
                 FROM income 
                 ";
+        $sql = "SELECT in_type,in_amount
+                FROM expenses 
+                 ";
         
         $stmt = $conn->dbh->prepare( $sql );
         $stmt->execute();
@@ -23,17 +26,17 @@
         // echo print_r($user,true);
         // echo print_r($pass,true); //เอาไว้ปริ้น ดูค่าที่ select มา
         //count($result);
-        if (sizeof($result) != 0) {
-            $_SESSION["type"] = $result["in_type"];
-            $_SESSION["amount"] = $result["in_amount"];
-            print_r($_SESSION["type"]);
-            print_r($_SESSION["amount"]);
-            die;
+       // if (sizeof($result) != 0) {
+            //$_SESSION["type"] = $result["in_type"];
+            //$_SESSION["amount"] = $result["in_amount"];
+            //print_r($_SESSION["type"]);
+           // print_r($_SESSION["amount"]);
+           // die;
            
                 // echo "<script>alert('สำเร็จ')</script>";
                 // header("Refresh:0.5; url=register_1.php");
             
-        }
+        //}
     
        
             
