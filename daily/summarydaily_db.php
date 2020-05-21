@@ -2,22 +2,37 @@
     include '../config.php';
     include '../classes/DB.php';
     
-     session_start();
+    session_start();
+
+    if(isset($_SESSION['users'])) {
+        $user_id = $_SESSION['users']['user_id'];
+    }
     
-    
-        $conn = DB::getInstance();
-        $sql = "SELECT in_type,in_amount
-                FROM income 
-                ";
-        $sql = "SELECT in_type,in_amount
-                FROM expenses 
-                 ";
-        
-        $stmt = $conn->dbh->prepare( $sql );
-        $stmt->execute();
-        $result = $stmt->fetchAll( PDO::FETCH_ASSOC );
-        $conn = null;
-        print_r($result);
+    $conn = DB::getInstance();
+
+    $sql = "SELECT saving.saving_detail, saving.saving_value, typemoney.type_tran as 'type_trans'
+            FROM saving
+            INNER JOIN typemoney 
+            ON saving.typemoney_id = typemoney.typemoney_id
+            WHERE user_id = '$user_id'
+            ";
+
+    $stmt = $conn->dbh->prepare( $sql );
+    $stmt->execute();
+    $results = $stmt->fetchAll( PDO::FETCH_ASSOC );
+    $conn = null;
+
+    //ส่วนปริ้นสำหรับตรวจสอบ result จากทั้ง 2 คิวรี่
+        // echo "<pre>";
+        // echo "results_income";
+        // print_r($results_income);
+        // echo "<hr>";
+        // echo "results_expenses";
+        // print_r($results_expenses);
+        // echo "</pre>";
+    // end 
+
+
         // echo "<script>alert('สำเร็จ')</script>";
         //         header("Refresh:0.5; url=../daily/income.php");
         //$admin = mysqli_query($user,$pass)     
