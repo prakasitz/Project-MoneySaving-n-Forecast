@@ -18,7 +18,7 @@
   <div class="row"style="margin-left:150px">
     <div class="col-md-10" style="background-color: #EEE9E9;">
     <h2 align-content-center ="center"> เข้าสู่ระบบ </h2>
-     <form  name="formlogin" action="" method="POST" id="login">
+     <form  name="formlogin" action="login_db.php" method="POST" id="login">
               <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">
             <div class="login-content">
@@ -30,12 +30,12 @@
                 <div class="login-form">
                     <form>
                         <div class="form-group">
-                            <label>Email address</label>
-                            <input type="email" class="form-control" placeholder="Email">
+                            <label>ชื่อผู้ใช้งาน</label>
+                            <input type="text"name= "user" class="form-control" placeholder="ชื่อผู้ใช้งาน">
                         </div>
                         <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <label>รหัสผ่าน</label>
+                            <input type="password"name= "pass" class="form-control" placeholder="รหัสผ่าน">
                         </div>
                         <div class="checkbox">
                             <label>
@@ -44,15 +44,11 @@
                             <label class="pull-right">
                                 <a href="#">Forgotten Password?</a>
                             </label>
-
                         </div>
+                        <button class="btn btn-info btn-block" type="submit">บันทึก</button>
                         
-                        <a  style="margin-left:350px"class="btn btn-primary" href="#" role="button">Sing In</a>
-                        <div class="social-login-content">
-
-                        </div>
                         <div class="register-link m-t-15 text-center">
-                            <p>Don't have account ? <a href="#"> Sign Up Here</a></p>
+                            <p>Don't have account ? <a href="http://localhost/zocute/login/register_1.php"> Sign Up Here</a></p>
                         </div>
                     </form>
                 </div>

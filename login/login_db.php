@@ -2,22 +2,31 @@
     include '../config.php';
     include '../classes/DB.php';
     // session_start();
-    if(isset($_POST["email"]) && isset($_POST["password"])) {
-        $user = $_POST["email"];
-        $pass = $_POST["password"];
+    if(isset($_POST["user"]) && isset($_POST["pass"])) {
+        $user = $_POST["user"];
+        $pass = $_POST["pass"];
         $conn = DB::getInstance();
         $sql = "SELECT *
-                FROM useraccount 
-                WHERE user_email = '$user'
-                    AND user_pass = '$pass'
-                ";
-     
+                FROM usersaccount
+                WHERE user_name = '$user' AND user_pass = '$pass';
+             ";
+            // echo $sql;
+            //die;
+        
         $stmt = $conn->dbh->prepare( $sql );
         $stmt->execute();
-        $result = $stmt->fetchAll( PDO::FETCH_ASSOC );
+        $results_user = $stmt->fetchAll( PDO::FETCH_ASSOC );
         $conn = null;
-        echo "<script>alert('สำเร็จ')</script>";
-                header("Refresh:0.5; url=../daily/income.php");
+        if(sizeof($results_user) != 0) {
+            echo "เข้าสู่ระบบสำเร็จ";
+            $_SESSION['user'] = $results_user[0];
+            echo "<pre>";
+            print_r($_SESSION['user']);
+            echo "</pre>";
+        } else {
+            echo "เข้าสู่ระบบไม่สำเร็จ ลองอีกครั้ง";
+            header("Refresh:0.5; url=login.php");
+        }
         //$admin = mysqli_query($user,$pass)     
     
         //$row = mysqli_fetch_array($admin);
