@@ -42,14 +42,14 @@
                                     <div class="row" style="padding: 7px 0px 7px 0px;">
                                         <div class="col-md-6 col-lg-6">
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="gMale" name="user_gen" class="custom-control-input">
+                                                <input type="radio" id="gMale" name="user_gen" class="custom-control-input" value="ชาย">
                                                 <label class="custom-control-label d-block" for="gMale">ชาย</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-lg-6">
                                             <div class="custom-control custom-radio">
                                                 <input type="radio" id="gFemale" name="user_gen" class="custom-control-input">
-                                                <label class="custom-control-label d-block" for="gFemale">หญิง</label>
+                                                <label class="custom-control-label d-block" for="gFemale" value="หญิง">หญิง</label>
                                             </div>
                                         </div>
                                     </div>

@@ -1,10 +1,19 @@
 <?php
     include '../config.php';
     include '../classes/DB.php';
-    // session_start();
-    if(isset($_POST["user"]) && isset($_POST["pass"])) {
-        $user = $_POST["user"];
-        $pass = $_POST["pass"];
+
+    session_start();
+    if(isset($_POST["user"], $_POST["pass"]) || isset($_SESSION['user_registed'])) {
+
+        if(isset($_POST["user"], $_POST["pass"])) {
+            $user = $_POST['user'];
+            $pass = $_POST['pass'];
+        } else {
+            $user = $_SESSION['user_registed']['user_name'];
+            $pass = $_SESSION['user_registed']['user_pass'];
+            unset($_SESSION['user_registed']);
+        }
+
         $conn = DB::getInstance();
         $sql = "SELECT *
                 FROM usersaccount
@@ -17,12 +26,11 @@
         $stmt->execute();
         $results_user = $stmt->fetchAll( PDO::FETCH_ASSOC );
         $conn = null;
+
         if(sizeof($results_user) != 0) {
             echo "เข้าสู่ระบบสำเร็จ";
-            $_SESSION['user'] = $results_user[0];
-            echo "<pre>";
-            print_r($_SESSION['user']);
-            echo "</pre>";
+            $_SESSION['users'] = $results_user[0];
+            header("Refresh:0.5; url=http://localhost/zocute/index.php");
         } else {
             echo "เข้าสู่ระบบไม่สำเร็จ ลองอีกครั้ง";
             header("Refresh:0.5; url=login.php");
@@ -43,6 +51,8 @@
         //         header("Refresh:0.5; url=register_1.php");
             
         // }
+    } else if(isset($_SESSION['user_registed'])) {
+        
     }
        
             
