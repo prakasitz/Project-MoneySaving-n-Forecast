@@ -47,7 +47,7 @@
             ];
 
             echo "<script>alert('[Insert สำเร็จ]')</script>";
-            header("Refresh:0.5; url=login_db.php");
+            header("Refresh:0.5; url=http://localhost/zocute/login/login.php");
         } else {
             echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
             print_r ($stmt->errorInfo());

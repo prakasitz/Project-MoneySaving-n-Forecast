@@ -1,3 +1,4 @@
+<?php session_start();?>
 <?php
     $_GET["isShowNav"] = 1;
     require_once './config.php';
@@ -61,7 +62,7 @@
         height: 160px;
     }
 </style>
-
+<from action ="login.php" method ="POST"
 <div class="content">
     <!-- Animated -->
     <div class="animated fadeIn">
@@ -77,7 +78,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">$<span class="count">23569</span></div>
+                                    <div class="stat-text">฿<span class="count">23569</span></div>
                                     <h4 class="font-weight-bold">รายรับ</h4>
                                 </div>
                             </div>
@@ -95,7 +96,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">3435</span></div>
+                                    <div class="stat-text">฿<span class="count">3435</span></div>
                                     <h4 class="font-weight-bold">รายจ่าย</h4>
                                 </div>
                             </div>
@@ -104,7 +105,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
@@ -113,8 +114,8 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text"><span class="count">349</span></div>
-                                    <h4 class="font-weight-bold">เงินออม</h4>
+                                    <div class="stat-text">฿<span class="stat-text">349</span></div>
+                                    <h4 class="font-weight-bold">ยอดคงเหลือ</h4>
                                 </div>
                             </div>
                         </div>
@@ -282,6 +283,8 @@
         </div>
         <!-- /.orders -->
         <!-- To Do and Live Chat -->
+     
+        
         <div class="row">
             <div class="col-lg-6">
                 <div class="card">
@@ -503,6 +506,7 @@
     </div>
     <!-- .animated -->
 </div>
+</from>
 <!-- /.content -->
     <?php
         include_once './includes/footer.php';
@@ -617,9 +621,9 @@
                 let dataForPieChart = {
                     data: [150, 400, 250],
                     label: [
-                            'บิล & สาธารณูปโภค',
-                            'อาหาร & เครื่องดื่ม',
-                            'การเดินทาง'
+                            'รายรับ',
+                            'รายจ่าย',
+                            'ยอดคงเหลือ'
                         ]
                 };
                 ctx.height = 150;

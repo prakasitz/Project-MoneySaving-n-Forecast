@@ -1,19 +1,11 @@
 <?php
+
     include '../config.php';
     include '../classes/DB.php';
-
-    session_start();
-    if(isset($_POST["user"], $_POST["pass"]) || isset($_SESSION['user_registed'])) {
-
-        if(isset($_POST["user"], $_POST["pass"])) {
-            $user = $_POST['user'];
-            $pass = $_POST['pass'];
-        } else {
-            $user = $_SESSION['user_registed']['user_name'];
-            $pass = $_SESSION['user_registed']['user_pass'];
-            unset($_SESSION['user_registed']);
-        }
-
+ session_start();
+    if(isset($_POST["user"]) && isset($_POST["pass"])) {
+        $user = $_POST["user"];
+        $pass = $_POST["pass"];
         $conn = DB::getInstance();
         $sql = "SELECT *
                 FROM usersaccount
@@ -22,19 +14,23 @@
             // echo $sql;
             //die;
         
-        $stmt = $conn->dbh->prepare( $sql );
-        $stmt->execute();
-        $results_user = $stmt->fetchAll( PDO::FETCH_ASSOC );
-        $conn = null;
-
-        if(sizeof($results_user) != 0) {
-            echo "เข้าสู่ระบบสำเร็จ";
-            $_SESSION['users'] = $results_user[0];
-            header("Refresh:0.5; url=http://localhost/zocute/index.php");
-        } else {
-            echo "เข้าสู่ระบบไม่สำเร็จ ลองอีกครั้ง";
-            header("Refresh:0.5; url=login.php");
-        }
+            $stmt = $conn->dbh->prepare( $sql );
+            $stmt->execute();
+            $results_user = $stmt->fetchAll( PDO::FETCH_ASSOC );
+            $conn = null;
+    
+            if(sizeof($results_user) != 0) {
+                echo "เข้าสู่ระบบสำเร็จ";
+                header("Refresh:0.5; url=http://localhost/zocute/index.php");
+                
+                $_SESSION['users'] = $results_user[0];
+               // echo "<pre>";
+                print_r($_SESSION['users']);
+                echo "</pre>";
+            } else {
+                echo "เข้าสู่ระบบไม่สำเร็จ ลองอีกครั้ง";
+                header("Refresh:0.5; url=login.php");
+            }
         //$admin = mysqli_query($user,$pass)     
     
         //$row = mysqli_fetch_array($admin);
@@ -51,8 +47,6 @@
         //         header("Refresh:0.5; url=register_1.php");
             
         // }
-    } else if(isset($_SESSION['user_registed'])) {
-        
     }
        
             

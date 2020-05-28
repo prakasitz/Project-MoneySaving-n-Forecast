@@ -13,11 +13,13 @@
 
 
   </head>
-  <body>
+<body>
+
+
 <div class="container">
   <div class="row"style="margin-left:150px">
     <div class="col-md-10" style="background-color: #EEE9E9;">
-    <h2 align-content-center ="center"> เข้าสู่ระบบ </h2>
+    <h2 align-content-center ="tet-center"> เข้าสู่ระบบ </h2>
      <form  name="formlogin" action="login_db.php" method="POST" id="login">
               <div class="sufee-login d-flex align-content-center flex-wrap">
         <div class="container">
