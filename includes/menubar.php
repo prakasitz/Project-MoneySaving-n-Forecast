@@ -24,8 +24,12 @@
                         <li class="">
                             <a href="<?= ROOT ?>/forecast/forecast.php"> <i class="menu-icon fa ti-image"></i> การพยากรณ์รายจ่าย</a>
                         </li>
-                        <li class="">
-                            <a href="<?= ROOT ?>/cal/cal.php"> <i class="menu-icon fa ti-image"></i> คำนวณ</a>
+                        <li class="menu-item-has-children dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa ti-agenda"></i>คำนวณ</a>
+                            <ul class="sub-menu children dropdown-menu">
+                                <li><i class="fa ti-wallet"></i><a href="<?= ROOT ?>/cal/calIn.php">รายรับ</a></li>
+                                <li><i class="fa ti-shopping-cart-full"></i><a href="<?= ROOT ?>/cal/calEx.php">รายจ่าย</a></li>
+                            </ul>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
