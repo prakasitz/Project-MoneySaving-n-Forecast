@@ -9,7 +9,7 @@ if ( isset( $_SESSION['users'] ) ) {
 	
 	$sql = " SELECT 
 				saving_date , 
-				SUM(saving_value) as sumval , 
+				SUM(saving_value) as sumInval , 
 				saving.user_id ,
 				saving.typemoney_id,
 				saving.saving_id,
@@ -45,7 +45,7 @@ if ( isset( $_SESSION['users'] ) ) {
 		echo "<td>" . $value["user_id"] . "</td> ";
 		echo "<td>" . $value["saving_date"] . "</td> ";
 
-		echo "<td>" . $value["sumval"] . "</td> ";
+		echo "<td>" . $value["sumInval"] . "</td> ";
 	}
 
 	echo "</table>";

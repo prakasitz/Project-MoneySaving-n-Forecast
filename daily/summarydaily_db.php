@@ -4,17 +4,18 @@
     
     session_start();
 
-    if(isset($_SESSION['users'])) {
+    if(isset($_GET["date"],$_SESSION['users'])) {
+        $date = $_GET["date"];
         $user_id = $_SESSION['users']['user_id'];
     }
     
     $conn = DB::getInstance();
 
-    $sql = "SELECT saving.saving_detail, saving.saving_value, typemoney.type_tran as 'type_trans'
+    $sql = "SELECT saving.saving_date as savedate ,saving.saving_detail, saving.saving_value, typemoney.type_tran as 'type_trans'
             FROM saving
             INNER JOIN typemoney 
             ON saving.typemoney_id = typemoney.typemoney_id
-            WHERE user_id = '$user_id'
+            WHERE user_id = '$user_id' AND date(savedate) = '$date'
             ";
 
     $stmt = $conn->dbh->prepare( $sql );
