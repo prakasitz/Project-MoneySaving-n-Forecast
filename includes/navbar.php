@@ -13,7 +13,7 @@
                     <div class="header-left">
                         <button class="search-trigger"><i class="fa fa-search"></i></button>
                 
-                        <a>สวัสดี 
+                        <a>สวัสดี
                         <!-- start php code -->
                         <?php
                             if(isset($_SESSION['users'])) {
@@ -32,9 +32,9 @@
                         </a>
 
                         <div class="user-menu dropdown-menu">
-                            <a class="nav-link" href="index.php"><i class="fa fa- user"></i>My Profile</a>
+                            <a class="nav-link" href="http://localhost/zocute/profile/profile.php"><i class="fa fa- user"></i>My Profile</a>
 
-                            <a class="nav-link" href="http://localhost/zocute/login/login.php"><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="http://localhost/zocute/login/login_1.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
