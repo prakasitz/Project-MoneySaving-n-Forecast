@@ -12,14 +12,14 @@
                     <h1 class="text-light">เข้าสู่ระบบ</h1>
                 </div>
                 <div class="login-form">
-                    <form>
+                    <form name="formlogin_1" action="login_db.php" method="POST" id="login">
                         <div class="form-group">
                             <label>User Name</label>
-                            <input type="email" class="form-control" placeholder="User Name">
+                            <input type="text" name ="user" class="form-control" placeholder="User Name">
                         </div>
                         <div class="form-group">
                             <label>Password</label>
-                            <input type="password" class="form-control" placeholder="Password">
+                            <input type="password" name="pass" class="form-control" placeholder="Password">
                         </div>
                         <div class="checkbox">
                             <label>
@@ -31,7 +31,7 @@
                         </div>
                         <button class="btn btn-info btn-block" type="submit">เข้าสู่ระบบ</button>
                         <div class="register-link m-t-15 text-center">
-                            <p>Don't have account ? <a href="#"> Sign in</a></p>
+                            <p>Don't have account ? <a href="http://localhost/zocute/login/register_1.php"> Sign in</a></p>
                         </div>
                     </form>
                 </div>

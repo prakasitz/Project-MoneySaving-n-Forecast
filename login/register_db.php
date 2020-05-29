@@ -3,9 +3,9 @@
     include '../classes/DB.php';
 
     session_start();
-    // echo "<pre>";
-    // print_r($_POST);
-    // echo "</pre>";
+    //echo "<pre>";
+    //print_r($_POST);
+    //echo "</pre>";
 
     if(isset(   
         $_POST["user_fname"], 
@@ -47,7 +47,7 @@
             ];
 
             echo "<script>alert('[Insert สำเร็จ]')</script>";
-            header("Refresh:0.5; url=http://localhost/zocute/login/login.php");
+            header("Refresh:0.5; url=http://localhost/zocute/login/login_1.php");
         } else {
             echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
             print_r ($stmt->errorInfo());

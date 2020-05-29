@@ -84,8 +84,8 @@
                                     
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col-lg-8">
-                                        <button class="btn btn-info btn-block" type="submit">บันทึก</button>
+                                    <div class="col-lg-4">
+                                        <button class="btn btn-info btn-block" type="submit">ลงทะเบียน</button>
                                     </div>
                                 </div>
                     </form>

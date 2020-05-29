@@ -11,7 +11,7 @@
                 FROM usersaccount
                 WHERE user_name = '$user' AND user_pass = '$pass';
              ";
-            // echo $sql;
+            //echo $sql;
             //die;
         
             $stmt = $conn->dbh->prepare( $sql );
@@ -29,7 +29,7 @@
                 echo "</pre>";
             } else {
                 echo "เข้าสู่ระบบไม่สำเร็จ ลองอีกครั้ง";
-                header("Refresh:0.5; url=login.php");
+                header("Refresh:0.5; url=login_1.php");
             }
         //$admin = mysqli_query($user,$pass)     
     
