@@ -24,6 +24,9 @@
                         <li class="">
                             <a href="<?= ROOT ?>/forecast/forecast.php"> <i class="menu-icon fa ti-image"></i> การพยากรณ์รายจ่าย</a>
                         </li>
+                        <li class="">
+                            <a href="<?= ROOT ?>/cal/cal.php"> <i class="menu-icon fa ti-image"></i> คำนวณ</a>
+                        </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
             </nav>
