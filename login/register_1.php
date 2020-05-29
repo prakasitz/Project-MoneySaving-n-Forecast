@@ -19,8 +19,6 @@
                        
                     </div>
                     <form action="register_db.php" method="POST">
-                        <div class="form-row">
-                            <div class="col-lg-6 border-right pr-3" style="border-width:5px !important">
 
                                 <div class="row">
                                     <div class="col-lg-6">
@@ -86,15 +84,10 @@
                                     
                                 </div>
                                 <div class="row form-group">
-                                        <div class="col-lg-8">
-                                            <button class="btn btn-info btn-block" type="submit">บันทึก</button>
-                                        </div>
+                                    <div class="col-lg-8">
+                                        <button class="btn btn-info btn-block" type="submit">บันทึก</button>
                                     </div>
-
-                                
-                            </div>
-                            <!-- section 2 -->
-                            
+                                </div>
                     </form>
                 </div>
             </div>
