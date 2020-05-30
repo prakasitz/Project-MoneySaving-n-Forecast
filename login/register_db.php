@@ -26,39 +26,6 @@
         $user_pass = $_POST["user_pass"];
         $user_email = $_POST["user_email"];
 
-        if(trim($_POST["user_fname"]) == "")
-	{
-		echo "Please input First Name!";
-		exit();	
-	}
-	
-	if(trim($_POST["txtPassword"]) == "")
-	{
-		echo "Please input Password!";
-		exit();	
-	}	
-		
-	if($_POST["txtPassword"] != $_POST["txtConPassword"])
-	{
-		echo "Password not Match!";
-		exit();
-	}
-	
-	if(trim($_POST["txtName"]) == "")
-	{
-		echo "Please input Name!";
-		exit();	
-	}	
-
-	if(trim($_POST["txtEmail"]) == "")
-	{
-		echo "Please input Email!";
-		exit();	
-	}	
-
-
-        
-
         $conn = DB::getInstance();
         $sql = "INSERT INTO usersaccount (user_name, user_pass, user_fname, user_sname, user_email, user_gen, user_bd)
                 VALUES (  '$user_name', '$user_pass', '$user_fname', '$user_sname', '$user_email', '$user_gen','$user_bd')
