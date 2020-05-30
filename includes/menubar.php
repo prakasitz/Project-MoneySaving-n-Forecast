@@ -29,6 +29,7 @@
                             <ul class="sub-menu children dropdown-menu">
                                 <li><i class="fa ti-wallet"></i><a href="<?= ROOT ?>/cal/calIn.php">รายรับ</a></li>
                                 <li><i class="fa ti-shopping-cart-full"></i><a href="<?= ROOT ?>/cal/calEx.php">รายจ่าย</a></li>
+                                <li><i class="fa ti-shopping-cart-full"></i><a href="<?= ROOT ?>/cal/calMonth.php">รายจ่ายทั้งเดือน</a></li>
                             </ul>
                         </li>
                     </ul>

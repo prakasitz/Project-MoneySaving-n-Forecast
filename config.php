@@ -8,10 +8,10 @@
 
         //ส่วนนี้คือส่วนสำหรับ ใช้งาน database
         Config::write( 'db.host', 'localhost' ); // if build to server, Please [ DON'T FORGET CHANGE HERE ] to Domain of Server.
-        Config::write( 'db.port', 'your_port' ); // check in xampp control panel Port(s)
-        Config::write( 'db.basename', 'your_database' ); // choose your database in mysql 
-        Config::write( 'db.user', 'your_username' ); //your username (Default: root) or if not exist let enter ""
-        Config::write( 'db.password', 'your_password' ); // your password (Default: "") or if not exist let enter ""
+        Config::write( 'db.port', '3306' ); // check in xampp control panel Port(s)
+        Config::write( 'db.basename', 'ject_db' ); // choose your database in mysql 
+        Config::write( 'db.user', 'root' ); //your username (Default: root) or if not exist let enter ""
+        Config::write( 'db.password', '' ); // your password (Default: "") or if not exist let enter ""
         // กรณีที่ รหัส error เป็น 2002 คือ port ผิด
         // กรณีที่ รหัส error เป็น 1049 คือ ชื่อ database ไม่่มีใน dabast server
         // กรณีที่ รหัส error เป็น 1045 คือ ชื่อ user ไม่ถูกต้อง หรือ pass ไม่ถูก
