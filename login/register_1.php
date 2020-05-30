@@ -46,8 +46,8 @@
                                         </div>
                                         <div class="col-md-6 col-lg-6">
                                             <div class="custom-control custom-radio">
-                                                <input type="radio" id="gFemale" name="user_gen" class="custom-control-input">
-                                                <label class="custom-control-label d-block" for="gFemale" value="หญิง">หญิง</label>
+                                                <input type="radio" id="gFemale" name="user_gen" class="custom-control-input" value="หญิง">
+                                                <label class="custom-control-label d-block" for="gFemale" >หญิง</label>
                                             </div>
                                         </div>
                                     </div>
