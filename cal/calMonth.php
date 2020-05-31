@@ -3,22 +3,20 @@ include '../config.php';
 include '../classes/DB.php';
 session_start();
 
-if ( isset( $_SESSION['users'] ) &&isset( $_SESSION['month_id'] ) ) {
-    $month_id = $_SESSION['month_id']['saving_date'];
+if ( isset( $_SESSION['users'] ) ) {
 	$user_id = $_SESSION['users']['user_id'];
 	
 	$sql = " SELECT 
                 saving_date,
-				month_id, 
-				SUM(saving_value) as sumInval , 
+				year(saving_date) year,
+				month(saving_date) month,
+				SUM(saving_value) as sumval , 
 				saving.user_id ,
-				saving.typemoney_id,
-				saving.saving_id,
 				saving.saving_value
 			FROM saving
-			WHERE user_id = '$user_id'AND typemoney_id BETWEEN 4 and 9 AND month_id = '$month_id'
-			GROUP BY saving_date
-			ORDER BY saving_date ASC";
+			WHERE user_id = '$user_id' AND typemoney_id BETWEEN 4 and 9
+			GROUP BY year,month 
+			ORDER BY year,month ASC";
 
 
 	// create connection db
@@ -38,15 +36,16 @@ if ( isset( $_SESSION['users'] ) &&isset( $_SESSION['month_id'] ) ) {
 	echo "<tr align='center' bgcolor='#CCCCCC'>
 
 	<td>user_id</td>
-	<td>DATE</td>
+	<td>YEAR</td>
+	<td>MONTH</td>
 	<td>SumValue</td></tr>";
 
 	foreach ($results as $key => $value) {
 		echo "<tr>";
 		echo "<td>" . $value["user_id"] . "</td> ";
-		echo "<td>" . $value["month_id"] . "</td> ";
-
-		echo "<td>" . $value["sumInval"] . "</td> ";
+		echo "<td>" . $value["year"] . "</td> ";
+		echo "<td>" . $value["month"] . "</td> ";
+		echo "<td>" . $value["sumval"] . "</td> ";
 	}
 
 	echo "</table>";
