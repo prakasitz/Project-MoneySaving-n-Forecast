@@ -19,6 +19,9 @@
                 <div class="login-logo">
                     <h1 class="text-light"><?=($actEdit === -1)?'My Profile ('.ucfirst($users['user_name']).')':'Edit My Profile ('.ucfirst($users['user_name']).')'?></h1>
                 </div>
+            <div class="register-link m-t-50 text-center">
+                <p> <a href="http://localhost/zocute/index.php"> <h4><i class="fa fa-link"></i> กลับหน้าหลัก</h4> </a></p>
+            </div>
                 <div class="login-form">
                     <form method="POST" id='<?=($actEdit === -1)?'formProfile':'formEditProfile'?>' action='<?=($actEdit === -1)?'':'./profile_db.php'?>'>
                         <div class="row">
@@ -99,7 +102,7 @@
                         </div>
 
                         <div class="row form-group">
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <input type="hidden" name="editprofile" value='<?= $actEdit ?>'>
                                 <button class="btn <?=($actEdit === -1)?'btn-info':'btn-success'?> btn-block" type="submit"><?=($actEdit === -1)?'แก้ไขข้อมูล':'ยืนยันการแก้ไข'?></button>
                             </div>
