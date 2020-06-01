@@ -6,7 +6,7 @@ session_start();
 if ( isset( $_SESSION['users'] ) ) {
 	$user_id = $_SESSION['users']['user_id'];
 	
-	$sql = " SELECT 
+	$sql = " SELECT ROW_NUMBER() OVER(ORDER BY year,month) AS num,
                 saving_date,
 				year(saving_date) year,
 				month(saving_date) month,
@@ -30,26 +30,30 @@ if ( isset( $_SESSION['users'] ) ) {
 	//close connection
 	$conn = null;
 
-
 	echo "<table border='1' align='center' width='auto'>";
 	//หัวข้อตาราง
 	echo "<tr align='center' bgcolor='#CCCCCC'>
 
+	<td>ลำดับ</td>
 	<td>user_id</td>
 	<td>YEAR</td>
 	<td>MONTH</td>
 	<td>SumValue</td></tr>";
 
+
 	foreach ($results as $key => $value) {
 		echo "<tr>";
+		echo "<td>" . $value["num"] . "</td> ";
 		echo "<td>" . $value["user_id"] . "</td> ";
 		echo "<td>" . $value["year"] . "</td> ";
 		echo "<td>" . $value["month"] . "</td> ";
 		echo "<td>" . $value["sumval"] . "</td> ";
+	
 	}
-
 	echo "</table>";
+	
 
 }
+
 
 ?>

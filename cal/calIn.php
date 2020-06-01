@@ -7,7 +7,7 @@ if ( isset( $_SESSION['users'] ) ) {
 
 	$user_id = $_SESSION['users']['user_id'];
 	
-	$sql = " SELECT 
+	$sql = " SELECT ROW_NUMBER() OVER(ORDER BY saving_date) AS num,
 				saving_date , 
 				SUM(saving_value) as sumInval , 
 				saving.user_id ,
@@ -36,15 +36,16 @@ if ( isset( $_SESSION['users'] ) ) {
 	//หัวข้อตาราง
 	echo "<tr align='center' bgcolor='#CCCCCC'>
 
+	<td>ลำดับ</td>
 	<td>user_id</td>
 	<td>DATE</td>
 	<td>SumValue</td></tr>";
 
 	foreach ($results as $key => $value) {
 		echo "<tr>";
+		echo "<td>" . $value["num"] . "</td> ";
 		echo "<td>" . $value["user_id"] . "</td> ";
 		echo "<td>" . $value["saving_date"] . "</td> ";
-
 		echo "<td>" . $value["sumInval"] . "</td> ";
 	}
 
