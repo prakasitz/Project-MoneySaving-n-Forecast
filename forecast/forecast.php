@@ -41,26 +41,6 @@
                                 <div class="card-body">
                                     <canvas id="forecastLineChart"></canvas>
                                     <form id="formSummaryMonthly" action="" method="post">
-                                            <div class="form-group row">
-                                            <label class="col-2 col-form-label text-right" for="selectMonthly">เดือน</label>
-                                            <div class="col-10">
-                                            <select class="selectpicker form-control" id="selectMonthly">
-                                                <option>เลือกเดือน</option>
-                                                <option value="1" selected>มกราคม</option>
-                                                <option value="2">กุมภาพันธ์</option>
-                                                <option value="3">มีนาคม</option>
-                                                <option value="4">เมษายน</option>
-                                                <option value="5">พฤษภาคม</option>
-                                                <option value="6">มิถุนายน</option>
-                                                <option value="7">กรกฎาคม</option>
-                                                <option value="8">สิงหาคม</option>
-                                                <option value="9">กันยนยน</option>
-                                                <option value="10">ตุลาคม</option>
-                                                <option value="11">พฤศจิกายน</option>
-                                                <option value="12">ธันวาคม</option>
-                                            </select>
-                                            </div>
-                                            </div>
                                     </form>
                                 </div>
                             </div>
