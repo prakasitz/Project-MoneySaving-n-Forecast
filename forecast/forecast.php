@@ -33,7 +33,7 @@
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-header">
-                        <strong class="card-title">รายเดือน</strong>
+                        <strong class="card-title">การพยากรณ์</strong>
                     </div>
                     <div class="card-body card-block">
                         <div class="row justify-content-center">
@@ -42,75 +42,6 @@
                                     <canvas id="forecastLineChart"></canvas>
                                     <form id="formSummaryMonthly" action="" method="post">
                                     </form>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="stat-widget-five">
-                                                <div class="stat-icon dib flat-color-1">
-                                                    <i class="pe-7s-cash"></i>
-                                                </div>
-                                                <div class="stat-content">
-                                                    <div class="text-left dib">
-                                                        <div class="stat-text"><span class="count">23569</span></div>
-                                                        <h4 class="font-weight-bold">รายรับ</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="stat-widget-five">
-                                                <div class="stat-icon dib flat-color-2">
-                                                    <i class="pe-7s-cart"></i>
-                                                </div>
-                                                <div class="stat-content">
-                                                    <div class="text-left dib">
-                                                        <div class="stat-text"><span class="count">3542</span></div>
-                                                        <h4 class="font-weight-bold">รายจ่าย</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="stat-widget-five">
-                                                <div class="stat-icon dib flat-color-3">
-                                                    <i class="pe-7s-browser"></i>
-                                                </div>
-                                                <div class="stat-content">
-                                                    <div class="text-left dib">
-                                                        <div class="stat-text"><span class="count">349</span></div>
-                                                        <h4 class="font-weight-bold">เงินออม</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="stat-widget-four">
-                                                 <div class="stat-icon dib">
-                                                     <i class="ti-stats-up text-muted"></i>
-                                                </div>
-                                            <div class="stat-content">
-                                                <div class="text-left dib">
-                                                    <div class="stat-text">อาหาร & เครื่องดื่ม เยอะ</div>
-                                                    <h4 class="font-weight-bold">คำแนะนำ</h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
