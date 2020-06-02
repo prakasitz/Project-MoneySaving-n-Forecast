@@ -43,6 +43,8 @@
                                     <form id="formSummaryMonthly" action="" method="post">
                                     </form>
                                 </div>
+                                <h5 align = 'center' >***ข้อมูลในการพยากรณ์อย่างน้อย 3 เดือน***</h5>
+                                <h5 align = 'center' >***กรุณากรอกข้อมูลทุกเดือนเพื่อ***</h5>
                             </div>
                         </div>
                     </div>
