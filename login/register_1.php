@@ -24,13 +24,13 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="Name" name="user_fname">
+                                            <input type="text" class="form-control" placeholder="Name" name="user_fname"required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Surename</label>
-                                            <input type="text" class="form-control" placeholder="Surename" name="user_sname">
+                                            <input type="text" class="form-control" placeholder="Surename" name="user_sname"required>
                                         </div>
                                     </div>
                                 </div>
@@ -55,30 +55,30 @@
 
                                 <div class="form-group">
                                     <label>วันเกิด</label>
-                                    <input type="date" min="1900-01-02" max="2100-01-01" class="form-control" name="user_bd">
+                                    <input type="date" min="1900-01-02" max="2100-01-01" class="form-control" name="user_bd"required>
                                 </div>
 
                                 <div class="form-group">
                                     <label>User Name</label>
-                                    <input type="text" class="form-control" placeholder="User Name" name="user_name">
+                                    <input type="text" class="form-control" placeholder="User Name" name="user_name"required>
                                 </div>
 
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" class="form-control" placeholder="Email" name="user_email">
+                                    <input type="email" class="form-control" placeholder="Email" name="user_email"required>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input type="password" class="form-control" placeholder="Password" name="user_pass">
+                                            <input type="password" class="form-control" placeholder="Password" name="user_pass"required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>Re-password</label>
-                                            <input type="password" class="form-control" placeholder="Re-password">
+                                            <input type="password" class="form-control" placeholder="Re-password"required>
                                         </div>
                                     </div>
                                     
