@@ -18,7 +18,6 @@ if ( isset( $_SESSION['users'] ) ) {
 			GROUP BY year,month 
 			ORDER BY year,month ASC";
 
-
 	// create connection db
 	$conn = DB::getInstance();
 	// prepare sql ส่วนนี้สามารถตรวจสอบได้ว่า sql เรา syntax ผิดไหม
@@ -29,6 +28,23 @@ if ( isset( $_SESSION['users'] ) ) {
 	$results = $stmt->fetchAll( PDO::FETCH_ASSOC );
 	//close connection
 	$conn = null;
+	
+
+	$forecast=[];
+	function forecast(int $a, int $b,int $c) {
+		return  ($a*0.17)+($b*0.33)+($c*0.50);
+  	}
+
+	for ($i = 0; $i < count($results)-3 ; $i++) {
+		array_push($forecast,forecast(($results[$i]["sumvalue"]),($results[$i+1]["sumvalue"]),($results[$i+2]["sumvalue"])));
+    }
+	      
+	
+	print_r($forecast);
+
+
+
+
 
 	echo "<table border='1' align='center' width='auto'>";
 	//หัวข้อตาราง
@@ -38,7 +54,9 @@ if ( isset( $_SESSION['users'] ) ) {
 	<td>user_id</td>
 	<td>YEAR</td>
 	<td>MONTH</td>
-	<td>SumValue</td></tr>";
+	<td>SumValue</td>
+	
+	</tr>";
 
 
 	foreach ($results as $key => $value) {
@@ -52,7 +70,6 @@ if ( isset( $_SESSION['users'] ) ) {
 	}
 	echo "</table>";
 	
-
 }
 
 
