@@ -38,20 +38,18 @@
                             <div class="row form-group">
                                 <div class="input-group col-lg-4">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                    <input type="date" id="input-date" name="date" class="form-control">
+                                    <input type="date" id="input-date" name="date" class="form-control"required>
                                 </div>
                                  <strong class="card-title">ถึง</strong>
                                 <div class="input-group col-lg-4">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                    <input type="date" id="input-date" name="date" class="form-control">
+                                    <input type="date" id="input-date" name="date" class="form-control"required>
                                 </div>
+                                <div class="col-lg-1">
+                                    <button class="btn btn-success"  type="submit">GO</button>
+                                 </div>
                             </div>
-                            <div class="row form-group">
-                            <div class="col-lg-1">
-                                <button class="btn btn-info btn-block" type="submit">GO</button>
-                            </div>
-                        </div>
-                      </div>
+                    </div>
                     <div class="card-body card-block">
                     <div class="row justify-content-center">
                         <h4>กราฟแสดงการเปรียบเทียบระหว่างค่าใช้จ่ายจริงกับเป้าหมาย</h4>

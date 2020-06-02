@@ -65,8 +65,7 @@
                                 </div>
                                 <div class=" col-lg-2 col-sm-2">
                                     <input type="hidden" name="savings_id" value="1">
-                                    <input type="number" id="input-note" name="savings" class="form-control"
-                                        placeholder="">
+                                    <input type="number" id="input-note" name="savings" class="form-control" placeholder="" required>
                                 </div>
                             </div>
 
@@ -78,7 +77,7 @@
                                 </div>
                                 <div class=" col-lg-2 col-sm-2">
                                     <input type="hidden" name="bill_id" value="2">
-                                    <input type="number" id="input-note" name="bill" class="form-control" placeholder="">
+                                    <input type="number" id="input-note" name="bill" class="form-control" placeholder="" required>
                                 </div>
                             </div>
 
@@ -96,8 +95,7 @@
                                     </div>
                                     <div class=" col-lg-2 col-sm-2">
                                         <input type="hidden" name="fami_id" value="3">
-                                        <input type="number" id="input-note" name="fami" class="form-control"
-                                            placeholder="">
+                                        <input type="number" id="input-note" name="fami" class="form-control" placeholder="" required>
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -106,8 +104,7 @@
                                     </div>
                                     <div class=" col-lg-2 col-sm-2">
                                         <input type="hidden" name="personal_id" value="4">
-                                        <input type="number" id="input-note" name="personal" class="form-control"
-                                            placeholder="">
+                                        <input type="number" id="input-note" name="personal" class="form-control" placeholder="" required>
                                     </div>
                                 </div>
                             </ul>
@@ -115,13 +112,11 @@
                             <div class="row form-group">
                                 <div class="input-group col-lg-6 col-sm-6">
                                     <div class="input-group-addon"><i class="fa fa-coffee"></i></div>
-                                    <label class="col col-form-label text-left">สันทนาการ(ช้อปปิ้ง สังสรรค์
-                                        ท่องเที่ยว)</label>
+                                    <label class="col col-form-label text-left">สันทนาการ(ช้อปปิ้ง สังสรรค์ ท่องเที่ยว)</label>
                                 </div>
                                 <div class="col-lg-2 col-sm-2">
                                     <input type="hidden" name="recreation_id" value="5">
-                                    <input type="number" id="input-note" name="recreation" class="form-control"
-                                        placeholder="">
+                                    <input type="number" id="input-note" name="recreation" class="form-control" placeholder="" required>
                                 </div>
                             </div>
                             
@@ -133,7 +128,7 @@
                                 </div>
                                 <div class=" col-lg-2 col-sm-2">
                                     <input type="hidden" name="debt_id" value="6">                                
-                                    <input type="number" id="input-note" name="debt" class="form-control" placeholder="">
+                                    <input type="number" id="input-note" name="debt" class="form-control" placeholder="" required>
                                 </div>
                             </div>
 
@@ -144,7 +139,7 @@
                                 </div>
                                 <div class=" col-lg-2 col-sm-2">
                                     <input type="hidden" name="other_id" value="7">                                  
-                                    <input type="number" id="input-note" name="other" class="form-control" placeholder="">
+                                    <input type="number" id="input-note" name="other" class="form-control" placeholder="" required>
                                 </div>
                             </div>
 

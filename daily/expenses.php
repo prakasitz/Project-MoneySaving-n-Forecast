@@ -41,7 +41,7 @@
                         <div class="row form-group">
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                <input type="date" id="input-date" name="date" class="form-control">
+                                <input type="date" id="input-date" name="date" class="form-control" required>
                                 </div>
                         </div>
                         <div class="row form-group">
@@ -61,13 +61,13 @@
                                 <div class="row form-group">
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><i class="fa fa-pencil"></i></div>
-                                <input type="text" id="input-note" name="note" class="form-control" placeholder="จดบันทึก">
+                                <input type="text" id="input-note" name="note" class="form-control" placeholder="จดบันทึก" required>
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><strong>THB</strong></div>
-                                <input type="text" step="0.01" min="0" id="input-money-income" name="moneyExpenses" onkeyup="dokeyup(this);" onchange="dokeyup(this);" onkeypress="checknumber()" maxlength="12" class="form-control" placeholder="จำนวนเงิน">
+                                <input type="text" step="0.01" min="0" id="input-money-income" name="moneyExpenses" onkeyup="dokeyup(this);" onchange="dokeyup(this);" onkeypress="checknumber()" maxlength="12" class="form-control" placeholder="จำนวนเงิน"required>
                             </div>
                         </div>
                         <div class="row form-group">
