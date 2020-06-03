@@ -19,7 +19,7 @@
                             </ul>
                         </li>
                         <li class="">
-                            <a href="<?= ROOT ?>/summary/monthly.php"> <i class="menu-icon fa ti-bar-chart"></i> สรุปรายรับรายจ่าย</a>
+                            <a href="<?= ROOT ?>/summary/monthly.php"> <i class="menu-icon fa ti-bar-chart"></i> การเปรียบเทียบเป้าหมายกับรายจ่าย</a>
                         </li>
                         <li class="">
                             <a href="<?= ROOT ?>/forecast/forecast.php"> <i class="menu-icon fa ti-image"></i> การพยากรณ์รายจ่าย</a>
