@@ -34,7 +34,7 @@
                         <div class="user-menu dropdown-menu">
                             <a class="nav-link" href="http://localhost/zocute/profile/profile.php"><i class="fa fa- user"></i>My Profile</a>
 
-                            <a class="nav-link" href="http://localhost/zocute/login/login_1.php"><i class="fa fa-power -off"></i>Logout</a>
+                            <a class="nav-link" href="http://localhost/zocute/login/logout.php"><i class="fa fa-power -off"></i>Logout</a>
                         </div>
                     </div>
 
