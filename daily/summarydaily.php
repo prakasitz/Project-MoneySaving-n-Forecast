@@ -82,6 +82,7 @@
                                 <tbody>
                                 <!--start php code -->
                                 <?php
+                                $sum_incomes = 0;
                                 if(isset($_SESSION['results'])) {
                                     $results = $_SESSION['results'];
                                     $cnt = 1;
@@ -101,7 +102,10 @@
                                         </td>
                                         <td>
                                         <!--start php code -->
-                                        <?php echo $list_incomes['saving_value'] ?>
+                                        <?php 
+                                            echo $list_incomes['saving_value'];
+                                            $sum_incomes += intval($list_incomes['saving_value']);
+                                        ?>
                                         <!--end php code -->
                                         </td>
                                     </tr>
@@ -131,6 +135,7 @@
                                 <tbody>
                                 <!--start php code -->
                                 <?php
+                                $sum_expenses = 0;
                                 if(isset($_SESSION['results'])) {
                                     $results = $_SESSION['results'];
                                     $cnt = 1;
@@ -152,7 +157,10 @@
                                         </td>
                                         <td>
                                         <!--start php code for จำนวนเงิน -->
-                                        <?php echo $list_expenses['saving_value'] ?>
+                                        <?php 
+                                            echo $list_expenses['saving_value'];
+                                            $sum_expenses += intval($list_expenses['saving_value']);
+                                        ?>
                                         <!--end php code -->
                                         </td>
                                     </tr>
@@ -175,15 +183,15 @@
                         <div class="col-6">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-money"></i></div>
-                                <input type="text"  name="note" class="form-control"
-                                    placeholder="Total">
+                                <input type="text" id='sum-incomes' class="form-control font-weight-bold" value='<?=  number_format((float)$sum_incomes, 2, '.', ','). " บาท" ?>'
+                                    placeholder="Total" disabled>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-money"></i></div>
-                                <input type="text"  name="note" class="form-control"
-                                    placeholder="Total">
+                                <input type="text" id='sum-expenses'  class="form-control font-weight-bold" value='<?=  number_format((float)$sum_expenses, 2, '.', ',')." บาท" ?>'
+                                    placeholder="Total" disabled>
                             </div>
                         </div>
                     </div>
