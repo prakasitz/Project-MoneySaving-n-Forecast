@@ -1,11 +1,10 @@
 <?php 
     $_GET["isShowNav"] = 1;
    
-    // require_once '../config.php';
-    // include '../classes/DB.php';
-    include_once 'summarydaily_db.php';
+    require_once '../config.php';
+    require_once '../classes/DB.php';
     include_once '../includes/header.php';
-   
+    
 ?>
 
 <div class="breadcrumbs">
@@ -44,20 +43,26 @@
                 
                 <div class="card-body card-block">
                     <div class="row justify-content-start">
-                        <form action="#" id="form-record-income" method="post" class="col-sm-10">
+                        <form action="summarydaily_db.php" id="form-record-income" method="get" class='col-12'>
                             <div class="form-row">
-                                <div class="col-sm-12 col-md-8 col-lg-6 form-group">
+                                <div class="col-sm-12 col-md-8 col-lg-5 form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                        <input type="date" id="input-date" name="date" class="form-control">
+                                        <?php
+                                            $input_date = (isset($_SESSION['results'])) ? date("Y-m-d", strtotime(array_pop($_SESSION['results'])['input_date'])):date("Y-m-d");                                        
+                                        ?>
+                                        <input type="date" id="input-date" name="date" class="form-control" value="<?= $input_date ?>">
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-8 col-lg-6 form-group">
+                                <div class="col-sm-12 col-md-8 col-lg-5 form-group">
                                     <div class="input-group">
                                         <div class="input-group-addon"><i class="fa fa-money"></i></div>
-                                        <input type="text" id="input-note" name="note" class="form-control"
+                                        <input type="text"  name="note" class="form-control"
                                             placeholder="ยอดคงเหลือ">
                                     </div>
+                                </div>
+                                <div class="col-sm-12 col-md-8 col-lg-2 form-group">
+                                    <button type="submit" id='btn-s-date' class="btn btn-block btn-primary" name="send">เรียกดู</button>
                                 </div>
                             </div>
                         </form>
@@ -77,6 +82,8 @@
                                 <tbody>
                                 <!--start php code -->
                                 <?php
+                                if(isset($_SESSION['results'])) {
+                                    $results = $_SESSION['results'];
                                     $cnt = 1;
                                     foreach ($results as $index => $list_incomes) {
                                         if($list_incomes['type_trans'] == 'รายรับ') {
@@ -101,6 +108,11 @@
                                 <?php
                                         }
                                     }
+                                } else {
+                                    ?>
+                                        <tr><td colspan="100%" class='text-center'>ไม่พบข้อมูลรายรับในวันที่ดังกล่าว!</td></tr>
+                                <?php    
+                                }
                                 ?>
                                 <!--end php code -->
                                 </tbody>
@@ -119,6 +131,8 @@
                                 <tbody>
                                 <!--start php code -->
                                 <?php
+                                if(isset($_SESSION['results'])) {
+                                    $results = $_SESSION['results'];
                                     $cnt = 1;
                                     foreach ($results as $index => $list_expenses) {
                                         if($list_expenses['type_trans'] == 'รายจ่าย') {
@@ -142,9 +156,15 @@
                                         <!--end php code -->
                                         </td>
                                     </tr>
+
                                 <?php
                                         }
                                     }
+                                } else {
+                                ?>
+                                    <tr><td colspan="100%" class='text-center'>ไม่พบข้อมูลรายจ่ายในวันที่ดังกล่าว!</td></tr>
+                                <?php    
+                                }
                                 ?>
                                 <!--end php code -->
                                 </tbody>
@@ -155,14 +175,14 @@
                         <div class="col-6">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-money"></i></div>
-                                <input type="text" id="input-note" name="note" class="form-control"
+                                <input type="text"  name="note" class="form-control"
                                     placeholder="Total">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="fa fa-money"></i></div>
-                                <input type="text" id="input-note" name="note" class="form-control"
+                                <input type="text"  name="note" class="form-control"
                                     placeholder="Total">
                             </div>
                         </div>
@@ -178,7 +198,6 @@
 <?php
     include_once '../includes/footer.php';
 ?>
-    
 
 <script src="<?= ROOT ?>/assets/js/lib/data-table/datatables.min.js"></script>
 <script src="<?= ROOT ?>/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
@@ -193,27 +212,15 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
-
-        var tableShowOrder = $('#tableShowOrder').DataTable();
-
-
-        $('#filter').change(function (e) {
-            var searchTypeOrder = $('select[name=search-typeorder]').val();
-            var typeOrderIndex = $('select[name=search-typeorder]').attr('for-col');
-
-            // console.log(searchTypeOrder, typeOrderIndex);
-            
-
-
-            
-            $('#tableOrder-wapper').fadeOut( 100,function() {
-                tableShowOrder.column(typeOrderIndex)
-                    .search(searchTypeOrder).draw();
-            }).fadeIn()
-
-            e.preventDefault(100);
-
-        });
+        <?php
+        if(!isset($_SESSION['results'])) {
+        ?>
+            $('#btn-s-date').click();
+        <?php
+        } else {
+            unset($_SESSION['results']);
+        }
+        ?>
     });
 </script>
 
