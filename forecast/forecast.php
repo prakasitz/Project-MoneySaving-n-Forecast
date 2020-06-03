@@ -68,11 +68,10 @@
 <script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
 
-<!--Local Stuff-->
 <script>
     jQuery(document).ready(function ($) {
         "use strict";
-        //bar chart
+
         var ctx = $("#forecastLineChart")[0];
         var myChart = new Chart(ctx, {
             type: 'line',
@@ -105,8 +104,8 @@
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: true,
-
+                maintainAspectRatio: false,
+                aspectRatio: 0.8,
                 legend: {
                     display: true,
                     labels: {
@@ -155,6 +154,9 @@
                 title: {
                     display: false,
                     text: 'Normal Legend'
+                },
+                animation :{
+                    duration :500    
                 }
             }
         });
