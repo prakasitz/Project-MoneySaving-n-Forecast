@@ -2,7 +2,7 @@
 
     include '../config.php';
     include '../classes/DB.php';
- session_start();
+    session_start();
     if(isset($_POST["user"]) && isset($_POST["pass"])) {
         $user = $_POST["user"];
         $pass = $_POST["pass"];
@@ -25,8 +25,6 @@
                 
                 $_SESSION['users'] = $results_user[0];
                // echo "<pre>";
-                print_r($_SESSION['users']);
-                echo "</pre>";
             } else {
                 echo "เข้าสู่ระบบไม่สำเร็จ ลองอีกครั้ง";
                 header("Refresh:0.5; url=login_1.php");
