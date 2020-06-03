@@ -1,27 +1,45 @@
 <?php
     include '../config.php';
     include '../classes/DB.php';
-    
+
+    session_start();
 
     if(isset($_GET["date"],$_SESSION['users'])) {
         $date = $_GET["date"];
         $user_id = $_SESSION['users']['user_id'];
-    }
+
+        $conn = DB::getInstance();
+
+        $sql = "SELECT saving.saving_date as savedate,
+                       saving.saving_detail, 
+                       saving.saving_value, 
+                       typemoney.type_tran as 'type_trans'
+                FROM saving
+                INNER JOIN typemoney 
+                ON saving.typemoney_id = typemoney.typemoney_id
+                WHERE date(saving.saving_date) = '$date' AND saving.user_id = '$user_id' 
+                ";
     
-    $conn = DB::getInstance();
+        $stmt = $conn->dbh->prepare( $sql );
+        $chk_stmt = $stmt->execute();
 
-    $sql = "SELECT saving.saving_date as savedate ,saving.saving_detail, saving.saving_value, typemoney.type_tran as 'type_trans'
-            FROM saving
-            INNER JOIN typemoney 
-            ON saving.typemoney_id = typemoney.typemoney_id
-            WHERE savedate = '$date' ,user_id = '$user_id' 
-            ";
+        if($chk_stmt) {
+            $results = $stmt->fetchAll( PDO::FETCH_ASSOC );
+            array_push($results, ['input_date' => $date]);
+            $_SESSION['results'] = $results;
+            header("Refresh:0.3; url=./summarydaily.php");
+        } else {
+            echo "Error<br>";
+            print_r ($stmt->errorInfo());
+            echo $sql;
+        }
+    
+    }
 
-    $stmt = $conn->dbh->prepare( $sql );
-    $stmt->execute();
-    $results = $stmt->fetchAll( PDO::FETCH_ASSOC );
     $conn = null;
 
+    
+   
     //ส่วนปริ้นสำหรับตรวจสอบ result จากทั้ง 2 คิวรี่
         // echo "<pre>";
         // echo "results_income";
