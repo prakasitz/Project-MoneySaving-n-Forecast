@@ -3,6 +3,7 @@ include '../config.php';
 include '../classes/DB.php';
 session_start();
 
+
 if ( isset( $_SESSION['users'] ) ) {
 	$user_id = $_SESSION['users']['user_id'];
 	
@@ -29,7 +30,7 @@ if ( isset( $_SESSION['users'] ) ) {
 	//close connection
 	$conn = null;
 	
-	// DB::printArray($results); สำปรับปริ้นดูค่า array $results
+	// DB::printArray($results); //สำปรับปริ้นดูค่า array $results
 
 	$forecast=[];
 
@@ -42,7 +43,13 @@ if ( isset( $_SESSION['users'] ) ) {
 		//สร้าง array เปล่าสำหรับเก็บค่า month และ forecastval
 		$arr = [];
 		//สร้าง key month และเก็บ value เป็นเดือนที่ทำนาย
-		$arr['month'] = $results[$i+2]["month"]+1;
+		$arr['user_id'] = $results[$i+2]["user_id"];
+
+		//focecast ในเดือนที่ month(i+2)+1 ex. เดือน 3 + 1 = เดือน 4
+		$fcstMonthly = ($results[$i+2]["month"]+1);
+		
+		$arr['month'] = ($fcstMonthly%12 == 0) ? 12: $fcstMonthly%12;
+		$arr['year'] = ($fcstMonthly-1 == 12) ? $results[$i+2]["year"]+1: $results[$i+2]["year"];
 		//สร้าง key forecastval และเก็บค่า ทำนาย
 		$arr['forecastval'] = forecast(($results[$i]["sumval"]),($results[$i+1]["sumval"]),($results[$i+2]["sumval"]));
 		// push เข้า array forecast ที่สร้างไว้นอก loop
@@ -50,13 +57,13 @@ if ( isset( $_SESSION['users'] ) ) {
 	}
 	      
 	// ตอนนี้ array forecast เก็บข้อมูลลักษณะ array 2d โดยมี key คือ month และ forecast เป็น key ย่อย
-	// DB::printArray($forecast); สำปรับปริ้นดูค่า array $forecast
+	// echo "forecast<br>";
+	// DB::printArray($forecast); //สำปรับปริ้นดูค่า array $forecast
 
 	//loop นี้สำหรับ add ค่า forecastval ใน array forecast เข้าไป array results โดยเช็กจาก key month ว่าเท่ากันไหม
 	foreach ($results as $indRes => $res) {
 		foreach ($forecast as $indFrct => $frct) {
-			if($res['month'] == $frct['month']) {
-				echo $results[$indRes]['month'];
+			if($res['month'] == $frct['month'] && $res['year'] == $frct['year']) {
 				$results[$indRes]['forecastval'] = $frct['forecastval'];
 			}
 		}
@@ -67,7 +74,8 @@ if ( isset( $_SESSION['users'] ) ) {
 	array_push($results, array_pop($forecast));
 
 
-	// DB::printArray($results); สำปรับปริ้นดูค่า array $results
+	echo "results<br>";
+	DB::printArray($results); //สำปรับปริ้นดูค่า array $results
 
 
 
