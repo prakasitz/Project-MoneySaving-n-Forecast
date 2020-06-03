@@ -54,13 +54,6 @@
                                         <input type="date" id="input-date" name="date" class="form-control" value="<?= $input_date ?>">
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-md-8 col-lg-5 form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-addon"><i class="fa fa-money"></i></div>
-                                        <input type="text"  name="note" class="form-control"
-                                            placeholder="ยอดคงเหลือ">
-                                    </div>
-                                </div>
                                 <div class="col-sm-12 col-md-8 col-lg-2 form-group">
                                     <button type="submit" id='btn-s-date' class="btn btn-block btn-primary" name="send">เรียกดู</button>
                                 </div>
