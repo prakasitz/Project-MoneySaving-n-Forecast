@@ -2,10 +2,9 @@
     include '../config.php';
     include '../classes/DB.php';
     
-    session_start();
 
-    if(isset($_SESSION['users'])) {
-   
+    if(isset($_GET["date"],$_SESSION['users'])) {
+        $date = $_GET["date"];
         $user_id = $_SESSION['users']['user_id'];
     }
     
@@ -15,7 +14,7 @@
             FROM saving
             INNER JOIN typemoney 
             ON saving.typemoney_id = typemoney.typemoney_id
-            WHERE user_id = '$user_id' 
+            WHERE savedate = '$date' ,user_id = '$user_id' 
             ";
 
     $stmt = $conn->dbh->prepare( $sql );
