@@ -66,7 +66,7 @@
                         <div class="row form-group">
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><strong>THB</strong></div>
-                                <input type="text" step="0.01" min="0.01" id="input-money-income" name="moneyIncome"  onkeyup="this.value=Comma(this.value);"  maxlength="14" class="form-control" placeholder="จำนวนเงิน"required> 
+                                <input type="text" step="0.01" min="" id="input-money-income" name="moneyIncome"  onkeyup="this.value=Comma(this.value);"  maxlength="14" class="form-control" placeholder="จำนวนเงิน"required> 
                                     <script LANGUAGE="JavaScript">
                                         function Comma(Num)
                                         {

@@ -7,8 +7,9 @@
         $date = $_GET["date"];
         $typeIncome = $_GET["typeIncome"];
         $note = $_GET["note"];
-        $money = $_GET["moneyIncome"];
-        $moneyIncome = str_replace(',','', $money);
+        $money1 = $_GET["moneyIncome"];
+        $money2 = str_replace(',','', $money1);
+        $moneyIncome = round($money2,2);
         $user_id = $_SESSION['users']['user_id'];
         $month = intval(explode("-", $date)[1]);
 
