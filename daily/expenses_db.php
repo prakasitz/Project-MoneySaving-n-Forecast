@@ -7,7 +7,8 @@
         $date = $_GET["date"];
         $typeExpenses = $_GET["typeExpenses"];
         $note = $_GET["note"];
-        $moneyExpenses = $_GET["moneyExpenses"];
+        $money = $_GET["moneyExpenses"];
+        $moneyExpenses = str_replace(',','', $money);
         $user_id = $_SESSION['users']['user_id'];
         $month = intval(explode('-',$date)[1]);
 
