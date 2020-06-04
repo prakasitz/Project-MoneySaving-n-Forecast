@@ -97,7 +97,7 @@
                                         <!--start php code -->
                                         <?php 
                                             echo $list_incomes['saving_value'];
-                                            $sum_incomes += intval($list_incomes['saving_value']);
+                                            $sum_incomes += doubleval($list_incomes['saving_value']);
                                         ?>
                                         <!--end php code -->
                                         </td>
@@ -152,7 +152,7 @@
                                         <!--start php code for จำนวนเงิน -->
                                         <?php 
                                             echo $list_expenses['saving_value'];
-                                            $sum_expenses += intval($list_expenses['saving_value']);
+                                            $sum_expenses += doubleval($list_expenses['saving_value']);
                                         ?>
                                         <!--end php code -->
                                         </td>
