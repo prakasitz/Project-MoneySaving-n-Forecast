@@ -72,94 +72,145 @@
     jQuery(document).ready(function ($) {
         "use strict";
 
-        var ctx = $("#forecastLineChart")[0];
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: [ "2012", "2013", "2014", "2015", "2016", "2017", "2018" ],
-                type: 'line',
-                datasets: [{
-                        label: "Expense",
-                        data: [ 0, 30, 15, 110, 50, 63, 120 ],
-                        backgroundColor: 'transparent',
-                        borderColor: 'rgba(220,53,69,0.75)',
-                        borderWidth: 3,
-                        pointStyle: 'circle',
-                        pointRadius: 5,
-                        pointBorderColor: 'transparent',
-                        pointBackgroundColor: 'rgba(220,53,69,0.75)',
-                    },
-                    {
-                        label: "Focecast",
-                        data: [ 0, 50, 40, 80, 35, 99, 80 ],
-                        backgroundColor: 'transparent',
-                        borderColor: 'rgba(40,167,69,0.75)',
-                        borderWidth: 3,
-                        pointStyle: 'circle',
-                        pointRadius: 5,
-                        pointBorderColor: 'transparent',
-                        pointBackgroundColor: 'rgba(40,167,69,0.75)',
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                aspectRatio: 0.8,
-                legend: {
-                    display: true,
-                    labels: {
-                        usePointStyle: true,
-                        fontFamily: 'Montserrat',
-                    },
-                },
-
-                tooltips: {
-                    mode: 'index',
-                    titleFontSize: 12,
-                    titleFontColor: '#000',
-                    bodyFontColor: '#000',
-                    backgroundColor: '#fff',
-                    titleFontFamily: 'Montserrat',
-                    bodyFontFamily: 'Montserrat',
-                    cornerRadius: 3,
-                    intersect: false,
-                },
-
-                scales: {
-                    yAxes: [{
-                        display: true,
-                        gridLines: {
-                            display: false,
-                            drawBorder: false
-                        },
-                        scaleLabel: {
-                            display: false,
-                            labelString: 'Month'
-                        }
-                    }],
-                    yAxes: [{
-                        display: true,
-                        gridLines: {
-                            display: false,
-                            drawBorder: false
-                        },
-                        scaleLabel: {
-                            display: true,
-                            labelString: 'Value'
-                        }
-                    }],
-                },
-
-                title: {
-                    display: false,
-                    text: 'Normal Legend'
-                },
-                animation :{
-                    duration :500    
-                }
+        function getMonthnames(monthId, lang) {
+            const en_monthnames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const th_monthnames = ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ษ.', 'พ.ค.', 'มิ.ย', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.'];
+            if(lang == 'th') {
+                return th_monthnames[monthId];
+            } else {
+                return en_monthnames[monthId];
             }
+        }
+
+        function callServices(type, url, async, data, callBack) {
+            $.ajax({
+                type: type,
+                dataType: "JSON",
+                beforeSend: function (jqXHR, settings) {
+                    //ใส่ Effect loading
+                },
+                url: url,
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                async: async,
+                success: function (msg) {
+                    return callBack(msg);
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.error(errorThrown);
+                    //fix bug error not set false
+
+                },
+                complete: function (jqXHR, textStatus) {
+                    // console.log("complete",textStatus,jqXHR);
+                }
+            });
+        }
+
+        callServices('GET', './forecast_db.php', false, {}, function (results) {
+            let labelMonths = [];
+            let data = {"exp": [], "frcst": []};
+            results.forEach(element => {
+                if(element['sumval'] !== undefined) {
+                    data['exp'].push(parseFloat(element['sumval']).toFixed(2))
+                }
+                data['frcst'].push((element['forecastval'] == undefined) ? 0 : parseFloat(element['forecastval']).toFixed(2))
+                labelMonths.push(getMonthnames(element['month']-1,'th')+"-"+(element['year'].slice(-2)))
+            });
+            renderChart(data, labelMonths)
         });
+
+        function renderChart(data, labels) {
+            var ctx = $("#forecastLineChart")[0];
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    type: 'line',
+                    datasets: [{
+                            label: "Expense",
+                            data: data['exp'],
+                            backgroundColor: 'transparent',
+                            borderColor: 'rgba(220,53,69,0.75)',
+                            borderWidth: 3,
+                            pointStyle: 'circle',
+                            pointRadius: 5,
+                            pointBorderColor: 'transparent',
+                            pointBackgroundColor: 'rgba(220,53,69,0.75)',
+                        },
+                        {
+                            label: "Focecast",
+                            data: data['frcst'],
+                            backgroundColor: 'transparent',
+                            borderColor: 'rgba(40,167,69,0.75)',
+                            borderWidth: 3,
+                            pointStyle: 'circle',
+                            pointRadius: 5,
+                            pointBorderColor: 'transparent',
+                            pointBackgroundColor: 'rgba(40,167,69,0.75)',
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    aspectRatio: 0.8,
+                    legend: {
+                        display: true,
+                        labels: {
+                            usePointStyle: true,
+                            fontFamily: 'Montserrat',
+                        },
+                    },
+
+                    tooltips: {
+                        mode: 'index',
+                        titleFontSize: 12,
+                        titleFontColor: '#000',
+                        bodyFontColor: '#000',
+                        backgroundColor: '#fff',
+                        titleFontFamily: 'Montserrat',
+                        bodyFontFamily: 'Montserrat',
+                        cornerRadius: 3,
+                        intersect: false,
+                    },
+
+                    scales: {
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            scaleLabel: {
+                                display: false,
+                                labelString: 'Month'
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            gridLines: {
+                                display: false,
+                                drawBorder: false
+                            },
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Value'
+                            },
+                     
+                        }],
+                    },
+
+                    title: {
+                        display: false,
+                        text: 'Normal Legend'
+                    },
+                    animation :{
+                        duration :500    
+                    }
+                }
+            });
+        }
 
     });
 </script>
