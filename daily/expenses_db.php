@@ -23,10 +23,12 @@
         // $result = $stmt->fetchAll( PDO::FETCH_ASSOC );
         // print_r($result); 
     
-        if(isset($sql) != 0) {
-        echo "<script>alert('[Insert สำเร็จ]')</script>";
-        header("Refresh:0.5; url=http://localhost/zocute/daily/expenses.php");
+        if($chk_stmt) {
+            echo "<script>alert('[Insert สำเร็จ]')</script>";
+            header("Refresh:0.3; url=http://localhost/zocute/index.php");
         } else {
-            echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
+            echo "Error<br>";
+            print_r ($stmt->errorInfo());
+            echo $sql;
         }
     }

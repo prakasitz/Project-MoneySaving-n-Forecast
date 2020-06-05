@@ -23,11 +23,12 @@
         $stmt->execute();
         $conn = null;
 
-        if(isset($sql) != 0) {
-        echo "<script>alert('[Insert สำเร็จ]')</script>";
-        header("Refresh:0.5; url=http://localhost/zocute/index.php");
+        if($chk_stmt) {
+            echo "<script>alert('[Insert สำเร็จ]')</script>";
+            header("Refresh:0.3; url=http://localhost/zocute/index.php");
         } else {
-            echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
+            echo "Error<br>";
+            print_r ($stmt->errorInfo());
+            echo $sql;
         }
-
     }
