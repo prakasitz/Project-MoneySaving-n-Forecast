@@ -18,7 +18,7 @@
                 VALUES ('$user_id', '$typeExpenses', '$note', '$moneyExpenses', '$date', '$month')
                 ";
         $stmt = $conn->dbh->prepare( $sql );
-        $stmt->execute();
+        $chk_stmt = $stmt->execute();
         $conn = null;
         // $result = $stmt->fetchAll( PDO::FETCH_ASSOC );
         // print_r($result); 

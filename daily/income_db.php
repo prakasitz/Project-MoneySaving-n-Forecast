@@ -20,7 +20,7 @@
         // print_r($sql);
         // die;
         $stmt = $conn->dbh->prepare( $sql );
-        $stmt->execute();
+        $chk_stmt = $stmt->execute();
         $conn = null;
 
         if($chk_stmt) {
