@@ -11,7 +11,7 @@ if ( isset( $_SESSION['users'] ) ) {
 				year(saving_date) year,
 				month(saving_date) month,
 				SUM(saving_value) as sumval, 
-				saving.user_id,
+				saving.user_id
 			FROM saving
 			WHERE user_id = '$user_id' AND typemoney_id BETWEEN 4 and 9
 			GROUP BY year,month 
