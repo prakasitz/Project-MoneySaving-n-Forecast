@@ -4,13 +4,61 @@
     require_once './config.php';
     require_once 'classes/DB.php';  
     include_once './includes/header.php';
-    $sumIn = $_SESSION['sumvalIn'];
-    $sumEx = $_SESSION['sumvalEx'];
-    $balance = ($sumIn[0]['sumvalIn'])-($sumEx[0]['sumvalEx']);
+?>
+
+<?php
+    if ( isset( $_SESSION['users'] ) ) {
+        $user_id = $_SESSION['users']['user_id'];
+        $sql1 = "SELECT 
+                    saving.user_id,
+                    SUM(saving_value) as sumvalIn 
+                FROM saving
+                WHERE  saving.user_id = '$user_id' AND saving.typemoney_id BETWEEN 1 and 3
+                ";
+            $conn = DB::getInstance();
+             $stmt = $conn->dbh->prepare( $sql1);
+            $chk_stmt = $stmt->execute();
+
+            if($chk_stmt) {
+                $_SESSION['sumvalIn'] = $stmt->fetchAll( PDO::FETCH_ASSOC );
+                //DB::printArray($_SESSION['sumvalIn']);
+                //header("Refresh:0.3; url=./edit_saving.php");
+            } 
+
+        $sql2 = "SELECT 
+                    saving.user_id,
+                    SUM(saving_value) as sumvalEx 
+                FROM saving
+                WHERE  saving.user_id = '$user_id' AND saving.typemoney_id BETWEEN 4 and 9
+                ";
+            $conn = DB::getInstance();
+            $stmt = $conn->dbh->prepare( $sql2);
+            $chk_stmt = $stmt->execute();
+
+            if($chk_stmt) {
+                $_SESSION['sumvalEx'] = $stmt->fetchAll( PDO::FETCH_ASSOC );
+                //$_SESSION['newIncome'] = 0;
+                //DB::printArray($_SESSION['newIncome']);
+                //header("Refresh:0.3; url=./edit_saving.php");
+            
+            } 
+    }
+    $Income = $_SESSION['sumvalIn'];
+    //$nIncome = $_SESSION['newIncome'];
+    $sumIn = ($Income[0]['sumvalIn']);
+    //$nIncome = [];
+  
+    
+    
+    
+    $Expense = $_SESSION['sumvalEx'];
+    //$nExpense = $_SESSION['newExpense']
+    $sumEx = ($Expense[0]['sumvalEx']);
+
+    $balance = $sumIn- $sumEx;
     //print_r ($sumIn);
     //print_r ($sumEx);
     //print_r ($balance);
-    
 ?>
 
 <style>
@@ -70,7 +118,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="count"><?php echo $sumIn[0]['sumvalIn'] ?> </span></div>
+                                    <div class="stat-text">฿<span class="count"><?php echo $sumIn ?> </span></div>
                                     <h4 class="font-weight-bold">รายรับ</h4>
                                 </div>
                             </div>
@@ -88,7 +136,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="count"><?php echo $sumEx[0]['sumvalEx'] ?></span></div>
+                                    <div class="stat-text">฿<span class="count"><?php echo $sumEx ?></span></div>
                                     <h4 class="font-weight-bold">รายจ่าย</h4>
                                 </div>
                             </div>
