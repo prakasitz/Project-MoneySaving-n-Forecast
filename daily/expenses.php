@@ -41,7 +41,7 @@
                         <div class="row form-group">
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                <input type="date" id="input-date" name="date" class="form-control" required>
+                                <input type="date" id="input-date" name="date" class="form-control" value="<?=date("Y-m-d")?>" required>
                                 </div>
                         </div>
                         <div class="row form-group">
