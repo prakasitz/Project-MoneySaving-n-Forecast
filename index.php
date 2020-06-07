@@ -60,7 +60,7 @@
         <!-- Widgets  -->
         <div class="row justify-content-center">
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
@@ -69,7 +69,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="count">23569</span></div>
+                                    <input type="text" id="showIn" name="sumIn"  class="form-control font-weight-bold"   value='<?= number_format((float)$sumIn[0]['sumvalIn'], 2, '.', ','). " บาท"?>' disabled >
                                     <h4 class="font-weight-bold">รายรับ</h4>
                                 </div>
                             </div>
@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-6">
+            <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="stat-widget-five">
@@ -87,7 +87,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="count">3435</span></div>
+                                <input type="text" id="showEx" name="sumEx"  class="form-control font-weight-bold"   value='<?= number_format((float)$sumEx[0]['sumvalEx'], 2, '.', ','). " บาท"?>' disabled >
                                     <h4 class="font-weight-bold">รายจ่าย</h4>
                                 </div>
                             </div>
@@ -105,7 +105,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="stat-text">349</span></div>
+                                <input type="text" id="showBalance" name="sumBalance"  class="form-control font-weight-bold"   value='<?= number_format((float)$balance, 2, '.', ','). " บาท"?>' disabled >
                                     <h4 class="font-weight-bold">ยอดคงเหลือ</h4>
                                 </div>
                             </div>
