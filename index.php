@@ -10,6 +10,7 @@
     //print_r ($sumIn);
     //print_r ($sumEx);
     //print_r ($balance);
+    
 ?>
 
 <style>
@@ -69,7 +70,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <input type="text" id="showIn" name="sumIn"  class="form-control font-weight-bold"   value='<?= number_format((float)$sumIn[0]['sumvalIn'], 2, '.', ','). " บาท"?>' disabled >
+                                    <div class="stat-text">฿<span class="count"><?php echo $sumIn[0]['sumvalIn'] ?> </span></div>
                                     <h4 class="font-weight-bold">รายรับ</h4>
                                 </div>
                             </div>
@@ -87,7 +88,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                <input type="text" id="showEx" name="sumEx"  class="form-control font-weight-bold"   value='<?= number_format((float)$sumEx[0]['sumvalEx'], 2, '.', ','). " บาท"?>' disabled >
+                                    <div class="stat-text">฿<span class="count"><?php echo $sumEx[0]['sumvalEx'] ?></span></div>
                                     <h4 class="font-weight-bold">รายจ่าย</h4>
                                 </div>
                             </div>
@@ -105,7 +106,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                <input type="text" id="showBalance" name="sumBalance"  class="form-control font-weight-bold"   value='<?= number_format((float)$balance, 2, '.', ','). " บาท"?>' disabled >
+                                    <div class="stat-text">฿<span class="stat-text"><?php echo $balance ?></span></div>
                                     <h4 class="font-weight-bold">ยอดคงเหลือ</h4>
                                 </div>
                             </div>
