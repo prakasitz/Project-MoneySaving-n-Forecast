@@ -2,22 +2,14 @@
 <?php
     $_GET["isShowNav"] = 1;
     require_once './config.php';
-    require_once 'classes/DB.php';   
-    $conn = DB::getInstance();
-    $sql = "SELECT * FROM income";
-    $stmt     = $conn->dbh->prepare( $sql ); // <-- สร้าง
-    $chk_stmt = $stmt->execute(); // ลองปริ้นค่า $chk_stmt เป็น 1 เท่ากับว่า คิวรี่สำเร็จ
-    $resultincome = $stmt->fetchAll( PDO::FETCH_ASSOC ); // บรรทัดนี้ใช้สำหรับ select เท่านั้น insert, update, delete จะไม่ส่งคืนค่า
-    $conn = DB::getInstance();
-    $sql = "SELECT * FROM expenses";
-    $stmt     = $conn->dbh->prepare( $sql ); // <-- สร้าง
-    $chk_stmt = $stmt->execute(); // ลองปริ้นค่า $chk_stmt เป็น 1 เท่ากับว่า คิวรี่สำเร็จ
-    $resultexpenses = $stmt->fetchAll( PDO::FETCH_ASSOC ); // บรรทัดนี้ใช้สำหรับ select เท่านั้น insert, update, delete จะไม่ส่งคืนค่า
-    //echo "<pre>";
-    //print_r($result);
-    // echo "</pre>";
+    require_once 'classes/DB.php';  
     include_once './includes/header.php';
-   
+    $sumIn = $_SESSION['sumvalIn'];
+    $sumEx = $_SESSION['sumvalEx'];
+    $balance = ($sumIn[0]['sumvalIn'])-($sumEx[0]['sumvalEx']);
+    //print_r ($sumIn);
+    //print_r ($sumEx);
+    //print_r ($balance);
 ?>
 
 <style>

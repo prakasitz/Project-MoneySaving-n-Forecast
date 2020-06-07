@@ -18,66 +18,54 @@
             $stmt->execute();
             $results_user = $stmt->fetchAll( PDO::FETCH_ASSOC );
             $conn = null;
-    
+
             if(sizeof($results_user) != 0) {
                 echo "เข้าสู่ระบบสำเร็จ";
+                $user_id = ($results_user[0]['user_id']);
+                $sql1 = "SELECT 
+                                saving.user_id,
+                                SUM(saving_value) as sumvalIn 
+                        FROM saving
+                        WHERE  saving.user_id = '$user_id' AND saving.typemoney_id BETWEEN 1 and 3
+                        ";
+                        $conn = DB::getInstance();
+                        $stmt = $conn->dbh->prepare( $sql1);
+                        $chk_stmt = $stmt->execute();
+    
+                        if($chk_stmt) {
+                            $_SESSION['sumvalIn'] = $stmt->fetchAll( PDO::FETCH_ASSOC );
+                            //DB::printArray($_SESSION['sumvalIn']);
+                            //header("Refresh:0.3; url=./edit_saving.php");
+                        } 
+
+                $sql2 = "SELECT 
+                                saving.user_id,
+                                SUM(saving_value) as sumvalEx 
+                        FROM saving
+                        WHERE  saving.user_id = '$user_id' AND saving.typemoney_id BETWEEN 4 and 9
+                        ";
+                        $conn = DB::getInstance();
+                        $stmt = $conn->dbh->prepare( $sql2);
+                        $chk_stmt = $stmt->execute();
+    
+                        if($chk_stmt) {
+                            $_SESSION['sumvalEx'] = $stmt->fetchAll( PDO::FETCH_ASSOC );
+                            //DB::printArray($_SESSION['sumvalEx']);
+                            //header("Refresh:0.3; url=./edit_saving.php");
+                        } 
                 header("Refresh:0.5; url=http://localhost/zocute/index.php");
-                
                 $_SESSION['users'] = $results_user[0];
                // echo "<pre>";
             } else {
                 echo "เข้าสู่ระบบไม่สำเร็จ ลองอีกครั้ง";
                 header("Refresh:0.5; url=login_1.php");
             }
-        //$admin = mysqli_query($user,$pass)     
-    
-        //$row = mysqli_fetch_array($admin);
-        // echo print_r($user,true);
-        // echo print_r($pass,true); //เอาไว้ปริ้น ดูค่าที่ select มา
-//count($result);
-        // if (sizeof($result) != 0) {
-        //     // $_SESSION["email"] = $result["0"]["user_email"];
-        //     // $_SESSION["surname"] = $result["0"]["user_sname"];
-        //     // $_SESSION["name"] = $result["0"]["user_fname"];
-            
+
            
-        //         echo "<script>alert('สำเร็จ')</script>";
-        //         header("Refresh:0.5; url=register_1.php");
             
-        // }
+            
     }
        
             
         
-        /*else {
-            $result = mysqli_query($user,$pass);
-        ($user = 'admin' && $pass = '1234')
-        
-        }
-
        
-
-        }
-         else echo '....';
-            
-
-            
-    /*if(sizeof($result) != 0) {
-        $userad = $_GET["uname"];
-        $passad = $_GET["psw"];
-
-        $userad = 'admin';
-        $passad = '1234';
-
-        header("Refresh:0.5; url=Insert.php");
-    }*/
-    
-        //DB::checkResult($result);
-       /* if(isset($result) && sizeof($result) != 0) {
-                $_SESSION["name"] = $result["0"]["sup_Name"];
-                $_SESSION["email"] = $result["0"]["sup_Email"];
-                $_SESSION["phone"] = $result["0"]["sup_Phone"];
-                $_SESSION["id"] = $result["0"]["sup_ID"];
-                $_SESSION["address"] = $result["0"]["sup_Address"];
-        }*/
-       // echo json_encode($result);
