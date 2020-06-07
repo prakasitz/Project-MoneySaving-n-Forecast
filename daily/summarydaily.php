@@ -6,7 +6,6 @@
     include_once '../includes/header.php';
     
 ?>
-
 <div class="breadcrumbs">
     <div class="breadcrumbs-inner">
         <div class="row m-0">
@@ -70,6 +69,7 @@
                                         <th>ลำดับ</th>
                                         <th>รายการ</th>
                                         <th>จำนวนเงิน</th>
+                                        <th>แก้ไข</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -101,6 +101,10 @@
                                         ?>
                                         <!--end php code -->
                                         </td>
+                                        <td>
+                                            <a class='btn btn-warning' href="./edit_saving_db.php?saving_id=<?php echo $list_incomes['saving_id']?>">แก้ไข</a>
+                                            <a class='btn btn-danger'>ลบ</a>
+                                        </td>
                                     </tr>
                                 <?php
                                         }
@@ -123,6 +127,7 @@
                                         <th>ลำดับ</th>
                                         <th>รายการ</th>
                                         <th>จำนวนเงิน</th> 
+                                        <th>แก้ไข</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -155,6 +160,10 @@
                                             $sum_expenses += doubleval($list_expenses['saving_value']);
                                         ?>
                                         <!--end php code -->
+                                        </td>
+                                        <td>
+                                            <a class='btn btn-warning' href="./edit_saving_db.php?saving_id=<?php echo $list_expenses['saving_id']?>">แก้ไข</a>
+                                            <a class='btn btn-danger'>ลบ</a>
                                         </td>
                                     </tr>
 

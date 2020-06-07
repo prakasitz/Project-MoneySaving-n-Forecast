@@ -11,6 +11,7 @@
         $conn = DB::getInstance();
 
         $sql = "SELECT saving.saving_date as savedate,
+                       saving.saving_id,
                        saving.saving_detail, 
                        saving.saving_value, 
                        typemoney.type_tran as 'type_trans'
