@@ -1,6 +1,7 @@
 <?php 
     $_GET["isShowNav"] = 1;
     require_once '../config.php';
+    require_once '../classes/DB.php';
     include_once '../includes/header.php';
     
 ?>
@@ -51,9 +52,12 @@
                                
                                 <select name="typeIncome" id="select-type-income" class="form-control selectpicker" required>
                                     <option>เลือกประเภท</option>
-                                    <option value="1" data-icon="fa fa-credit-card">เงินเดือน</option>
-                                    <option value="2" data-icon="fa fa-money">ดอกเบี้ย</option>
-                                    <option value="3" data-icon="fa fa-question">อื่นๆ</option>
+                                    <?php 
+                                        require_once '../classes/TypeSaving.php';
+                                        $conn = DB::getInstance();
+                                        $typeIncome = new TypeSaving($conn,"รายรับ");
+                                        $typeIncome->getOptionHTML();
+                                    ?>
                                 </select>
                             </div>
                         </div>

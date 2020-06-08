@@ -1,6 +1,7 @@
 <?php 
     $_GET["isShowNav"] = 1;
     require_once '../config.php';
+    require_once '../classes/DB.php';
     include_once '../includes/header.php';
 ?>
 
@@ -49,12 +50,12 @@
                                 <div class="input-group-addon"><i class="fa fa-circle"></i></div>
                                 <select name="typeExpenses" id="select-type-expenses" class="form-control selectpicker" required>
                                     <option>เลือกประเภท</option>
-                                        <option value="4" data-icon="fa fa-money">การออม&การลงทุน</option>
-                                        <option value="5" data-icon="fa fa-barcode">สาธาณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์ ฯลฯ)</option>
-                                        <option value="6" data-icon="fa fa-group">ครอบครัว&ส่วนตัว</option>
-                                        <option value="7" data-icon="fa fa-coffee">สันทนาการ</option>
-                                        <option value="8" data-icon="fa fa-credit-card">หนี้สิน</option>
-                                        <option value="9" data-icon="fa fa-circle">อื่นๆ</option>
+                                    <?php
+                                        require_once '../classes/TypeSaving.php';
+                                        $conn = DB::getInstance();
+                                        $gts = new TypeSaving($conn, "รายจ่าย");
+                                        $gts->getOptionHTML();
+                                    ?>
                                     </select>
                                     </div>
                                 </div>
