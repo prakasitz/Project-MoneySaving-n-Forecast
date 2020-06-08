@@ -30,10 +30,10 @@ class TypeSaving {
         return $this->results;
     }
 
-    public function getOptionHTML() {
+    public function getOptionHTML($selected = 0) {
         $str = "";
         foreach ($this->results as $key => $value) {
-            $str .= "<option value=". $value['typemoney_id'] .">". $value['typemoney_name'] ."</option>";
+            $str .= "<option value=". $value['typemoney_id'] ." ".(($selected == $value['typemoney_id']) ? "selected":"").">". $value['typemoney_name'] ."</option>";
         }
         echo $str;
     }
