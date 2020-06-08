@@ -78,14 +78,14 @@
                                 $sum_incomes = 0;
                                 if(isset($_SESSION['results'])) {
                                     $results = $_SESSION['results'];
-                                    $cnt = 1;
+                                    $cnt = 0;
                                     foreach ($results as $index => $list_incomes) {
                                         if($list_incomes['type_trans'] == 'รายรับ') {
                                 ?>
                                     <tr>
                                         <td>
                                         <!--start php code -->
-                                        <?php echo $cnt; $cnt+=1 ?>
+                                        <?php $cnt+=1; echo $cnt; ?>
                                         <!--end php code -->
                                         </td>
                                         <td>
@@ -103,17 +103,19 @@
                                         </td>
                                         <td>
                                             <a class='btn btn-warning' href="./edit_saving_db.php?saving_id=<?php echo $list_incomes['saving_id']?>">แก้ไข</a>
-                                            <a class='btn btn-danger'href="./delete_saving_db.php?saving_id=<?php echo $list_incomes['saving_id']?>" >ลบ</a>
+                                            <a class='btn btn-danger delete-saving'href="./delete_saving_db.php?saving_id=<?php echo $list_incomes['saving_id']?>" >ลบ</a>
                                         </td>
                                     </tr>
                                 <?php
                                         }
                                     }
-                                } else {
-                                    ?>
+
+                                    if($cnt == 0) { 
+                                ?>
                                         <tr><td colspan="100%" class='text-center'>ไม่พบข้อมูลรายรับในวันที่ดังกล่าว!</td></tr>
-                                <?php    
-                                }
+                                <?php
+                                    }
+                                }   
                                 ?>
                                 <!--end php code -->
                                 </tbody>
@@ -136,14 +138,14 @@
                                 $sum_expenses = 0;
                                 if(isset($_SESSION['results'])) {
                                     $results = $_SESSION['results'];
-                                    $cnt = 1;
+                                    $cnt = 0;
                                     foreach ($results as $index => $list_expenses) {
                                         if($list_expenses['type_trans'] == 'รายจ่าย') {
                                 ?>
                                     <tr>
                                         <td>
                                         <!--start php code for ลำดับ -->
-                                        <?php echo $cnt; $cnt+=1?>
+                                        <?php $cnt+=1; echo $cnt; ?>
                                         <!--end php code -->
                                         </td>
                                         <td>
@@ -163,18 +165,20 @@
                                         </td>
                                         <td>
                                             <a class='btn btn-warning' href="./edit_saving_db.php?saving_id=<?php echo $list_expenses['saving_id']?>">แก้ไข</a>
-                                            <a class='btn btn-danger'href="./delete_saving_db.php?saving_id=<?php echo $list_expenses['saving_id']?>">ลบ</a>
+                                            <a class='btn btn-danger delete-saving' href="./delete_saving_db.php?saving_id=<?php echo $list_expenses['saving_id']?>">ลบ</a>
                                         </td>
                                     </tr>
 
                                 <?php
                                         }
                                     }
-                                } else {
+                                
+                                    if($cnt == 0) { 
                                 ?>
-                                    <tr><td colspan="100%" class='text-center'>ไม่พบข้อมูลรายจ่ายในวันที่ดังกล่าว!</td></tr>
-                                <?php    
-                                }
+                                        <tr><td colspan="100%" class='text-center'>ไม่พบข้อมูลรายจ่ายในวันที่ดังกล่าว!</td></tr>
+                                <?php
+                                    }
+                                }   
                                 ?>
                                 <!--end php code -->
                                 </tbody>
@@ -222,6 +226,16 @@
 
 <script type="text/javascript">
     $(document).ready(function() {
+        $('.delete-saving').click(function (e) { 
+            let tdButton = $(this).parent();
+            let tr = tdButton.parent();
+            let saving_detail = tr.find(":eq(1)").text().trim();
+            let saving_value = tr.find(":eq(2)").text().trim();
+            if(!confirm(`คุณต้องการลบ\nรายการ : \"${saving_detail}\" \nจำนวนเงิน :\"${saving_value}\" หรือไม่?`)) {
+                e.preventDefault();
+            }
+        });
+
         <?php
         if(!isset($_SESSION['results'])) {
         ?>
