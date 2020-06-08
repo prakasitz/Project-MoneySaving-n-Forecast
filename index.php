@@ -166,7 +166,7 @@
         </div>
         <!-- /Widgets -->
         <!--  Traffic  -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
@@ -178,11 +178,11 @@
                                 <canvas id="TrafficChart"></canvas>  
                             </div>
                         </div>
-                    </div> <!-- /.row -->
+                    </div>
                     <div class="card-body"></div>
                 </div>
-            </div><!-- /# column -->
-        </div>
+            </div>
+        </div> -->
         <!--  /Traffic -->
         <div class="clearfix"></div>
 
@@ -210,60 +210,60 @@
             "use strict";
 
             //Traffic chart chart-js
-            if ($('#TrafficChart').length) {
-                let ctx = $('#TrafficChart')[0];
-                let dataForPieChart = {
-                    data: [150, 400, 250],
-                    label: [
-                            'รายรับ',
-                            'รายจ่าย',
-                            'ยอดคงเหลือ'
-                        ]
-                };
-                ctx.height = 150;
-                let chart = new Chart(ctx, {
-                    type: 'pie',
-                    data: {
-                        datasets: [{
-                            data: dataForPieChart.data,
-                            backgroundColor: palette('tol', dataForPieChart.data.length).map(function(hex) {
-                                return '#' + hex; 
-                            })
-                        }],
-                        labels: dataForPieChart.label
-                    },
-                    options: {
-                        responsive: true,
-                        legend: {
-                            position: 'right'
-                        },
-                        tooltips: {
-                            callbacks: {
-                                label: function (tooltipItem, data) {
-                                    let label = data.labels[tooltipItem.index]
-                                    let val = data.datasets[0].data[tooltipItem.index];
+            // if ($('#TrafficChart').length) {
+            //     let ctx = $('#TrafficChart')[0];
+            //     let dataForPieChart = {
+            //         data: [150, 400, 250],
+            //         label: [
+            //                 'รายรับ',
+            //                 'รายจ่าย',
+            //                 'ยอดคงเหลือ'
+            //             ]
+            //     };
+            //     ctx.height = 150;
+            //     let chart = new Chart(ctx, {
+            //         type: 'pie',
+            //         data: {
+            //             datasets: [{
+            //                 data: dataForPieChart.data,
+            //                 backgroundColor: palette('tol', dataForPieChart.data.length).map(function(hex) {
+            //                     return '#' + hex; 
+            //                 })
+            //             }],
+            //             labels: dataForPieChart.label
+            //         },
+            //         options: {
+            //             responsive: true,
+            //             legend: {
+            //                 position: 'right'
+            //             },
+            //             tooltips: {
+            //                 callbacks: {
+            //                     label: function (tooltipItem, data) {
+            //                         let label = data.labels[tooltipItem.index]
+            //                         let val = data.datasets[0].data[tooltipItem.index];
                                     
-                                    return label + ": ฿" + val;
-                                }
-                            }
-                        }
-                    }
-                });
-            }
-            //Traffic chart chart-js  End
-            // Bar Chart #flotBarChart
-            $.plot("#flotBarChart", [{
-                data: [[0, 18], [2, 8], [4, 5], [6, 13],[8,5], [10,7],[12,4], [14,6],[16,15], [18, 9],[20,17], [22,7],[24,4], [26,9],[28,11]],
-                bars: {
-                    show: true,
-                    lineWidth: 0,
-                    fillColor: '#ffffff8a'
-                }
-            }], {
-                grid: {
-                    show: false
-                }
-            });
+            //                         return label + ": ฿" + val;
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     });
+            // }
+            // //Traffic chart chart-js  End
+            // // Bar Chart #flotBarChart
+            // $.plot("#flotBarChart", [{
+            //     data: [[0, 18], [2, 8], [4, 5], [6, 13],[8,5], [10,7],[12,4], [14,6],[16,15], [18, 9],[20,17], [22,7],[24,4], [26,9],[28,11]],
+            //     bars: {
+            //         show: true,
+            //         lineWidth: 0,
+            //         fillColor: '#ffffff8a'
+            //     }
+            // }], {
+            //     grid: {
+            //         show: false
+            //     }
+            // });
             // Bar Chart #flotBarChart End
         });
     </script>
