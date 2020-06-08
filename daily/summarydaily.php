@@ -103,7 +103,7 @@
                                         </td>
                                         <td>
                                             <a class='btn btn-warning' href="./edit_saving_db.php?saving_id=<?php echo $list_incomes['saving_id']?>">แก้ไข</a>
-                                            <a class='btn btn-danger'>ลบ</a>
+                                            <a class='btn btn-danger'href="./delete_saving_db.php?saving_id=<?php echo $list_incomes['saving_id']?>" >ลบ</a>
                                         </td>
                                     </tr>
                                 <?php
@@ -163,7 +163,7 @@
                                         </td>
                                         <td>
                                             <a class='btn btn-warning' href="./edit_saving_db.php?saving_id=<?php echo $list_expenses['saving_id']?>">แก้ไข</a>
-                                            <a class='btn btn-danger'>ลบ</a>
+                                            <a class='btn btn-danger'href="./delete_saving_db.php?saving_id=<?php echo $list_expenses['saving_id']?>">ลบ</a>
                                         </td>
                                     </tr>
 
