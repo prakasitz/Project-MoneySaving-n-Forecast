@@ -7,8 +7,9 @@ session_start();
 if ( isset( 
       $_GET["savings"],
       $_GET["bill"], 
-      $_GET["fami"], 
-      $_GET["personal"], 
+      $_GET['fami_per'],
+      // $_GET["fami"], 
+      // $_GET["personal"], 
       $_GET["recreation"], 
       $_GET["debt"], 
       $_GET["other"], 
@@ -19,8 +20,9 @@ if ( isset(
     $plan_ids   = [
                     $_GET["savings_id"]     => $_GET["savings"],
                     $_GET["bill_id"]        => $_GET["bill"],
-                    $_GET["fami_id"]        => $_GET["fami"],
-                    $_GET["personal_id"]    => $_GET["personal"],
+                    $_GET["fami_per_id"]        => $_GET["fami_per"],
+                    // $_GET["fami_id"]        => $_GET["fami"],
+                    // $_GET["personal_id"]    => $_GET["personal"],
                     $_GET["recreation_id"]  => $_GET["recreation"],
                     $_GET["debt_id"]        => $_GET["debt"],
                     $_GET["other_id"]       => $_GET["other"]
@@ -32,7 +34,7 @@ if ( isset(
     $conn = DB::getInstance();
 
     #wtf
-    $sql  = " INSERT INTO `userplan` (`plan_id`, `uplan_value`, `month_id`, `user_id`)
+    $sql  = " INSERT INTO `userplan` (`typemoney_id`, `uplan_value`, `month_id`, `user_id`)
               VALUES ";
 
     foreach ($plan_ids as $plan_id => $value) {
