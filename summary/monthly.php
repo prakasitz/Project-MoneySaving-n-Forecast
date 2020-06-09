@@ -61,61 +61,9 @@
                             </div>
                         </div>
                            
-                            <div class="col-lg-4">
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="stat-widget-five">
-                                                <div class="stat-icon dib flat-color-1">
-                                                    <i class="pe-7s-cash"></i>
-                                                </div>
-                                                <div class="stat-content">
-                                                    <div class="text-left dib">
-                                                        <div class="stat-text"><span class="count">23569</span></div>
-                                                        <h4 class="font-weight-bold">รายรับ</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="stat-widget-five">
-                                                <div class="stat-icon dib flat-color-2">
-                                                    <i class="pe-7s-cart"></i>
-                                                </div>
-                                                <div class="stat-content">
-                                                    <div class="text-left dib">
-                                                        <div class="stat-text"><span class="count">3542</span></div>
-                                                        <h4 class="font-weight-bold">รายจ่าย</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="stat-widget-five">
-                                                <div class="stat-icon dib flat-color-3">
-                                                    <i class="pe-7s-browser"></i>
-                                                </div>
-                                                <div class="stat-content">
-                                                    <div class="text-left dib">
-                                                        <div class="stat-text"><span class="count">349</span></div>
-                                                        <h4 class="font-weight-bold">เงินออม</h4>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                           
                                
-                            </div>
-                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
