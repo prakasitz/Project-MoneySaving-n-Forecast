@@ -108,7 +108,6 @@
     <div class="animated fadeIn">
         <!-- Widgets  -->
         <div class="row justify-content-center">
-
             <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -154,7 +153,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="stat-text"><?php echo $balance ?></span></div>
+                                    <div class="stat-text">฿<span class="count"><?php echo $balance ?></span></div>
                                     <h4 class="font-weight-bold">ยอดคงเหลือ</h4>
                                 </div>
                             </div>
@@ -162,27 +161,22 @@
                     </div>
                 </div>
             </div>
-            
         </div>
+        
         <!-- /Widgets -->
         <!--  Traffic  -->
-        <!-- <div class="row">
+        <div class="row">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="box-title">สัดส่วนการใช้เงิน</h4>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="card-body">
-                                <canvas id="TrafficChart"></canvas>  
-                            </div>
+                        <div align="center">
+                        <img src="<?= ROOT ?>/images/kebtangg.png">
                         </div>
                     </div>
-                    <div class="card-body"></div>
+                </div>
                 </div>
             </div>
-        </div> -->
+        </div> 
         <!--  /Traffic -->
         <div class="clearfix"></div>
 
