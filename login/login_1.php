@@ -23,12 +23,12 @@
                         </div>
                         <div class="checkbox">
                             <label class="pull-right">
-                                <a href="#">Forgotten Password?</a>
+                                <a href="http://localhost/zocute/login/forget.php">Forgotten Password?</a>
                             </label>
                         </div>
                         <button class="btn btn-info btn-block" type="submit">เข้าสู่ระบบ</button>
                         <div class="register-link m-t-15 text-center">
-                            <p>Don't have account ? <a href="http://localhost/zocute/login/register_1.php"> Sign in</a></p>
+                            <p>Don't have account ? <a href="http://localhost/zocute/login/register_1.php">ลงทะเบียน</a></p>
                         </div>
                     </form>
                 </div>
