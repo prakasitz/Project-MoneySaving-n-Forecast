@@ -213,9 +213,9 @@
             chart.data.labels = labels;
             chart.data.datasets.forEach((dataset, ind) => {
                 if(ind == 0) {
-                    dataset.data = data['exp_real'];
-                } else if(ind == 1) {
                     dataset.data = data['exp_target'];
+                } else if(ind == 1) {
+                    dataset.data = data['exp_real'];
                 }
             });
             chart.update();
