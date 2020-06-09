@@ -165,6 +165,9 @@
         
         <!-- /Widgets -->
         <!--  Traffic  -->
+        <!--  /Traffic -->
+        <div class="clearfix"></div>
+        
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
@@ -174,11 +177,8 @@
                         </div>
                     </div>
                 </div>
-                </div>
             </div>
-        </div> 
-        <!--  /Traffic -->
-        <div class="clearfix"></div>
+        </div>
 
     </div>
     <!-- .animated -->
