@@ -37,19 +37,19 @@
                                 <label class="col-sm-3 col-lg-3 col-form-label font-weight-bold">วางแผนเป้าหมายเดือน</label>
                                 <div class="col-sm-5 col-lg-5">
                                     <select class="selectpicker form-control" name="m" id="selectMonthly">
-                                        <option selected>เลือกเดือน</option>
-                                        <option value="1" >มกราคม</option>
-                                        <option value="2">กุมภาพันธ์</option>
-                                        <option value="3">มีนาคม</option>
-                                        <option value="4">เมษายน</option>
-                                        <option value="5">พฤษภาคม</option>
-                                        <option value="6">มิถุนายน</option>
-                                        <option value="7">กรกฎาคม</option>
-                                        <option value="8">สิงหาคม</option>
-                                        <option value="9">กันยนยน</option>
-                                        <option value="10">ตุลาคม</option>
-                                        <option value="11">พฤศจิกายน</option>
-                                        <option value="12">ธันวาคม</option>
+                                        <option>เลือกเดือน</option>
+                                        <option value="1" <?= (date('m') == '1')? "selected":"" ?>>มกราคม</option>
+                                        <option value="2" <?= (date('m') == '2')? "selected":"" ?>>กุมภาพันธ์</option>
+                                        <option value="3" <?= (date('m') == '3')? "selected":"" ?>>มีนาคม</option>
+                                        <option value="4" <?= (date('m') == '4')? "selected":"" ?>>เมษายน</option>
+                                        <option value="5" <?= (date('m') == '5')? "selected":"" ?>>พฤษภาคม</option>
+                                        <option value="6" <?= (date('m') == '6')? "selected":"" ?>>มิถุนายน</option>
+                                        <option value="7" <?= (date('m') == '7')? "selected":"" ?>>กรกฎาคม</option>
+                                        <option value="8" <?= (date('m') == '8')? "selected":"" ?>>สิงหาคม</option>
+                                        <option value="9" <?= (date('m') == '9')? "selected":"" ?>>กันยนยน</option>
+                                        <option value="10 <?= (date('m') == '10')? "selected":"" ?>">ตุลาคม</option>
+                                        <option value="11 <?= (date('m') == '11')? "selected":"" ?>">พฤศจิกายน</option>
+                                        <option value="12 <?= (date('m') == '12')? "selected":"" ?>">ธันวาคม</option>
                                     </select>
                                 </div>
                             </div>
