@@ -54,15 +54,25 @@
                     </div>
                     <div class="card-body card-block">
                     <div class="row justify-content-center">
-                        <h4></h4>
                         <div class="col-lg-8 col-md-10">
-                            <div class="card-body">
-                                <canvas id="monthlyBarChart"></canvas>
-                            </div>
+                            <canvas id="monthlyBarChart"></canvas>
                         </div>
-                           
-                           
-                               
+                        <div class="col-lg-4 col-md-2">
+                            <table id='tableTypeMoneyDetail'  class='table table-bordered '>
+                                <thead>
+                                    <tr class='text-center'>
+                                        <th>ป้ายกำกับ</th>
+                                        <th>หมายเหตุ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class='text-center font-weight-bold'></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                     </div>
                 </div>
@@ -137,22 +147,40 @@
             });
         }
 
+        function createTableLabelTypeMoney(labelsTypemoney) {
+            const table = $('#tableTypeMoneyDetail');
+            const tbody = table.find('tbody');
+            const row = tbody.find('tr:eq(0)');
+            tbody.find('tr').remove();
+            labelsTypemoney['compact'].forEach((element, ind) => {
+                const cloneRows = row.clone();
+                const tdCompLabels = cloneRows.find('td:eq(0)');
+                const tdExtendLabels = cloneRows.find('td:eq(1)');
+                tdCompLabels.text(labelsTypemoney['compact'][ind]);
+                tdExtendLabels.text(labelsTypemoney['extend'][ind]);
+                tbody.append(cloneRows);
+            });
 
+        }
+
+        var chart;
         callServices('GET', "JSON", './monthly_db.php', false, {
             'month_start': $('#input-month_start').val(), 
             'month_end': $('#input-month_start').val(), 
         }, function (results) {
-            let labelTypeMoney = [];
+            let labelTypeMoney = {"compact": [], "extend": []};
             let data = {"exp_real": [], "exp_target": []};
             
             results.forEach((element, ind )=> {
                 let chr = String.fromCharCode(65+ind)
-                // labelTypeMoney.push(element['typemoney_name']);
-                labelTypeMoney.push(chr)
+                labelTypeMoney.compact.push(chr)
+                labelTypeMoney.extend.push(element['typemoney_name'])
                 data['exp_real'].push(element['exp_real']);
                 data['exp_target'].push(element['exp_target']);
             });
-            var chart = createChart(labelTypeMoney, data)
+
+            createTableLabelTypeMoney(labelTypeMoney);
+            chart = createChart(labelTypeMoney['compact'], data)
         });
 
         $('#input-month_start').change(function (e) {
@@ -173,18 +201,18 @@
             }
 
             callServices('GET', "JSON", './monthly_db.php', false, data, function (results) {
-                let labelTypeMoney = [];
+                let labelTypeMoney = {"compact": [], "extend": []};
                 let data = {"exp_real": [], "exp_target": []};
                 results.forEach((element, ind) => {
-                    labelTypeMoney.push(element['typemoney_name']);
                     let chr = String.fromCharCode(65+ind)
-                    // labelTypeMoney.push(element['typemoney_name']);
-                    labelTypeMoney.push(chr)
+                    labelTypeMoney.compact.push(chr)
+                    labelTypeMoney.extend.push(element['typemoney_name'])
                     data['exp_real'].push(element['exp_real']);
                     data['exp_target'].push(element['exp_target']);
                 });
+                createTableLabelTypeMoney(labelTypeMoney);
                 removeData(chart);
-                addData(chart, labelTypeMoney, data);
+                addData(chart, labelTypeMoney['compact'], data);
             });
             e.preventDefault();
 
