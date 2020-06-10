@@ -102,7 +102,14 @@
             while (rgx.test(x1))
             x1 = x1.replace(rgx, '$1' + ',' + '$2');
             return x1 + x2;
-        } 
+        }
+
+        function unicodeToChar(text) {
+            return text.replace(/\\u[\dA-F]{4}/gi, 
+            function (match) {
+                return String.fromCharCode(parseInt(match.replace(/\\u/g, ''), 16));
+            });
+        }
 
         function callServices(type, typeData, url, async, data, callBack) {
             $.ajax({
@@ -118,8 +125,9 @@
                 success: function (msg) {
                     return callBack(msg);
                 },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    console.error(errorThrown);
+                error: function (jqXHR) {
+                    console.error(jqXHR);
+                    console.error(jqXHR.responseText);
                     //fix bug error not set false
 
                 },
@@ -129,14 +137,18 @@
             });
         }
 
+
         callServices('GET', "JSON", './monthly_db.php', false, {
             'month_start': $('#input-month_start').val(), 
             'month_end': $('#input-month_start').val(), 
         }, function (results) {
             let labelTypeMoney = [];
             let data = {"exp_real": [], "exp_target": []};
-            results.forEach(element => {
-                labelTypeMoney.push(element['typemoney_name']);
+            
+            results.forEach((element, ind )=> {
+                let chr = String.fromCharCode(65+ind)
+                // labelTypeMoney.push(element['typemoney_name']);
+                labelTypeMoney.push(chr)
                 data['exp_real'].push(element['exp_real']);
                 data['exp_target'].push(element['exp_target']);
             });
@@ -163,8 +175,11 @@
             callServices('GET', "JSON", './monthly_db.php', false, data, function (results) {
                 let labelTypeMoney = [];
                 let data = {"exp_real": [], "exp_target": []};
-                results.forEach(element => {
+                results.forEach((element, ind) => {
                     labelTypeMoney.push(element['typemoney_name']);
+                    let chr = String.fromCharCode(65+ind)
+                    // labelTypeMoney.push(element['typemoney_name']);
+                    labelTypeMoney.push(chr)
                     data['exp_real'].push(element['exp_real']);
                     data['exp_target'].push(element['exp_target']);
                 });
@@ -214,7 +229,7 @@
                             label: "ค่าใช้จ่ายจริง",
                             borderColor: "rgba(0,0,0,0.09)",
                             borderWidth: "0",
-                            backgroundColor: "rgba(0,0,0,0.07)"
+                            backgroundColor: "rgba(255, 142, 122, 0.88)"
                         }
                     ]
                 },
