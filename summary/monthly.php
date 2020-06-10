@@ -39,12 +39,12 @@
                             <div class="row form-group">
                                 <div class="input-group col-lg-4">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                    <input type="month" id="input-month_start" name="month_start" class="form-control" required>
+                                    <input type="month" id="input-month_start" name="month_start" class="form-control" value="<?= date('Y-m') ?>" required>
                                 </div>
                                  <strong class="card-title">ถึง</strong>
                                 <div class="input-group col-lg-4">
                                     <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                                    <input type="month" id="input-month_end" name="month_end" class="form-control" required>
+                                    <input type="month" id="input-month_end" name="month_end" min="<?= date('Y-m') ?>" class="form-control" value="<?= date('Y-m') ?>" required>
                                 </div>
                                 <div class="col-lg-1">
                                     <button class="btn btn-primary" type="submit">เรียกดู</button>
@@ -143,6 +143,19 @@
     jQuery(document).ready(function ($) {
         "use strict";
 
+        function Comma(Num) {
+            Num += '';
+            Num = Num.replace(/,/g, '');
+
+            let x = Num.split('.');
+            let x1 = x[0];
+            let x2 = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1))
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            return x1 + x2;
+        } 
+
         function callServices(type, typeData, url, async, data, callBack) {
             $.ajax({
                 type: type,
@@ -168,6 +181,20 @@
             });
         }
 
+        callServices('GET', "JSON", './monthly_db.php', false, {
+            'month_start': $('#input-month_start').val(), 
+            'month_end': $('#input-month_start').val(), 
+        }, function (results) {
+            let labelTypeMoney = [];
+            let data = {"exp_real": [], "exp_target": []};
+            results.forEach(element => {
+                labelTypeMoney.push(element['typemoney_name']);
+                data['exp_real'].push(element['exp_real']);
+                data['exp_target'].push(element['exp_target']);
+            });
+            var chart = createChart(labelTypeMoney, data)
+        });
+
         $('#input-month_start').change(function (e) {
             const input_month_end = $("#input-month_end");
             if(input_month_end.val() != "") {
@@ -177,7 +204,6 @@
             input_month_end.attr('min', $(this).val());
         });
 
-        var chart = createChart()
 
         $('#formSummaryMonthly').submit(function (e) {
             let form_values = $(this).serializeArray();
@@ -222,22 +248,21 @@
         }
 
         //bar chart
-        function createChart() {
+        function createChart(labels, data) {
             var ctx = $("#monthlyBarChart")[0];
-            //    ctx.height = 200;
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: {
-                    labels: [],
+                    labels: labels,
                     datasets: [{
-                            data: [],
+                            data: data['exp_target'],
                             label: "เป้าหมาย",
                             borderColor: "rgba(0, 194, 146, 0.9)",
                             borderWidth: "0",
                             backgroundColor: "rgba(0, 194, 146, 0.5)"
                         },
                         {
-                            data: [],
+                            data: data['exp_real'],
                             label: "ค่าใช้จ่ายจริง",
                             borderColor: "rgba(0,0,0,0.09)",
                             borderWidth: "0",
@@ -257,7 +282,10 @@
                     scales: {
                         yAxes: [{
                             ticks: {
-                                beginAtZero: true
+                                beginAtZero: true,
+                                callback: function(value, index, values) {
+                                    return Comma(value);
+                                }
                             }
                         }],
                     }
