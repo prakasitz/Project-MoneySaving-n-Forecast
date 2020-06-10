@@ -117,7 +117,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="count"><?php echo $sumIn ?> </span></div>
+                                    <div class="stat-text"> <?php echo  number_format((float)$sumIn, 2, '.', ','). " บาท" ?> </div>
                                     <h4 class="font-weight-bold">รายรับ</h4>
                                 </div>
                             </div>
@@ -135,7 +135,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="count"><?php echo $sumEx ?></span></div>
+                                    <div class="stat-text"><?php echo  number_format((float)$sumEx, 2, '.', ','). " บาท" ?></div>
                                     <h4 class="font-weight-bold">รายจ่าย</h4>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="count"><?php echo $balance ?></span></div>
+                                    <div class="stat-text"><?php echo  number_format((float)$balance, 2, '.', ','). " บาท" ?></div>
                                     <h4 class="font-weight-bold">ยอดคงเหลือ</h4>
                                 </div>
                             </div>
@@ -170,6 +170,8 @@
         
         <div class="row">
             <div class="col-lg-12">
+
+            
                 <div class="card">
                     <div class="card-body">
                         <div align="center">
