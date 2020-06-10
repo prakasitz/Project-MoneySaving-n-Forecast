@@ -108,7 +108,6 @@
     <div class="animated fadeIn">
         <!-- Widgets  -->
         <div class="row justify-content-center">
-
             <div class="col-lg-4 col-md-6">
                 <div class="card">
                     <div class="card-body">
@@ -118,7 +117,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="count"><?php echo $sumIn ?> </span></div>
+                                    <div class="stat-text"> <?php echo  number_format((float)$sumIn, 2, '.', ','). " บาท" ?> </div>
                                     <h4 class="font-weight-bold">รายรับ</h4>
                                 </div>
                             </div>
@@ -136,7 +135,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="count"><?php echo $sumEx ?></span></div>
+                                    <div class="stat-text"><?php echo  number_format((float)$sumEx, 2, '.', ','). " บาท" ?></div>
                                     <h4 class="font-weight-bold">รายจ่าย</h4>
                                 </div>
                             </div>
@@ -154,7 +153,7 @@
                             </div>
                             <div class="stat-content">
                                 <div class="text-left dib">
-                                    <div class="stat-text">฿<span class="stat-text"><?php echo $balance ?></span></div>
+                                    <div class="stat-text"><?php echo  number_format((float)$balance, 2, '.', ','). " บาท" ?></div>
                                     <h4 class="font-weight-bold">ยอดคงเหลือ</h4>
                                 </div>
                             </div>
@@ -162,29 +161,26 @@
                     </div>
                 </div>
             </div>
-            
         </div>
+        
         <!-- /Widgets -->
         <!--  Traffic  -->
-        <!-- <div class="row">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="box-title">สัดส่วนการใช้เงิน</h4>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-lg-8">
-                            <div class="card-body">
-                                <canvas id="TrafficChart"></canvas>  
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body"></div>
-                </div>
-            </div>
-        </div> -->
         <!--  /Traffic -->
         <div class="clearfix"></div>
+        
+        <div class="row">
+            <div class="col-lg-12">
+
+            
+                <div class="card">
+                    <div class="card-body">
+                        <div align="center">
+                        <img src="<?= ROOT ?>/images/kebtangg.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     <!-- .animated -->
