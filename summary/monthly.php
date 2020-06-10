@@ -50,6 +50,9 @@
                                     <button class="btn btn-primary" type="submit">เรียกดู</button>
                                  </div>
                             </div>
+                            <div align="center">
+                            <H4>กราฟแสดงการเปรียบเทียบระหว่างค่าใช้จ่ายจริงกับเป้าหมาย</H4>
+                            </div>
                         </form>
                     </div>
                     <div class="card-body card-block">
@@ -264,7 +267,7 @@
                 options: {
                     title: {
                         display: true,
-                        text: 'กราฟแสดงการเปรียบเทียบระหว่างค่าใช้จ่ายจริงกับเป้าหมาย'
+                        text: ''
                     },
                     responsive: true,
                     legend: {
