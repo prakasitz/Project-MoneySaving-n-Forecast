@@ -14,21 +14,21 @@
                 <div class="login-form">
                     <form name="formlogin_1" action="login_db.php" method="POST" id="login">
                         <div class="form-group">
-                            <label>User Name</label>
-                            <input type="text" name ="user" class="form-control" placeholder="User Name">
+                            <label>ชื่อผู้ใช้งาน</label>
+                            <input type="text" name ="user" class="form-control" placeholder="ชื่อผู้ใช้งาน">
                         </div>
                         <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" name="pass" class="form-control" placeholder="Password">
+                            <label>รหัสผ่าน</label>
+                            <input type="password" name="pass" class="form-control" placeholder="รหัสผ่าน">
                         </div>
                         <div class="checkbox">
                             <label class="pull-right">
-                                <a href="http://localhost/zocute/login/forget.php">Forgotten Password?</a>
+                                <a href="http://localhost/zocute/login/forget.php">ลืมรหัสผ่าน?</a>
                             </label>
                         </div>
                         <button class="btn btn-info btn-block" type="submit">เข้าสู่ระบบ</button>
                         <div class="register-link m-t-15 text-center">
-                            <p>Don't have account ? <a href="http://localhost/zocute/login/register_1.php">ลงทะเบียน</a></p>
+                            <p>คุณมีบัญชีหรือไม่? <a href="http://localhost/zocute/login/register_1.php">ลงทะเบียน</a></p>
                         </div>
                     </form>
                 </div>

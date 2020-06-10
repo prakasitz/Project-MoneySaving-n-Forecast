@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                         </div>
-
+                    <div align="center">
                         <div class="card-body list-group">
 
                             <div class="row form-group">
@@ -86,6 +86,7 @@
                                     <div class="input-group-addon"><i class="fa fa-group (alias)"></i></div>
                                     <label class="col col-form-label text-left">ครอบครัว&ส่วนตัว</label>
                                 </div>
+                            
                                 <div class=" col-lg-2 col-sm-2">
                                     <input type="hidden" name="fami_per_id" value="6">
                                     <input type="number" id="input-note" name="fami_per" class="form-control" placeholder="" required>
@@ -146,7 +147,17 @@
                                     <input type="number" id="input-note" name="other" class="form-control" placeholder="" required>
                                 </div>
                             </div>
-
+                    
+                            
+                            <div class="col-6">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="fa fa-money"></i></div>
+                                <input type="text" id=''  class="form-control font-weight-bold" 
+                                    placeholder="รวม" disabled>
+                            </div>
+                           
+                            </div>  
+                        </div>
                             <div class="row form-group">
                                 <div class="col-lg-8">
                                     <button class="btn btn-info btn-block" type="submit">บันทึก</button>
@@ -154,6 +165,7 @@
                             </div>
                             
                         </div>
+                    </div>
                     <!-- end form -->
                     </form>
                 </div>

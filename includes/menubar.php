@@ -4,9 +4,9 @@
                 <div id="main-menu" class="main-menu collapse navbar-collapse">
                     <ul class="nav navbar-nav">
                         <li class="active">
-                            <a href="<?= ROOT ?>/index.php"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                            <a href="<?= ROOT ?>/index.php"><i class="menu-icon fa fa-laptop"></i>หน้าหลัก </a>
                         </li>
-                        <li class="menu-title">menu-title</li><!-- /.menu-title -->
+                        <li class="menu-title">เมนูการใช้งาน</li><!-- /.menu-title -->
                         <li class="">
                             <a href="<?= ROOT ?>/planing/planing.php"> <i class="menu-icon fa fa-calendar"></i> วางแผนเป้าหมาย</a>
                         </li>

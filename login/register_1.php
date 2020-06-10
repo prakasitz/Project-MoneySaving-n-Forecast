@@ -23,20 +23,20 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Name</label>
-                                            <input type="text" class="form-control" placeholder="Name" name="user_fname"required>
+                                            <label>ชื่อ</label>
+                                            <input type="text" class="form-control" placeholder="ชื่อ" name="user_fname"required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Surename</label>
-                                            <input type="text" class="form-control" placeholder="Surename" name="user_sname"required>
+                                            <label>นามสกุล</label>
+                                            <input type="text" class="form-control" placeholder="นามสกุล" name="user_sname"required>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Gender</label>
+                                    <label>เพศr</label>
                                     <div class="row" style="padding: 7px 0px 7px 0px;">
                                         <div class="col-md-6 col-lg-6">
                                             <div class="custom-control custom-radio">
@@ -59,26 +59,26 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>User Name</label>
-                                    <input type="text" class="form-control" placeholder="User Name" name="user_name"required>
+                                    <label>ชื่อผู้ใช้งาน</label>
+                                    <input type="text" class="form-control" placeholder="ชื่อผู้ใช้งาน" name="user_name"required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label>Email</label>
-                                    <input type="email" class="form-control" placeholder="Email" name="user_email"required>
+                                    <label>อีเมล</label>
+                                    <input type="email" class="form-control" placeholder="อีเมล" name="user_email"required>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" class="form-control" placeholder="Password" name="user_pass"required>
+                                            <label>รหัสผ่าน</label>
+                                            <input type="password" class="form-control" placeholder="รหัสผ่าน" name="user_pass"required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Re-password</label>
-                                            <input type="password" class="form-control" placeholder="Re-password"required>
+                                            <label>ยืนยันรหัสผ่าน</label>
+                                            <input type="password" class="form-control" placeholder="ยืนยันรหัสผ่าน"required>
                                         </div>
                                     </div>
                                     

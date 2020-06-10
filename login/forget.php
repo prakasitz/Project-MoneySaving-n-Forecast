@@ -10,25 +10,25 @@
         <div class="container">
             <div class="login-content" style="max-width: none !important">
                 <div class="login-logo">
-                    <h1 class="text-light"> Forgot your password? </h1>
+                    <h1 class="text-light"> เปลี่ยนรหัสผ่าน </h1>
                 </div>
                 <div class="login-form">
                     <form action="forget_db.php" method="POST">
                                 <div class="form-group">
-                                    <label>Email</label>
-                                    <input type="email" name="email" class="form-control" placeholder="Email" >
+                                    <label>อีเมล</label>
+                                    <input type="email" name="email" class="form-control" placeholder="อีเมล" >
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Password</label>
-                                            <input type="password" name="pass" class="form-control" placeholder="Password" >
+                                            <label>รหัสผ่าน</label>
+                                            <input type="password" name="pass" class="form-control" placeholder="รหัสผ่าน" >
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>Re-password</label>
-                                            <input type="password" class="form-control" placeholder="Re-password">
+                                            <label>ยืนยันรหัสผ่าน</label>
+                                            <input type="password" class="form-control" placeholder="ยืนยันรหัสผ่าน">
                                         </div>
                                     </div>
                                     

@@ -17,7 +17,7 @@
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
-                    <h1 class="text-light"><?=($actEdit === -1)?'My Profile ('.ucfirst($users['user_name']).')':'Edit My Profile ('.ucfirst($users['user_name']).')'?></h1>
+                    <h1 class="text-light"><?=($actEdit === -1)?'ข้อมูลส่วนตัว ('.ucfirst($users['user_name']).')':'Edit My Profile ('.ucfirst($users['user_name']).')'?></h1>
                 </div>
             <div class="register-link m-t-50 text-center">
                 <p> <a href="http://localhost/zocute/index.php"> <h4><i class="fa fa-link"></i> กลับหน้าหลัก</h4> </a></p>
@@ -27,18 +27,18 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label>Name</label>
+                                    <label>ชื่อ</label>
                                     <div class="wrapper-detail">
-                                        <input type="text" class="form-control" section='sec-edit' placeholder="Name" name="user_fname" value='<?= $users['user_fname'] ?>'> 
+                                        <input type="text" class="form-control" section='sec-edit' placeholder="ชื่อ" name="user_fname" value='<?= $users['user_fname'] ?>'> 
                                         <p class='h4' id='showFname' section='sec-show'><?= strtoupper($users['user_fname']) ?></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label>Surename</label>
+                                    <label>นามสกุล</label>
                                     <div class="wrapper-detail">
-                                        <input type="text" class="form-control" section='sec-edit' placeholder="Surename" name="user_sname" value='<?= $users['user_sname'] ?>'>
+                                        <input type="text" class="form-control" section='sec-edit' placeholder="นามสกุล" name="user_sname" value='<?= $users['user_sname'] ?>'>
                                         <p class='h4' id='showSname' section='sec-show'><?= strtoupper($users['user_sname']) ?></p>
                                     </div>  
                                 </div>
@@ -46,7 +46,7 @@
                         </div>            
 
                         <div class="form-group">
-                            <label>Gender</label>
+                            <label>เพศ</label>
                             <div class="wrapper-detail">
                                 <div class="row" section='sec-edit' style="padding: 7px 0px 7px 0px;">
                                     <div class="col-md-6 col-lg-6">
@@ -75,28 +75,28 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Email</label>
+                            <label>อีเมล</label>
                             <div class="wrapper-detail">
-                                <input type="email" class="form-control" section='sec-edit' placeholder="Email" name="user_email" value="<?= $users['user_email'] ?>">
+                                <input type="email" class="form-control" section='sec-edit' placeholder="อีเมล" name="user_email" value="<?= $users['user_email'] ?>">
                                 <p class='h4' id='showEmail' section='sec-show'><?= $users['user_email'] ?></p>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label>User Name</label>
+                            <label>ชื่อผู้ใช้งาน</label>
                             <div class="wrapper-detail">
                                 <p class='h4' id='showUsername'><?= ucfirst($users['user_name']) ?></p>
                             </div>
                         </div>
 
                         <div class="form-group" section='sec-edit'>
-                            <label>Change Password</label>
+                            <label>เปลี่ยนรหัสผ่าน</label>
                             <div class="row">
                                 <div class="col">
-                                    <input type="password" class="form-control" placeholder="New Password" name="user_pass">
+                                    <input type="password" class="form-control" placeholder="เปลี่ยนรหัสผ่าน" name="user_pass">
                                 </div>
                                 <div class="col">
-                                    <input type="password" class="form-control" placeholder="Re-new Password" name="user_rnpass">
+                                    <input type="password" class="form-control" placeholder="ยืนยันรหัสผ่าน" name="user_rnpass">
                                 </div>
                             </div>
                         </div>
