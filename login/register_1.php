@@ -78,7 +78,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>ยืนยันรหัสผ่าน</label>
-                                            <input type="password" class="form-control" placeholder="ยืนยันรหัสผ่าน"required>
+                                            <input type="password" class="form-control" placeholder="ยืนยันรหัสผ่าน" name="user_cpass"required>
                                         </div>
                                     </div>
                                     
