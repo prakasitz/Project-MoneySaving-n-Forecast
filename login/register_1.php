@@ -10,6 +10,9 @@
         <div class="container">
             <div class="login-content" style="max-width: none !important">
                 <div class="login-logo">
+                    <div align="center">
+                        <img src="<?= ROOT ?>/images/new.png">
+                    </div>
                     <h1 class="text-light">ลงทะเบียน</h1>
                 </div>
                 <div class="login-form">
