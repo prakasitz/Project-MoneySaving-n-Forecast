@@ -49,12 +49,41 @@ if ( isset(
     $stmt = $conn->dbh->prepare( $sql );
     $stmt->execute();
     $conn = null;
+   
+    if ( isset( $_SESSION['users'],$_GET["m"]) ) {
+         $m1         = $_GET["m"]; //เดือน
+        $user_id = $_SESSION['users']['user_id'];
+        $sql1 ="SELECT u1.typemoney_id,  
+                TRUNCATE(( sum(u1.uplan_value)*100/(SELECT sum(u2.uplan_value) FROM userplan as u2 
+                WHERE u2.month_id = '$m1'   AND u2.user_id = '$user_id')), 2) as pv_percent,
+                sum(u1.uplan_value) as sumplan,
+                (SELECT sum(u3.uplan_value) FROM userplan as u3  WHERE u3.month_id = 6 AND u3.user_id = '$user_id') as sumplan,
+                 u1.month_id
+                 FROM userplan as u1
+                 WHERE u1.month_id = '$m1'   AND u1.user_id = '$user_id'
+                GROUP BY u1.typemoney_id
 
-    if ( isset( $sql ) != 0 ) {
-        echo "<script>alert('[Insert สำเร็จ]')</script>";
-        header( "Refresh:0.5; url=http://localhost/zocute/index.php" );
-    } else {
-        echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
+                ";
+                //print_r($user_id) ;
+                //echo $sql1;
+                $conn = DB::getInstance();
+                $stmt = $conn->dbh->prepare( $sql1);
+                $chk_stmt = $stmt->execute();
+
+                if($chk_stmt) {
+                $_SESSION['sumplan'] = $stmt->fetchAll( PDO::FETCH_ASSOC );
+                DB::printArray($_SESSION['sumplan']);
+                //header("Refresh:0.3; url=./.php");
+            }          
     }
-
+    //if ( isset( $sql ) != 0 ) {
+      // echo "<script>alert('[Insert สำเร็จ]')</script>";
+      //header( "Refresh:0.5; url=http://localhost/zocute/planing/planing.php" );
+      //}
+        
+    // else {
+    //echo "<script>alert('ใส่ข้อมูลผิดพลาด')</script>";
+    //}
 }
+
+ 
