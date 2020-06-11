@@ -2,8 +2,6 @@
     $_GET["isShowNav"] = 1;
     require_once '../config.php';
     include_once '../includes/header.php';
-    $sum =$_SESSION['sumplan'];
-    $sump = ($sum[2]['sumplan']);
 ?>
   
 <div class="breadcrumbs">
@@ -58,7 +56,12 @@
                             </div>
                         </div>
                     <div align="center">
-                        <div class="card-body list-group">
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        <div class="card-body list-group section-inputplan">
 
                             <div class="row form-group">
 
@@ -68,7 +71,7 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="savings_id" value="4">
-                                    <input type="number" id="input-note" name="savings" class="form-control" placeholder="" required>
+                                    <input type="number" name="savings" class="form-control input-planing" placeholder="" required>
                                 </div>
                             </div>
 
@@ -80,7 +83,7 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="bill_id" value="5">
-                                    <input type="number" id="input-note" name="bill" class="form-control" placeholder="" required>
+                                    <input type="number" name="bill" class="form-control input-planing" placeholder="" required>
                                 </div>
                             </div>
 
@@ -92,7 +95,7 @@
                             
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="fami_per_id" value="6">
-                                    <input type="number" id="input-note" name="fami_per" class="form-control" placeholder="" required>
+                                    <input type="number" name="fami_per" class="form-control input-planing" placeholder="" required>
                                 </div>
                             </div>
 
@@ -103,8 +106,8 @@
                                     <label class="col col-form-label text-left">สันทนาการ(ช้อปปิ้ง สังสรรค์ ท่องเที่ยว)</label>
                                 </div>
                                 <div class="col-lg-3 col-sm-2">
-                                    <input type="hidden" name="recreation_id" value="7">
-                                    <input type="number" id="input-note" name="recreation" class="form-control" placeholder="" required>
+                                    <input type="hidden"name="recreation_id" value="7">
+                                    <input type="number" name="recreation" class="form-control input-planing" placeholder="" required>
                                 </div>
                             </div>
                             
@@ -116,7 +119,7 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="debt_id" value="8">                                
-                                    <input type="number" id="input-note" name="debt" class="form-control" placeholder="" required>
+                                    <input type="number" name="debt" class="form-control input-planing" placeholder="" required>
                                 </div>
                             </div>
 
@@ -127,7 +130,7 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="other_id" value="9">                                  
-                                    <input type="number" id="input-note" name="other" class="form-control" placeholder="" required>
+                                    <input type="number" name="other" class="form-control input-planing" placeholder="" required>
                                 </div>
                             </div>
                            
@@ -137,8 +140,7 @@
                                     <label class="col col-form-label text-left"><h4>รวม</h4></label>
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
-                                <input type="text" id=''  class="form-control font-weight-bold" value='<?=  number_format((float)$sump, 2, '.', ',')." บาท" ?>'
-                                    placeholder="Total" disabled>
+                                    <p class='h6 font-weight-bold' id='sumplan-total'>sadas</p>
                                 </div>
                             </div>
                     
@@ -147,11 +149,9 @@
                         </div>
                             <div class="row form-group">
                                 <div class="col-lg-8">
-                                    <button class="btn btn-info btn-block" type="submit">บันทึก</button>
+                                    <button id="btnFormPlaning" class="btn btn-info btn-block" type="submit" name="insert">บันทึก</button>
                                 </div>
                             </div>
-                            <div class="row form-group">
-                        
                         </div>
                     </div>
                     <!-- end form -->
@@ -165,3 +165,96 @@
 
 <?php
     include_once '../includes/footer.php';
+?>
+
+
+<script>
+    jQuery(document).ready(function ($) {
+
+        function Comma(Num) {
+            Num += '';
+            Num = Num.replace(/,/g, '');
+
+            let x = Num.split('.');
+            let x1 = x[0];
+            let x2 = x.length > 1 ? '.' + x[1] : '';
+            var rgx = /(\d+)(\d{3})/;
+            while (rgx.test(x1))
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+            return x1 + x2;
+        }
+
+        function callServices(type, typeData, url, async, data, callBack) {
+            $.ajax({
+                type: type,
+                dataType: typeData,
+                beforeSend: function (jqXHR, settings) {
+                },
+                url: url,
+                data: data,
+                contentType: "application/json; charset=utf-8",
+                async: async,
+                success: function (msg) {
+                    return callBack(msg);
+                },
+                error: function (jqXHR) {
+                    console.error(jqXHR);
+                    console.error(jqXHR.responseText);
+                    //fix bug error not set false
+
+                },
+                complete: function (jqXHR, textStatus) {
+                    $('.section-inputplan').fadeIn();
+                    // console.log("complete",textStatus,jqXHR);
+                }
+            });
+        }
+
+        $('#selectMonthly').on('changed.bs.select, rendered.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+            let month = $(this).val();
+            const inputPlaningId = $('input[name=userplan_id]');
+            const inputPlanings = $(".input-planing");
+            const wrapperInputPlaning = inputPlanings.closest('div');
+            callServices('GET', "JSON", './planing_db.php', false, {m: month, show_plan: ""}, function(results) {
+                console.log(results);
+                let sumplan = 0;
+                $('.label-percent, .update-hide-planing').remove();
+                //style="padding-right: 8%;"
+                const strTagLabelPercent = '<label class="label-percent col-sm-2 col-md-2 col-lg-2 col-form-label col-form-label-sm text-right pr-5 pl-1"></label>';
+                const labelPercent = $( strTagLabelPercent );
+                const btnFormPlanning = $("#btnFormPlaning");
+                if(results.length != 0) {
+                    btnFormPlanning.attr('name', 'update');
+                    results.forEach((element, ind) => {
+                        const inputHidePlaning = $(inputPlanings[ind]).prev('input[type=hidden]');
+                        const clonInputHidePlaning = inputHidePlaning.clone();
+                        let keyInputHidePlaning = clonInputHidePlaning.attr('name');
+                        clonInputHidePlaning.attr('name','update_'+keyInputHidePlaning);
+                        clonInputHidePlaning.addClass('update-hide-planing');
+                        clonInputHidePlaning.val(element['uplan_id']);
+                        $(clonInputHidePlaning).insertBefore(inputHidePlaning);
+                        let plan_id = inputHidePlaning.val();
+                        if(plan_id == element['typemoney_id']) {
+                            const cloneLabelPercent = labelPercent.clone();
+                            let str_format = parseFloat(element['uplan_value']);
+                            $(inputPlanings[ind]).val(str_format);
+                            cloneLabelPercent.text(element['pv_percent']+"%");
+                            $(cloneLabelPercent).insertAfter($(wrapperInputPlaning[ind]));
+                        }
+                        sumplan = sumplan + parseFloat(element['uplan_value']);
+                    });
+
+                    let str_format = Comma(sumplan.toFixed(2))+" บาท";
+                    $('#sumplan-total').text(str_format);
+                } else {
+                    btnFormPlanning.attr('name', 'insert');
+                    $(inputPlanings).val('');
+                    $('#sumplan-total').text('-');
+                }
+            });
+        });
+
+
+
+    });
+</script>
