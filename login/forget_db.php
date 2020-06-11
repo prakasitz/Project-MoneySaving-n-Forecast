@@ -23,11 +23,11 @@
         $chk_stmt = $stmt->execute(); // ลองปริ้นค่า $chk_stmt เป็น 1 เท่ากับว่า คิวรี่สำเร็จ
         if($chk_stmt) {
             echo "<h3>เปลี่ยนรหัสสำเร็จ</h3>";
-            header("http://localhost/zocute/login/login_1.php");
+           header( "Refresh:0.5; url=http://localhost/zocute/login/login_1.php" );
         } else {
             echo "มีบางอย่างผิดพลาด";
-            print_r ($stmt->errorInfo());
-            echo $sql;
+           // print_r ($stmt->errorInfo());
+            //echo $sql;
         }
     $conn = null;
 }
