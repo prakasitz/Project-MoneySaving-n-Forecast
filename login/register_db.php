@@ -28,12 +28,12 @@
         
         // validate
         if (strlen($user_name) < 6) {
-            echo "<script>alert('ชื่อผู้ใช้สั้นเกินไป อย่างน้อย 6 ตัวอักษร')</script>";
+            echo "<script>alert('ชื่อผู้ใช้งานสั้นเกินไป อย่างน้อย 6 ตัวอักษร')</script>";
             header("Refresh:0.5; url=http://localhost/zocute/login/register_1.php");
         }
 
         elseif (strlen($user_name) > 12) {
-            echo "<script>alert('ชื่อผู้ใช้ยาวเกินไป สูงสุด 12 ตัวอักษร')</script>";
+            echo "<script>alert('ชื่อผู้ใช้งานยาวเกินไป สูงสุด 12 ตัวอักษร')</script>";
             header("Refresh:0.5; url=http://localhost/zocute/login/register_1.php");
           
         } 
