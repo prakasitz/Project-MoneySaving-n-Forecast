@@ -60,6 +60,34 @@
     //print_r ($sumEx);
     //print_r ($balance);
 ?>
+<?php
+    if ( isset( $_SESSION['users'] ) ) {
+        $user_id = $_SESSION['users']['user_id'];
+        $sql1 = " SELECT date(saving.saving_date) as day
+                FROM saving
+                WHERE  saving.user_id = '$user_id' 
+                "; 
+
+            $conn = DB::getInstance();
+            $stmt = $conn->dbh->prepare( $sql1);
+            $chk_stmt = $stmt->execute();
+            if($chk_stmt) {
+                $_SESSION['date'] = $stmt->fetchAll( PDO::FETCH_ASSOC );
+                $date = $_SESSION['date'];
+            }
+            $count = count($date);
+            //DB::printArray($_SESSION['date']);
+            $first = ( $date[0]['day']);
+            //$firstday = date('d/m/y',strtotime('$date[0]['day']');
+            $last = ( $date[$count-1]['day']);
+            $firstday = date("d/m/yy",strtotime($first));
+            $lastday = date("d/m/yy",strtotime($last));
+            //echo $firstday;
+            //echo $lastday;
+    } 
+
+?>
+
 
 <style>
     #weatherWidget .currentDesc {
@@ -103,8 +131,21 @@
         height: 160px;
     }
 </style>
+
+
+<div class="card-header">
+    <div align="right">
+        <div class="input-group col-lg-6">
+            <strong class="card-title col-md-4">ข้อมูลตั้งแต่</strong>
+            <input type="text" id='sum-expenses'  class="form-control font-weight-bold" value= '<?=  "วันที่ ". ($firstday) ?>'disabled>
+            <strong class="card-title">  ถึง  </strong>
+            <input type="text" id='sum-expenses'  class="form-control font-weight-bold" value= '<?=  "วันที่ ". ($lastday) ?>'disabled>
+        </div>
+    </div>      
+</div>
 <div class="content">
     <!-- Animated -->
+    
     <div class="animated fadeIn">
         <!-- Widgets  -->
         <div class="row justify-content-center">
@@ -170,8 +211,6 @@
         
         <div class="row">
             <div class="col-lg-12">
-
-            
                 <div class="card">
                     <div class="card-body">
                         <div align="center">
@@ -181,7 +220,6 @@
                 </div>
             </div>
         </div>
-
     </div>
     <!-- .animated -->
 </div>
