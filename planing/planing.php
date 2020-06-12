@@ -71,8 +71,22 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="savings_id" value="4">
-                                    <input  type="text"  name="savings" class="form-control input-planing"  placeholder="" required>
-                                   
+                                    <input  type="text"  name="savings" class="form-control input-planing" onkeyup="this.value=Comma(this.value);"  maxlength="14" placeholder="" required>
+                                    <script LANGUAGE="JavaScript">
+                                        function Comma(Num)
+                                        {
+                                            Num += '';
+                                            Num = Num.replace(/,/g, '');
+
+                                            x = Num.split('.');
+                                            x1 = x[0];
+                                            x2 = x.length > 1 ? '.' + x[1] : '';
+                                            var rgx = /(\d+)(\d{3})/;
+                                            while (rgx.test(x1))
+                                            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                                            return x1 + x2;
+                                        } 
+                                    </script>
                                 </div>
                             </div>
 
@@ -84,8 +98,22 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="bill_id" value="5">
-                                    <input type="text" name="bill" class="form-control input-planing" placeholder="" required> 
-                                    
+                                    <input type="text" name="bill" class="form-control input-planing" onkeyup="this.value=Comma(this.value);"  maxlength="14"placeholder="" required> 
+                                    <script LANGUAGE="JavaScript">
+                                        function Comma(Num)
+                                        {
+                                            Num += '';
+                                            Num = Num.replace(/,/g, '');
+
+                                            x = Num.split('.');
+                                            x1 = x[0];
+                                            x2 = x.length > 1 ? '.' + x[1] : '';
+                                            var rgx = /(\d+)(\d{3})/;
+                                            while (rgx.test(x1))
+                                            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                                            return x1 + x2;
+                                        } 
+                                    </script>
                                 </div>
                             </div>
 
@@ -97,7 +125,22 @@
                             
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="fami_per_id" value="6">
-                                    <input type="text" name="fami_per" class="form-control input-planing" placeholder="" required>
+                                    <input type="text" name="fami_per" class="form-control input-planing" onkeyup="this.value=Comma(this.value);"  maxlength="14"placeholder="" required>
+                                    <script LANGUAGE="JavaScript">
+                                        function Comma(Num)
+                                        {
+                                            Num += '';
+                                            Num = Num.replace(/,/g, '');
+
+                                            x = Num.split('.');
+                                            x1 = x[0];
+                                            x2 = x.length > 1 ? '.' + x[1] : '';
+                                            var rgx = /(\d+)(\d{3})/;
+                                            while (rgx.test(x1))
+                                            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                                            return x1 + x2;
+                                        } 
+                                    </script>
                                 </div>
                             </div>
 
@@ -109,7 +152,22 @@
                                 </div>
                                 <div class="col-lg-3 col-sm-2">
                                     <input type="hidden"name="recreation_id" value="7">
-                                    <input type="text" name="recreation" class="form-control input-planing" placeholder="" required>
+                                    <input type="text" name="recreation" class="form-control input-planing"onkeyup="this.value=Comma(this.value);"  maxlength="14" placeholder="" required>
+                                    <script LANGUAGE="JavaScript">
+                                        function Comma(Num)
+                                        {
+                                            Num += '';
+                                            Num = Num.replace(/,/g, '');
+
+                                            x = Num.split('.');
+                                            x1 = x[0];
+                                            x2 = x.length > 1 ? '.' + x[1] : '';
+                                            var rgx = /(\d+)(\d{3})/;
+                                            while (rgx.test(x1))
+                                            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                                            return x1 + x2;
+                                        } 
+                                    </script>
                                 </div>
                             </div>
                             
@@ -121,7 +179,22 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="debt_id" value="8">                                
-                                    <input type="text" name="debt" class="form-control input-planing" placeholder="" required>
+                                    <input type="text" name="debt" class="form-control input-planing"onkeyup="this.value=Comma(this.value);"  maxlength="14" placeholder="" required>
+                                    <script LANGUAGE="JavaScript">
+                                        function Comma(Num)
+                                        {
+                                            Num += '';
+                                            Num = Num.replace(/,/g, '');
+
+                                            x = Num.split('.');
+                                            x1 = x[0];
+                                            x2 = x.length > 1 ? '.' + x[1] : '';
+                                            var rgx = /(\d+)(\d{3})/;
+                                            while (rgx.test(x1))
+                                            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                                            return x1 + x2;
+                                        } 
+                                    </script>
                                 </div>
                             </div>
 
@@ -132,7 +205,22 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="other_id" value="9">                                  
-                                    <input type="text" name="other" class="form-control input-planing" placeholder="" required>
+                                    <input type="text" name="other" class="form-control input-planing"onkeyup="this.value=Comma(this.value);"  maxlength="14" placeholder="" required>
+                                    <script LANGUAGE="JavaScript">
+                                        function Comma(Num)
+                                        {
+                                            Num += '';
+                                            Num = Num.replace(/,/g, '');
+
+                                            x = Num.split('.');
+                                            x1 = x[0];
+                                            x2 = x.length > 1 ? '.' + x[1] : '';
+                                            var rgx = /(\d+)(\d{3})/;
+                                            while (rgx.test(x1))
+                                            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                                            return x1 + x2;
+                                        } 
+                                    </script>
                                 </div>
                             </div>
                            
@@ -169,17 +257,8 @@
     include_once '../includes/footer.php';
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+>
 <script>
- 
- $('input.input-planing').on('blur', function() {
-  const value = this.value.replace(/,/g, '');
-  this.value = parseFloat(value).toLocaleString('en-US', {
-    style: 'decimal',
-    maximumFractionDigits: 2,
-    minimumFractionDigits: 2
-  });
-});
 
     jQuery(document).ready(function ($) {
 
