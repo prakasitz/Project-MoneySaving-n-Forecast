@@ -214,7 +214,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div align="center">
-                        <img src="<?= ROOT ?>/images/indexpic.png">
+                        <img src="<?= ROOT ?>/images/index.png">
                         </div>
                     </div>
                 </div>
