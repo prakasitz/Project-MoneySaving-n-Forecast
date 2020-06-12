@@ -138,7 +138,7 @@
         <div class="input-group col-lg-6">
             <strong class="card-title col-md-4">ข้อมูลตั้งแต่</strong>
             <input type="text" id='sum-expenses'  class="form-control font-weight-bold" value= '<?=  "วันที่ ". ($firstday) ?>'disabled>
-            <strong class="card-title">  ถึง  </strong>
+            &nbsp; &nbsp;<strong class="card-title">  ถึง  </strong> &nbsp; &nbsp;
             <input type="text" id='sum-expenses'  class="form-control font-weight-bold" value= '<?=  "วันที่ ". ($lastday) ?>'disabled>
         </div>
     </div>      
