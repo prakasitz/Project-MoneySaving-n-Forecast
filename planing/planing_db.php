@@ -120,7 +120,7 @@ if(isset($_SESSION['users'])) {
     $y = date('Y');
 
     $update_plan_ids   = [
-      $_GET["update_savings_id"]     => number_format((float)$savingid, 2, '.', ','),
+      $_GET["update_savings_id"]     => $savingid,
       $_GET["update_bill_id"]        => $billid,
       $_GET["update_fami_per_id"]        => $famiperid,
       // $_GET["fami_id"]        => $_GET["fami"],
