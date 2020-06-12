@@ -71,7 +71,8 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="savings_id" value="4">
-                                    <input type="number" name="savings" class="form-control input-planing" placeholder="" required>
+                                    <input  type="text"  name="savings" class="form-control input-planing"  placeholder="" required>
+                                   
                                 </div>
                             </div>
 
@@ -83,7 +84,8 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="bill_id" value="5">
-                                    <input type="number" name="bill" class="form-control input-planing" placeholder="" required>
+                                    <input type="text" name="bill" class="form-control input-planing" placeholder="" required> 
+                                    
                                 </div>
                             </div>
 
@@ -95,7 +97,7 @@
                             
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="fami_per_id" value="6">
-                                    <input type="number" name="fami_per" class="form-control input-planing" placeholder="" required>
+                                    <input type="text" name="fami_per" class="form-control input-planing" placeholder="" required>
                                 </div>
                             </div>
 
@@ -107,7 +109,7 @@
                                 </div>
                                 <div class="col-lg-3 col-sm-2">
                                     <input type="hidden"name="recreation_id" value="7">
-                                    <input type="number" name="recreation" class="form-control input-planing" placeholder="" required>
+                                    <input type="text" name="recreation" class="form-control input-planing" placeholder="" required>
                                 </div>
                             </div>
                             
@@ -119,7 +121,7 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="debt_id" value="8">                                
-                                    <input type="number" name="debt" class="form-control input-planing" placeholder="" required>
+                                    <input type="text" name="debt" class="form-control input-planing" placeholder="" required>
                                 </div>
                             </div>
 
@@ -130,7 +132,7 @@
                                 </div>
                                 <div class=" col-lg-3 col-sm-2">
                                     <input type="hidden" name="other_id" value="9">                                  
-                                    <input type="number" name="other" class="form-control input-planing" placeholder="" required>
+                                    <input type="text" name="other" class="form-control input-planing" placeholder="" required>
                                 </div>
                             </div>
                            
@@ -167,8 +169,18 @@
     include_once '../includes/footer.php';
 ?>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
+ 
+ $('input.input-planing').on('blur', function() {
+  const value = this.value.replace(/,/g, '');
+  this.value = parseFloat(value).toLocaleString('en-US', {
+    style: 'decimal',
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 2
+  });
+});
+
     jQuery(document).ready(function ($) {
 
         function Comma(Num) {

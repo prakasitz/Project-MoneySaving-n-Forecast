@@ -68,51 +68,8 @@
                         <div class="row form-group">
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><strong>THB</strong></div>
-                                <input type="text" step="0.01" min="0" id="input-money-income" name="moneyExpenses"  onkeyup="dokeyup(this);"  onkeypress="checknumber()"  maxlength="12" class="form-control" placeholder="จำนวนเงิน"required> 
-                                <script type="text/javaScript">
-                                                                        //เติม , (คอมมา)
-                                                                            function dokeyup( obj )
-                                                                            {
-                                                                                var key = event.keyCode;
-                                                                                    if( key != 37 & key != 39 & key != 110 )
-                                                                                    {
-                                                                                        var value = obj.value;
-                                                                                        var svals = value.split( "." ); //แยกทศนิยมออก
-                                                                                        var sval = svals[0]; //ตัวเลขจำนวนเต็ม
-                                                                                        var n = 0;
-                                                                                        var result = "";
-                                                                                        var c = "";
-                                                                                        for ( a = sval.length - 1; a >= 0 ; a-- )
-                                                                                        {
-                                                                                        c = sval.charAt(a);
-                                                                                        if ( c != ',' )
-                                                                                        {
-                                                                                            n++;
-                                                                                            if ( n == 4 )
-                                                                                            {
-                                                                                            result = "," + result;
-                                                                                            n = 1;
-                                                                                            };
-                                                                                            result = c + result;
-                                                                                        };
-                                                                                        };
-                                                                                        if ( svals[1] )
-                                                                                        {
-                                                                                        result = result + '.' + svals[1];
-                                                                                        };
-                                                                                        obj.value = result;
-                                                                                    };
-                                                                                    };
-                                                                                    //ให้ text รับค่าเป็นตัวเลขอย่างเดียว
-                                                                                    function checknumber()
-                                                                                    {
-                                                                                    key = event.keyCode;
-                                                                                    if ( key != 46 & ( key < 48 || key > 57 ) )
-                                                                                    {
-                                                                                        event.returnValue = false;
-                                                                                    };
-                                                                                    };
-                                                                                    </script>
+                                <input type="text" step="0.01" min="0"  name="moneyExpenses"  class="form-control input-money-expenses" placeholder="จำนวนเงิน"required> 
+                              
                             </div>
                         </div>
                         <div class="row form-group">
@@ -130,3 +87,15 @@
 <?php
     include_once '../includes/footer.php';
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+ 
+ $('input.input-money-expenses').on('blur', function() {
+  const value = this.value.replace(/,/g, '');
+  this.value = parseFloat(value).toLocaleString('en-US', {
+    style: 'decimal',
+    maximumFractionDigits: 2,
+    minimumFractionDigits: 2
+  });
+});
+</script>
