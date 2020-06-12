@@ -70,8 +70,22 @@
                         <div class="row form-group">
                             <div class="input-group col-lg-12">
                                 <div class="input-group-addon"><strong>THB</strong></div>
-                                <input type="text" step="0.01" min=""  name="moneyIncome"   class="form-control input-money-income" placeholder="จำนวนเงิน"required> 
-                                
+                                <input type="text" step="0.01" min="" id="input-money-income" name="moneyIncome"  onkeyup="this.value=Comma(this.value);"  maxlength="14" class="form-control" placeholder="จำนวนเงิน"required> 
+                                    <script LANGUAGE="JavaScript">
+                                        function Comma(Num)
+                                        {
+                                            Num += '';
+                                            Num = Num.replace(/,/g, '');
+
+                                            x = Num.split('.');
+                                            x1 = x[0];
+                                            x2 = x.length > 1 ? '.' + x[1] : '';
+                                            var rgx = /(\d+)(\d{3})/;
+                                            while (rgx.test(x1))
+                                            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+                                            return x1 + x2;
+                                        } 
+                                    </script>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -90,15 +104,3 @@
 <?php
     include_once '../includes/footer.php';
 ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script>
- 
- $('input.input-money-income').on('blur', function() {
-  const value = this.value.replace(/,/g, '');
-  this.value = parseFloat(value).toLocaleString('en-US', {
-    style: 'decimal',
-    maximumFractionDigits: 2,
-    minimumFractionDigits: 2
-  });
-});
-</script>
