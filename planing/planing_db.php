@@ -29,6 +29,7 @@ if(isset($_SESSION['users'])) {
 
     if($chk_stmt) {
       $results = $stmt->fetchAll( PDO::FETCH_ASSOC );
+
       echo json_encode($results);
     } else {
         echo json_encode( $stmt->errorInfo(), "query"->$sql);
@@ -50,27 +51,27 @@ if(isset($_SESSION['users'])) {
     $s1 = $_GET["savings"];
     $s2 = str_replace(',','', $s1);
     $savingid = round($s2,2);
-    print_r($savingid);
+    
     $b1 = $_GET["bill"];
     $b2 = str_replace(',','', $b1);
     $billid = round($b2,2);
-    print_r($billid);
+    
     $f1 = $_GET['fami_per'];
     $f2 = str_replace(',','', $f1);
     $famiperid = round($f2,2);
-    print_r($famiperid);
+    
     $r1 = $_GET["recreation"];
     $r2 = str_replace(',','', $r1);
     $recreationid = round($r2,2);
-    print_r($recreationid);
+    
     $d1 = $_GET["debt"];
     $d2 = str_replace(',','', $d1);
     $debtid = round($d2,2);
-    print_r($debtid);
+    
     $o1 = $_GET["debt"];
     $o2 = str_replace(',','', $o1);
     $otherid = round($o2,2);
-    print_r($otherid);
+    
     
 
 
@@ -138,6 +139,7 @@ if(isset($_SESSION['users'])) {
 
     $sql = rtrim( $sql, ", ");
     $sql .= " ON DUPLICATE KEY UPDATE `uplan_value`= VALUES(`uplan_value`)";
+    
     /*
 
     INSERT INTO userplan (`uplan_id`, `uplan_value`) VALUES (29,100),(30,200),(31,300),(32,400)
@@ -150,8 +152,8 @@ if(isset($_SESSION['users'])) {
     $chk_stmt = $stmt->execute(); // ลองปริ้นค่า $chk_stmt เป็น 1 เท่ากับว่า คิวรี่สำเร็จ
 
     if($chk_stmt) {
-      echo "<script>alert('อัพเดทข้อมูลสำเร็จ!')</script>";
-      header("Refresh:0.5; url=./planing.php");
+        echo "<script>alert('อัพเดทข้อมูลสำเร็จ!')</script>";
+        header("Refresh:0.5; url=./planing.php");
     } else {
         echo "<script>alert('เสียใจ! มีบางอย่างผิดผลาด')</script>";
         DB::printArray($stmt->errorInfo());
