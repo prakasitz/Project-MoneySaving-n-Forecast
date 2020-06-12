@@ -47,34 +47,61 @@ if(isset($_SESSION['users'])) {
                   $_GET["m"]) 
     ) {
     //section insert
+    $s1 = $_GET["savings"];
+    $s2 = str_replace(',','', $s1);
+    $savingid = round($s2,2);
+    print_r($savingid);
+    $b1 = $_GET["bill"];
+    $b2 = str_replace(',','', $b1);
+    $billid = round($b2,2);
+    print_r($billid);
+    $f1 = $_GET['fami_per'];
+    $f2 = str_replace(',','', $f1);
+    $famiperid = round($f2,2);
+    print_r($famiperid);
+    $r1 = $_GET["recreation"];
+    $r2 = str_replace(',','', $r1);
+    $recreationid = round($r2,2);
+    print_r($recreationid);
+    $d1 = $_GET["debt"];
+    $d2 = str_replace(',','', $d1);
+    $debtid = round($d2,2);
+    print_r($debtid);
+    $o1 = $_GET["debt"];
+    $o2 = str_replace(',','', $o1);
+    $otherid = round($o2,2);
+    print_r($otherid);
+    
+
+
     $plan_ids   = [
-      $_GET["savings_id"]     => $_GET["savings"],
-      $_GET["bill_id"]        => $_GET["bill"],
-      $_GET["fami_per_id"]        => $_GET["fami_per"],
+      $_GET["savings_id"]     => $savingid,
+      $_GET["bill_id"]        => $billid,
+      $_GET["fami_per_id"]        => $famiperid,
       // $_GET["fami_id"]        => $_GET["fami"],
       // $_GET["personal_id"]    => $_GET["personal"],
-      $_GET["recreation_id"]  => $_GET["recreation"],
-      $_GET["debt_id"]        => $_GET["debt"],
-      $_GET["other_id"]       => $_GET["other"]
+      $_GET["recreation_id"]  => $recreationid,
+      $_GET["debt_id"]        => $debtid,
+      $_GET["other_id"]       => $otherid
     ];
-
-    $m    = $_GET["m"]; //เดือน
-    $sql  = " INSERT INTO `userplan` 
+    
+   $m    = $_GET["m"]; //เดือน
+   $sql  = " INSERT INTO `userplan` 
                 (`typemoney_id`, 
                 `uplan_value`, 
                 `month_id`, 
-                `user_id`)
+               `user_id`)
               VALUES ";
 
     foreach ($plan_ids as $plan_id => $value) {
       $sql .= "('$plan_id', '$value', '$m', '$user_id'),";
-    }
+   }
 
     $sql = rtrim($sql,",");
 
     // echo $sql;
     // die;
-
+    $conn = DB::getInstance();
     $stmt = $conn->dbh->prepare( $sql );
     $chk_stmt = $stmt->execute();
   
@@ -93,14 +120,14 @@ if(isset($_SESSION['users'])) {
     $y = date('Y');
 
     $update_plan_ids   = [
-      $_GET["update_savings_id"]     => $_GET["savings"],
-      $_GET["update_bill_id"]        => $_GET["bill"],
-      $_GET["update_fami_per_id"]        => $_GET["fami_per"],
+      $_GET["update_savings_id"]     => number_format((float)$savingid, 2, '.', ','),
+      $_GET["update_bill_id"]        => $billid,
+      $_GET["update_fami_per_id"]        => $famiperid,
       // $_GET["fami_id"]        => $_GET["fami"],
       // $_GET["personal_id"]    => $_GET["personal"],
-      $_GET["update_recreation_id"]  => $_GET["recreation"],
-      $_GET["update_debt_id"]        => $_GET["debt"],
-      $_GET["update_other_id"]       => $_GET["other"]
+      $_GET["update_recreation_id"]  => $recreationid,
+      $_GET["update_debt_id"]        => $debtid,
+      $_GET["update_other_id"]       => $otherid
     ];
 
     $sql = "INSERT INTO userplan (`uplan_id`, `uplan_value`) VALUES ";
