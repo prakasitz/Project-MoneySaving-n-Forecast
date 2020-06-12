@@ -52,24 +52,26 @@
                                         <option value="11 <?= (date('m') == '11')? "selected":"" ?>">พฤศจิกายน</option>
                                         <option value="12 <?= (date('m') == '12')? "selected":"" ?>">ธันวาคม</option>
                                     </select>
+                                
                                 </div>
                             </div>
                         </div>
+                        
                     <div align="center">
                         <div class="d-flex justify-content-center">
                             <div class="spinner-border" role="status">
                                 <span class="sr-only">Loading...</span>
                             </div>
                         </div>
+                        <h4>**กรุณากรอกเป็นตัวเลข**</h4> 
                         <div class="card-body list-group section-inputplan">
-
                             <div class="row form-group">
 
-                                <div class="input-group col-lg-6 col-sm-6">
+                                <div class="input-group col-lg-5 col-sm-6">
                                     <div class="input-group-addon"><i class="fa fa-save"></i></div>
                                     <label class="col col-form-label text-left">การออม&การลงทุน</label>
                                 </div>
-                                <div class=" col-lg-3 col-sm-2">
+                                <div class=" col-lg-2 col-sm-2">
                                     <input type="hidden" name="savings_id" value="4">
                                     <input  type="text"  name="savings" class="form-control input-planing" onkeyup="this.value=Comma(this.value);"  maxlength="14" placeholder="" required>
                                     <script LANGUAGE="JavaScript">
@@ -91,12 +93,12 @@
                             </div>
 
                             <div class="row form-group">
-                                <div class="input-group col-lg-6 col-sm-6">
+                                <div class="input-group col-lg-5 col-sm-6">
                                     <div class="input-group-addon"><i class="fa fa-barcode"></i></div>
                                     <label class="col col-form-label text-left">สาธารณูปโภค(ค่าน้ำ ค่าไฟ ค่าโทรศัพท์
                                         บิลอื่นๆ)</label>
                                 </div>
-                                <div class=" col-lg-3 col-sm-2">
+                                <div class=" col-lg-2 col-sm-2">
                                     <input type="hidden" name="bill_id" value="5">
                                     <input type="text" name="bill" class="form-control input-planing" onkeyup="this.value=Comma(this.value);"  maxlength="14"placeholder="" required> 
                                     <script LANGUAGE="JavaScript">
@@ -118,12 +120,12 @@
                             </div>
 
                             <div class="row form-group">
-                                <div class="input-group col-lg-6 col-sm-6">
+                                <div class="input-group col-lg-5 col-sm-6">
                                     <div class="input-group-addon"><i class="fa fa-group (alias)"></i></div>
                                     <label class="col col-form-label text-left">ครอบครัว&ส่วนตัว</label>
                                 </div>
                             
-                                <div class=" col-lg-3 col-sm-2">
+                                <div class=" col-lg-2 col-sm-2">
                                     <input type="hidden" name="fami_per_id" value="6">
                                     <input type="text" name="fami_per" class="form-control input-planing" onkeyup="this.value=Comma(this.value);"  maxlength="14"placeholder="" required>
                                     <script LANGUAGE="JavaScript">
@@ -146,11 +148,11 @@
 
 
                             <div class="row form-group">
-                                <div class="input-group col-lg-6 col-sm-6">
+                                <div class="input-group col-lg-5 col-sm-6">
                                     <div class="input-group-addon"><i class="fa fa-coffee"></i></div>
                                     <label class="col col-form-label text-left">สันทนาการ(ช้อปปิ้ง สังสรรค์ ท่องเที่ยว)</label>
                                 </div>
-                                <div class="col-lg-3 col-sm-2">
+                                <div class="col-lg-2 col-sm-2">
                                     <input type="hidden"name="recreation_id" value="7">
                                     <input type="text" name="recreation" class="form-control input-planing"onkeyup="this.value=Comma(this.value);"  maxlength="14" placeholder="" required>
                                     <script LANGUAGE="JavaScript">
@@ -172,12 +174,12 @@
                             </div>
                             
                             <div class="row form-group">
-                                <div class="input-group col-lg-6 col-sm-6">
+                                <div class="input-group col-lg-5 col-sm-6">
                                     <div class="input-group-addon"><i class="fa fa-credit-card"></i></div>
                                     <label class="col col-form-label text-left">หนี้สิน</label>
 
                                 </div>
-                                <div class=" col-lg-3 col-sm-2">
+                                <div class=" col-lg-2 col-sm-2">
                                     <input type="hidden" name="debt_id" value="8">                                
                                     <input type="text" name="debt" class="form-control input-planing"onkeyup="this.value=Comma(this.value);"  maxlength="14" placeholder="" required>
                                     <script LANGUAGE="JavaScript">
@@ -199,11 +201,11 @@
                             </div>
 
                             <div class="row form-group">
-                                <div class="input-group col-lg-6 col-sm-6">
+                                <div class="input-group col-lg-5 col-sm-6">
                                     <div class="input-group-addon"><i class="fa fa-circle"></i></div>
                                     <label class="col col-form-label text-left">อื่นๆ</label>
                                 </div>
-                                <div class=" col-lg-3 col-sm-2">
+                                <div class=" col-lg-2 col-sm-2">
                                     <input type="hidden" name="other_id" value="9">                                  
                                     <input type="text" name="other" class="form-control input-planing"onkeyup="this.value=Comma(this.value);"  maxlength="14" placeholder="" required>
                                     <script LANGUAGE="JavaScript">
@@ -225,11 +227,11 @@
                             </div>
                            
                             <div class="row form-group">
-                                <div class="input-group col-lg-6 col-sm-6">
+                                <div class="input-group col-lg-5 col-sm-6">
                                     
                                     <label class="col col-form-label text-left"><h4>รวม</h4></label>
                                 </div>
-                                <div class=" col-lg-3 col-sm-2">
+                                <div class=" col-lg-2 col-sm-2">
                                     <p class='h6 font-weight-bold' id='sumplan-total'>sadas</p>
                                 </div>
                             </div>
