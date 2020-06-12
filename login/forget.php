@@ -24,7 +24,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>รหัสผ่าน</label>
+                                            <label>รหัสผ่าน</label>&nbsp;<label>(อย่างน้อย 6-12 ตัวอักษร)</label>
                                             <input type="password" name="pass" class="form-control" placeholder="รหัสผ่าน" >
                                         </div>
                                     </div>

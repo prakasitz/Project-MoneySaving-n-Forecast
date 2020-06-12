@@ -62,7 +62,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>ชื่อผู้ใช้งาน</label>
+                                    <label>ชื่อผู้ใช้งาน</label>&nbsp;<label>(อย่างน้อย 6-12 ตัวอักษร)</label>
                                     <input type="text" class="form-control" placeholder="ชื่อผู้ใช้งาน" name="user_name"required>
                                 </div>
 
@@ -74,7 +74,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>รหัสผ่าน</label>
+                                            <label>รหัสผ่าน</label>&nbsp;<label>(อย่างน้อย 6-12 ตัวอักษร)</label>
                                             <input type="password" class="form-control" placeholder="รหัสผ่าน" name="user_pass"required>
                                         </div>
                                     </div>
