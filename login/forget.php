@@ -31,7 +31,7 @@
                                     <div class="col-lg-6">
                                         <div class="form-group">
                                             <label>ยืนยันรหัสผ่าน</label>
-                                            <input type="password" class="form-control" placeholder="ยืนยันรหัสผ่าน">
+                                            <input type="password" name="cpass"class="form-control" placeholder="ยืนยันรหัสผ่าน">
                                         </div>
                                     </div>
                                     
