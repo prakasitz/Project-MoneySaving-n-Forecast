@@ -9,7 +9,7 @@
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>สรุปรายรับรายจ่าย</h1>
+                        <h1>การเปรียบเทียบเป้าหมายกับรายจ่าย</h1>
                     </div>
                 </div>
             </div>
@@ -18,7 +18,7 @@
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
                             <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">สรุปรายรับรายจ่าย</a></li>
+                            <li><a href="#">การเปรียบเทียบเป้าหมายกับรายจ่าย</a></li>
                             <li class="active">รายเดือน</li>
                         </ol>
                     </div>
