@@ -29,6 +29,7 @@ if(isset($_SESSION['users'])) {
 
     if($chk_stmt) {
       $results = $stmt->fetchAll( PDO::FETCH_ASSOC );
+
       echo json_encode($results);
     } else {
         echo json_encode( $stmt->errorInfo(), "query"->$sql);
@@ -47,34 +48,61 @@ if(isset($_SESSION['users'])) {
                   $_GET["m"]) 
     ) {
     //section insert
+    $s1 = $_GET["savings"];
+    $s2 = str_replace(',','', $s1);
+    $savingid = round($s2,2);
+    
+    $b1 = $_GET["bill"];
+    $b2 = str_replace(',','', $b1);
+    $billid = round($b2,2);
+    
+    $f1 = $_GET['fami_per'];
+    $f2 = str_replace(',','', $f1);
+    $famiperid = round($f2,2);
+    
+    $r1 = $_GET["recreation"];
+    $r2 = str_replace(',','', $r1);
+    $recreationid = round($r2,2);
+    
+    $d1 = $_GET["debt"];
+    $d2 = str_replace(',','', $d1);
+    $debtid = round($d2,2);
+    
+    $o1 = $_GET["debt"];
+    $o2 = str_replace(',','', $o1);
+    $otherid = round($o2,2);
+    
+    
+
+
     $plan_ids   = [
-      $_GET["savings_id"]     => $_GET["savings"],
-      $_GET["bill_id"]        => $_GET["bill"],
-      $_GET["fami_per_id"]        => $_GET["fami_per"],
+      $_GET["savings_id"]     => $savingid,
+      $_GET["bill_id"]        => $billid,
+      $_GET["fami_per_id"]        => $famiperid,
       // $_GET["fami_id"]        => $_GET["fami"],
       // $_GET["personal_id"]    => $_GET["personal"],
-      $_GET["recreation_id"]  => $_GET["recreation"],
-      $_GET["debt_id"]        => $_GET["debt"],
-      $_GET["other_id"]       => $_GET["other"]
+      $_GET["recreation_id"]  => $recreationid,
+      $_GET["debt_id"]        => $debtid,
+      $_GET["other_id"]       => $otherid
     ];
-
-    $m    = $_GET["m"]; //เดือน
-    $sql  = " INSERT INTO `userplan` 
+    
+   $m    = $_GET["m"]; //เดือน
+   $sql  = " INSERT INTO `userplan` 
                 (`typemoney_id`, 
                 `uplan_value`, 
                 `month_id`, 
-                `user_id`)
+               `user_id`)
               VALUES ";
 
     foreach ($plan_ids as $plan_id => $value) {
       $sql .= "('$plan_id', '$value', '$m', '$user_id'),";
-    }
+   }
 
     $sql = rtrim($sql,",");
 
     // echo $sql;
     // die;
-
+    $conn = DB::getInstance();
     $stmt = $conn->dbh->prepare( $sql );
     $chk_stmt = $stmt->execute();
   
@@ -93,14 +121,14 @@ if(isset($_SESSION['users'])) {
     $y = date('Y');
 
     $update_plan_ids   = [
-      $_GET["update_savings_id"]     => $_GET["savings"],
-      $_GET["update_bill_id"]        => $_GET["bill"],
-      $_GET["update_fami_per_id"]        => $_GET["fami_per"],
+      $_GET["update_savings_id"]     => $savingid,
+      $_GET["update_bill_id"]        => $billid,
+      $_GET["update_fami_per_id"]        => $famiperid,
       // $_GET["fami_id"]        => $_GET["fami"],
       // $_GET["personal_id"]    => $_GET["personal"],
-      $_GET["update_recreation_id"]  => $_GET["recreation"],
-      $_GET["update_debt_id"]        => $_GET["debt"],
-      $_GET["update_other_id"]       => $_GET["other"]
+      $_GET["update_recreation_id"]  => $recreationid,
+      $_GET["update_debt_id"]        => $debtid,
+      $_GET["update_other_id"]       => $otherid
     ];
 
     $sql = "INSERT INTO userplan (`uplan_id`, `uplan_value`) VALUES ";
@@ -111,6 +139,7 @@ if(isset($_SESSION['users'])) {
 
     $sql = rtrim( $sql, ", ");
     $sql .= " ON DUPLICATE KEY UPDATE `uplan_value`= VALUES(`uplan_value`)";
+    
     /*
 
     INSERT INTO userplan (`uplan_id`, `uplan_value`) VALUES (29,100),(30,200),(31,300),(32,400)
@@ -123,8 +152,8 @@ if(isset($_SESSION['users'])) {
     $chk_stmt = $stmt->execute(); // ลองปริ้นค่า $chk_stmt เป็น 1 เท่ากับว่า คิวรี่สำเร็จ
 
     if($chk_stmt) {
-      echo "<script>alert('อัพเดทข้อมูลสำเร็จ!')</script>";
-      header("Refresh:0.5; url=./planing.php");
+        echo "<script>alert('อัพเดทข้อมูลสำเร็จ!')</script>";
+        header("Refresh:0.5; url=./planing.php");
     } else {
         echo "<script>alert('เสียใจ! มีบางอย่างผิดผลาด')</script>";
         DB::printArray($stmt->errorInfo());

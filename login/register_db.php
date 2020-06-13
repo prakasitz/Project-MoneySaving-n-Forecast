@@ -74,7 +74,7 @@
                 echo "<script>alert('[Insert สำเร็จ]')</script>";
                 header("Refresh:0.5; url=http://localhost/zocute/login/login_1.php");
             } else {
-                echo "<script>alert('ชื่อผู้ใช้ไม่สามารถใช้ได้ กรุณาลองใหม่')</script>";
+                echo "<script>alert('ชื่อผู้ใช้งานนี้มีอยู่แล้วในระบบ กรุณาลองใหม่')</script>";
                 header("Refresh:0.5; url=http://localhost/zocute/login/register_1.php");
                 //print_r ($stmt->errorInfo());
                 //echo $sql;

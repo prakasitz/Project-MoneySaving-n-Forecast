@@ -96,7 +96,7 @@
                                         <td>
                                         <!--start php code -->
                                         <?php 
-                                            echo $list_incomes['saving_value'];
+                                            echo number_format((float)$list_incomes['saving_value'], 2, '.', ',');
                                             $sum_incomes += doubleval($list_incomes['saving_value']);
                                         ?>
                                         <!--end php code -->
@@ -158,7 +158,7 @@
                                         <td>
                                         <!--start php code for จำนวนเงิน -->
                                         <?php 
-                                            echo $list_expenses['saving_value'];
+                                            echo number_format((float)$list_expenses['saving_value'], 2, '.', ',') ;
                                             $sum_expenses += doubleval($list_expenses['saving_value']);
                                         ?>
                                         <!--end php code -->

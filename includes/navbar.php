@@ -3,7 +3,7 @@
         <header id="header" class="header">
             <div class="top-left">
                 <div class="navbar-header">
-                    <a class="brand" href="<?= ROOT ?>/index.php"><img src="<?= ROOT ?>/images/kebtanglogo.png" alt="Logo"></a>
+                    <a class="brand" href="<?= ROOT ?>/index.php"><img src="<?= ROOT ?>/images/newlogo.png" alt="Logo"></a>
                     <a class="navbar-brand hidden" href="<?= ROOT ?>/index.php"><img src="<?= ROOT ?>/images/money.png" alt="Logo"></a>
                     <a id="menuToggle" class="menutoggle"><i class="fa fa-bars"></i></a>
                 </div>

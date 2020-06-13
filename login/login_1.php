@@ -9,6 +9,9 @@
         <div class="container">
             <div class="login-content">
                 <div class="login-logo">
+                    <div align="center">
+                            <img src="<?= ROOT ?>/images/new.png">
+                    </div>
                     <h1 class="text-light">เข้าสู่ระบบ</h1>
                 </div>
                 <div class="login-form">

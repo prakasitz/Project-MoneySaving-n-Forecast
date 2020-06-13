@@ -10,12 +10,15 @@
         <div class="container">
             <div class="login-content" style="max-width: none !important">
                 <div class="login-logo">
-                    <h1 class="text-light">ลงทะเบียน</h1>
+                    <div align="center">
+                        <img src="<?= ROOT ?>/images/new.png">
+                    </div>
+                    <h1 class="text-light">สมัครสมาชิก</h1>
                 </div>
                 <div class="login-form">
                     
                     <div class="row mb-3">
-                        <h3 class="col-lg-6">ข้อมูลส่วนตัว</h3>
+                        <h3 class="col-lg-6">ข้อมูลส่วนตัว&nbsp;&nbsp;(ต้องกรอกทุกช่อง)</h3>
                        
                     </div>
                     <form action="register_db.php" method="POST">
@@ -59,7 +62,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label>ชื่อผู้ใช้งาน</label>
+                                    <label>ชื่อผู้ใช้งาน</label>&nbsp;<label>(อย่างน้อย 6-12 ตัวอักษร)</label>
                                     <input type="text" class="form-control" placeholder="ชื่อผู้ใช้งาน" name="user_name"required>
                                 </div>
 
@@ -71,7 +74,7 @@
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <label>รหัสผ่าน</label>
+                                            <label>รหัสผ่าน</label>&nbsp;<label>(อย่างน้อย 6-12 ตัวอักษร)</label>
                                             <input type="password" class="form-control" placeholder="รหัสผ่าน" name="user_pass"required>
                                         </div>
                                     </div>
