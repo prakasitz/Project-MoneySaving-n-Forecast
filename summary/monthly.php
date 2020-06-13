@@ -70,7 +70,7 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class='text-center font-weight-bold'></td>
+                                        <td class='text-center'></td>
                                         <td></td>
                                     </tr>
                                 </tbody>
@@ -271,7 +271,7 @@
                     },
                     responsive: true,
                     legend: {
-                        position: "top"
+                        position: "top",
                     },
                     scales: {
                         yAxes: [{
@@ -279,9 +279,17 @@
                                 beginAtZero: true,
                                 callback: function(value, index, values) {
                                     return Comma(value);
-                                }
+                                },
+                                fontSize: 16,
+                                fontColor: 'black',
                             }
                         }],
+                        xAxes: [{
+                            ticks: {
+                                fontSize: 16,
+                                fontColor: 'black',
+                            }
+                        }]
                     }
                 }
             });
