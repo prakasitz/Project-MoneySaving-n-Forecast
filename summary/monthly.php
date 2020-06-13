@@ -64,13 +64,13 @@
                             <table id='tableTypeMoneyDetail'  class='table table-bordered '>
                                 <thead>
                                     <tr class='text-center'>
-                                        <th>ป้ายกำกับ</th>
+                                        <th>สัญลักษณ์</th>
                                         <th>หมายเหตุ</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td class='text-center font-weight-bold'></td>
+                                        <td class='text-center font-weight-normal'></td>
                                         <td></td>
                                     </tr>
                                 </tbody>

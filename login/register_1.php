@@ -13,12 +13,12 @@
                     <div align="center">
                         <img src="<?= ROOT ?>/images/new.png">
                     </div>
-                    <h1 class="text-light">ลงทะเบียน</h1>
+                    <h1 class="text-light">สมัครสมาชิก</h1>
                 </div>
                 <div class="login-form">
                     
                     <div class="row mb-3">
-                        <h3 class="col-lg-6">ข้อมูลส่วนตัว</h3>
+                        <h3 class="col-lg-6">ข้อมูลส่วนตัว&nbsp;&nbsp;(ต้องกรอกทุกช่อง)</h3>
                        
                     </div>
                     <form action="register_db.php" method="POST">
