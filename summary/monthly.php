@@ -102,8 +102,6 @@
 <!--Local Stuff-->
 <script>
     jQuery(document).ready(function ($) {
-        "use strict";
-
         function Comma(Num) {
             Num += '';
             Num = Num.replace(/,/g, '');
@@ -151,18 +149,24 @@
         }
 
         function createTableLabelTypeMoney(labelsTypemoney) {
+            console.log(labelsTypemoney);
             const table = $('#tableTypeMoneyDetail');
             const tbody = table.find('tbody');
             const row = tbody.find('tr:eq(0)');
-            tbody.find('tr').remove();
+            row.find('td').text('');
+            tbody.find('tr:not(:first-child)').remove();
             labelsTypemoney['compact'].forEach((element, ind) => {
-                const cloneRows = row.clone();
+                const cloneRows = row.clone().show();
                 const tdCompLabels = cloneRows.find('td:eq(0)');
                 const tdExtendLabels = cloneRows.find('td:eq(1)');
                 tdCompLabels.text(labelsTypemoney['compact'][ind]);
                 tdExtendLabels.text(labelsTypemoney['extend'][ind]);
                 tbody.append(cloneRows);
             });
+
+            if(labelsTypemoney['compact'].length != 0) {
+                row.hide();
+            }
 
         }
 
@@ -204,6 +208,7 @@
             }
 
             callServices('GET', "JSON", './monthly_db.php', false, data, function (results) {
+                console.log(results);
                 let labelTypeMoney = {"compact": [], "extend": []};
                 let data = {"exp_real": [], "exp_target": []};
                 results.forEach((element, ind) => {
