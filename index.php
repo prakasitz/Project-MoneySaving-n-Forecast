@@ -1,4 +1,3 @@
-<?php session_start();?>
 <?php
     $_GET["isShowNav"] = 1;
     require_once './config.php';

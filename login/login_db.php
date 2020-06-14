@@ -3,9 +3,7 @@
     include '../config.php';
     include '../classes/DB.php';
     session_start();
-    if ($_SESSION["go_login"] == 1 ){
-        $_SESSION["go_login"] == 0;
-    }
+
     if(isset($_POST["user"]) && isset($_POST["pass"])) {
         $user = $_POST["user"];
         $pass = $_POST["pass"];

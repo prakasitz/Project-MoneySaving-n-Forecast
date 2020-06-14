@@ -38,10 +38,28 @@
 <?php
     ob_start();
     session_start();
-    if( !isset($_SESSION["users"]) && isset($_SESSION["go_login"]) &&  $_SESSION["go_login"] == 0 ){
-        header("Refresh:0.5; url=http://localhost/zocute/login/login_1.php");
+
+    if(isset($_SESSION['users'])) {
+        if(isset($public_page)) {
+            echo "<script>alert('ท่านได้ login แล้ว กรุณาออกจากระบบก่อน');</script>";
+            header('Refresh:0.0; url='.$_SERVER["HTTP_REFERER"]);
+            die;
+        }
+    } else {
+        if(!isset($public_page)) {
+            echo "<script>alert('กรุณาเข้าสู่ระบบก่อน');</script>";
+            header('Refresh:0.0; url=http://localhost/zocute/login/login_1.php');
+            die;
+        }
     }
-    include_once 'menubar.php';
+
+
+    if(isset($_SESSION['users'], $public_page) && $public_page == 1) {
+        echo "<script>alert('ท่านได้ login แล้ว กรุณาออกจากระบบก่อน');</script>";
+        header('Refresh:0.0; url='.$_SERVER["HTTP_REFERER"]);
+    }
+
+        include_once 'menubar.php';
     include_once 'navbar.php';
     $contents = ob_get_contents();
     ob_end_clean();

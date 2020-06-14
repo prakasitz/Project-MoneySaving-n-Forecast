@@ -1,6 +1,9 @@
 <?php
     $_GET['isShowNav'] = 0;
-    require_once '../config.php';
+    
+    $public_page = 1;
+
+    include_once '../config.php';
     include_once '../includes/header.php';
 ?>
 <body class="bg-dark small-device">

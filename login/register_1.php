@@ -1,5 +1,8 @@
 <?php
     $_GET['isShowNav'] = 0;
+
+    $public_page = 1;
+
     require_once '../config.php';
     include_once '../includes/header.php';
 ?>
