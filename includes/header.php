@@ -38,12 +38,13 @@
 <?php
     ob_start();
     session_start();
+    if( !isset($_SESSION["users"]) && isset($_SESSION["go_login"]) &&  $_SESSION["go_login"] == 0 ){
+        header("Refresh:0.5; url=http://localhost/zocute/login/login_1.php");
+    }
     include_once 'menubar.php';
     include_once 'navbar.php';
     $contents = ob_get_contents();
     ob_end_clean();
-
-
     if(isset($_GET["isShowNav"])) {
         $isShow = boolval($_GET["isShowNav"]);
         echo ($isShow) ? $contents : "";
