@@ -122,7 +122,7 @@
                             <div class="row form-group">
                                 <div class="input-group col-lg-5 col-sm-6">
                                     <div class="input-group-addon"><i class="fa fa-group (alias)"></i></div>
-                                    <label class="col col-form-label text-left">ครอบครัว&ส่วนตัว</label>
+                                    <label class="col col-form-label text-left">ค่าใช้จ่ายครอบครัวและส่วนตัว</label>
                                 </div>
                             
                                 <div class=" col-lg-2 col-sm-2">
